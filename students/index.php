@@ -12,8 +12,8 @@ function show_bug($msg){
 
 //前后台资源常量定义
 //
-define('SITE_URL',"http://192.168.1.111/item/");
-define('SITE_URL_L',"http://192.168.1.111/item/students/index.php/");
+define('SITE_URL',"/item/");
+define('SITE_URL_L',"/item/students/index.php/");
 
 define('ADMIN_CSS_URL',SITE_URL.'students/Public/Admin/css/');
 define('ADMIN_FONTS_URL',SITE_URL.'students/Public/Admin/font/');
