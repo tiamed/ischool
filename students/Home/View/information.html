@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>信息中心</title>
+<!-- for-mobile-apps -->
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="keywords" content="" />
+<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false);
+		function hideURLbar(){ window.scrollTo(0,1); } </script>
+<!-- //for-mobile-apps -->
+<link href="css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
+<link href="css/style.css" rel="stylesheet" type="text/css" media="all" />
+<link rel="stylesheet" type="text/css" href="layui/css/layui.css">
+<!-- js -->
+<script src="js/jquery-1.11.1.min.js"></script>
+
+<script type="text/javascript"> 
+var t=5;//设定跳转的时间 
+setInterval("refer()",1000); //启动1秒定时 
+function refer(){  
+	if(t==0){ 
+		location="index.html"; //#设定跳转的链接地址 
+	} 
+	document.getElementById('show').innerHTML=""+t+"秒后将自动跳转到首页"; // 显示倒计时 
+	t--; // 计数器递减 
+} 
+</script> 
+
+<!---<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600,600italic,700,700italic,800,800italic' rel='stylesheet' type='text/css'>
+<link href='http://fonts.googleapis.com/css?family=Cinzel:400,700,900' rel='stylesheet' type='text/css'>--->
+<link rel="apple-touch-icon" sizes="76x76" href="{$Think.const.HOME_IMAGES_URL}apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="{$Think.const.HOME_IMAGES_URL}favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="{$Think.const.HOME_IMAGES_URL}favicon-16x16.png">
+<link rel="manifest" href="{$Think.const.HOME_IMAGES_URL}manifest.json">
+<link rel="mask-icon" href="{$Think.const.HOME_IMAGES_URL}safari-pinned-tab.svg" color="#5bbad5">
+<meta name="theme-color" content="#ffffff">
+</head>
+	
+<body>
+<!-- banner -->
+	<div class="banner1">
+		<div class="container">
+			<div class="logo">
+				<a href="index.html"><img src="images/logo.png" alt="浙江科技学院安吉校区学生事务管理系统"></a>
+			</div>
+			<nav class="navbar navbar-default">
+				<!-- Collect the nav links, forms, and other content for toggling -->
+				<div class="collapse navbar-collapse nav-wil" id="bs-example-navbar-collapse-1">
+				<nav class="stroke">
+						<ul class="nav navbar-nav">
+							<li class="active"><a href="index.html">首页</a></li>
+							<li><a href="information.html">问卷调查</a></li>
+							<li style="margin-top:-50px;"><a href="index.html" style="hover:color:#FFFFFF"><img src="{$Think.const.HOME_IMAGES_URL}logo.png" alt="浙江科技学院安吉校区学生事务管理系统"></a></li>
+							<li><a href="hdzx_t.html">活动中心</a></li>
+							<li><a href="leave_s.html">离校统计</a></li>
+						</ul>
+						<div class="landing"><a href="{$Think.const.SITE_URL_L}home/login/index"><input type="submit" value="登录" ></a></div>
+					</nav>
+				</div>
+				<!-- /.navbar-collapse -->
+			</nav>
+		</div>
+	</div>
+	<div class="single">
+		<div class="container">
+			<div class="col-md-7 blog-left" style="margin-top: -40px;margin-bottom: 30px;">
+				<div class="blog-left-grid">
+					<h1>问卷调查</h1>	
+				</div>
+				
+			</div>
+			<div class="operate" style="margin-top:30px;">
+	  <ul class="layui-nav layui-nav-tree">
+		<li class="layui-nav-item layui-this"><a href="">学生基本信息</a></li>
+		<li class="layui-nav-item "><a href="">离校统计</a></li>
+		<li class="layui-nav-item"><a href="">乘车信息</a></li>
+		<li class="layui-nav-item"><a href="">搬迁统计</a></li>
+	  </ul> 
+	</div>
+			<div class="col-md-5 blog-right" style="float: right;width: 1000px;">
+				
+				<div class="headerhidden"></div>
+  <div class="content">
+<img src="images/error.png" width="200px" height="200px" style="margin-left:150px;margin-top: 150px;" />
+<span style="margin-top:-140px;margin-left:540px;display:block;font-size:18px;">网站还在建设</span>
+<span id="show" style="margin-top:20px;margin-left:500px;display:block;font-size:18px;">5秒后将自动跳转到首页</span>
+
+</div>	
+
+					
+					
+				
+			</div>
+
+			<div class="grid_3 grid_5">
+				
+			</div>
+
+
+			<div class="clearfix"> </div>
+		
+		</div>
+	</div>
+
+	
+
+
+
+
+
+	<div class="twitter-comment">
+		<div class="container">
+			
+			<p>版权所有 © 浙江科技学院 support@zust.edu.cn 浙ICP备11051284号<br> 地址：浙江·杭州市留和路318号 邮编：310023</p>
+		</div>
+	</div>
+
+
+
+	
+<!-- scroll_top_btn -->
+		<script type="text/javascript" src="js/move-top.js"></script>
+		<script type="text/javascript" src="js/easing.js"></script>
+	    <script type="text/javascript">
+			$(document).ready(function() {
+			
+				var defaults = {
+		  			containerID: 'toTop', // fading element id
+					containerHoverID: 'toTopHover', // fading element hover id
+					scrollSpeed: 1200,
+					easingType: 'linear' 
+		 		};
+				
+				
+				$().UItoTop({ easingType: 'easeOutQuart' });
+				
+			});
+		</script>
+		 <a href="#" id="toTop" style="display: block;"><span id="toTopHover" style="opacity: 1;"></span></a>
+<!--end scroll_top_btn -->
+<!-- for bootstrap working -->
+	<script src="js/bootstrap.js"></script>
+<!-- //for bootstrap working -->
+</body>
+</html>

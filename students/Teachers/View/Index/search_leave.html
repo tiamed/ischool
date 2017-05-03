@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html>
+<!-- 导航栏阴影 -->
+<style type="text/css">
+header{
+    box-shadow: -5px 5px 10px #888888;
+}
+</style>
+   
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <meta name="description" content="离返校信息">
+        <meta name="keyword" content="admin,teacher,information,collect">
+        <link rel="shortcut icon" href="{$Think.const.ADMIN_IMGS_URL}favicon.png">
+        <title>
+            离返校情况搜索结果
+        </title>
+        <!-- Icons -->
+        <link href="{$Think.const.ADMIN_CSS_URL}font-awesome.min.css" rel="stylesheet">
+        <link href="{$Think.const.ADMIN_CSS_URL}simple-line-icons.css" rel="stylesheet">
+        <!-- Main styles for this application -->
+        <link href="{$Think.const.ADMIN_CSS_URL}style2.css" rel="stylesheet">
+        <link rel="stylesheet" type="text/css" href="{$Think.const.SITE_URL}students/Public/Home/layui/css/layui.css">
+        <link href="{$Think.const.ADMIN_CSS_URL}pagination.css" rel="stylesheet">
+    <link rel="apple-touch-icon" sizes="76x76" href="{$Think.const.HOME_IMAGES_URL}apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="{$Think.const.HOME_IMAGES_URL}favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="{$Think.const.HOME_IMAGES_URL}favicon-16x16.png">
+<link rel="manifest" href="{$Think.const.HOME_IMAGES_URL}manifest.json">
+<link rel="mask-icon" href="{$Think.const.HOME_IMAGES_URL}safari-pinned-tab.svg" color="#5bbad5">
+<meta name="theme-color" content="#ffffff">
+</head>
+    
+    <body class="app header-fixed sidebar-fixed aside-menu-fixed aside-menu-hidden">
+        <header class="app-header navbar">
+            <button class="navbar-toggler mobile-sidebar-toggler hidden-lg-up" type="button">
+                ☰
+            </button>
+            <a class="navbar-brand" href="{$Think.const.SITE_URL_L}Teachers/Index" style="padding:1rem;"><img src="{$Think.const.ADMIN_IMGS_URL}logohei.png" style=" height: 2rem;float: left;margin-top: -0.1rem;margin-right:0.5rem;">
+                <h4 style="font-size: 1.5rem; color:#494949;">
+                    教师个人中心
+                </h4>
+            </a>
+            <ul class="nav navbar-nav ml-auto">
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" role="button" aria-haspopup="true"
+                    aria-expanded="false">
+                        账户管理
+                    </a>
+                    <div class="dropdown-menu dropdown-menu-right text-xs-center">
+                        <a class="dropdown-item" href="{$Think.const.SITE_URL_L}Home/Index/change">
+                            修改密码
+                        </a>
+                    </div>
+                </li>
+                <li class="nav-item">
+                    <a class="btn btn-outline" href="{$Think.const.SITE_URL_L}Home/Index/logout"
+                    style="margin-right: 1em;">
+                        <i class="icon-logout">
+                        </i>
+                        注销
+                    </a>
+                </li>
+            </ul>
+        </header>
+        <div class="app-body">
+            <div class="sidebar">
+                <nav class="sidebar-nav">
+                    <ul class="nav">
+                        <li class="nav-title">
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{$Think.const.SITE_URL_L}Teachers/Index">
+                                <i class="fa fa-cog">
+                                </i>
+                                我的信息
+                            </a>
+                        </li>
+                        <li class="nav-item nav-dropdown">
+                            <a class="nav-link nav-dropdown-toggle" href="#">
+                                <i class="fa fa-group">
+                                </i>
+                                学生信息
+                            </a>
+                            <ul class="nav-dropdown-items">
+                                <li class="nav-item">
+                                    <a class="nav-link" href="{$Think.const.SITE_URL_L}Teachers/Index/showlist">
+                                        学生列表
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="{$Think.const.SITE_URL_L}Teachers/Index/stu_download">
+                                        下载学生信息
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="nav-item nav-dropdown">
+                            <a class="nav-link nav-dropdown-toggle" href="#">
+                                <i class="fa fa-edit">
+                                </i>
+                                活动管理
+                            </a>
+                            <ul class="nav-dropdown-items">
+                                <li class="nav-item">
+                                    <a class="nav-link" href="{$Think.const.SITE_URL_L}Teachers/Index/add">
+                                        发布活动
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="{$Think.const.SITE_URL_L}Teachers/Index/actived">
+                                        查看发布的活动
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="nav-item nav-dropdown">
+                            <a class="nav-link nav-dropdown-toggle" href="#">
+                                <i class="fa fa-calendar-o">
+                                </i>
+                                离返校
+                            </a>
+                            <ul class="nav-dropdown-items">
+                                <li class="nav-item">
+                                    <a class="nav-link" href="{$Think.const.SITE_URL_L}Teachers/Index/leave">
+                                        发布离返校统计
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="{$Think.const.SITE_URL_L}Teachers/Index/leavelist">
+                                        查看发布的离返校
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="nav-item nav-dropdown">
+                            <a class="nav-link nav-dropdown-toggle" href="#">
+                                <i class="fa fa-signal">
+                                </i>
+                                问卷调查
+                            </a>
+                            <ul class="nav-dropdown-items">
+                                <li class="nav-item">
+                                    <a class="nav-link" href="{$Think.const.SITE_URL_L}Teachers/Index/form">
+                                        发布问卷调查
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="{$Think.const.SITE_URL_L}Teachers/Index/infolist">
+                                        查看发布的问卷调查
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+            <!-- Main content -->
+            <main class="main">
+                <div class="container-fluid animated fadeIn">
+                    <div class="card">
+                        <div class="card-header">
+                            <i class="fa fa-align-justify">
+                            </i>
+                            <strong>
+                                【{$latest.title}】离返校情况搜索结果
+                            </strong>
+                            <div style="margin-top:-1.9rem;">
+                            <form action="{$Think.const.SITE_URL_L}teachers/index/search_leave/id/{$id}"
+                            style="float: right;margin-top:0.5rem;margin-right:-0.95em;">
+                                 <div class="input-group col-md-3" style="height: 1.5rem;">
+                                    <input type="text" id="username2" name="keyword" class="form-control"
+                                    placeholder="搜索" style="width: 10rem;padding:0 0.7rem;">
+                                    <button class="icon-magnifier btn btn-secondary " type="submit" method="post"
+                                    style="margin:0;font-size: 0.5rem;line-height: 0.6rem;">
+                                    </button>
+                            </div>                            
+                            </form>
+                            </div>
+                        </div>
+                        <div class="card-block col-lg-12">
+                            <table class="table" style="table-layout: fixed;">
+                                <thead>
+                                    <tr style="text-align: center;">
+                                        <th class="span2 sortable" style="width:4rem;">
+                                            姓名
+                                        </th>
+                                        <th class="span2 sortable" style="width:8.5rem;">
+                                            <span style="text-align: center;color:black;">
+                                            </span>
+                                            班级
+                                        </th>
+                                        <th class="span2 sortable" style="text-align: center;width:5.5rem;">
+                                            <span>
+                                            </span>
+                                            离校原因
+                                        </th>
+                                        <th class="span2 sortable" style="text-align: center;width:5.5rem;">
+                                            <span>
+                                            </span>
+                                            离校时间
+                                        </th>
+                                        <th class="span2 sortable" style="text-align: center;width:5.5rem;">
+                                            <span>
+                                            </span>
+                                            离校方式
+                                        </th>
+                                        <th class="span2 sortable" style="text-align: center;">
+                                            <span style="text-align: center;">
+                                            </span>
+                                            目的地
+                                        </th>
+                                        <th class="span2 sortable" style="text-align: center;width:6.5rem;">
+                                            <span>
+                                            </span>
+                                            紧急联系人
+                                        </th>
+                                        <th class="span2 sortable" style="text-align: center;width:6rem;">
+                                            <span>
+                                            </span>
+                                            联系电话
+                                        </th>
+                                        <th class="span2 sortable" style="text-align: center;width:7rem;">
+                                            <span>
+                                            </span>
+                                            到校情况
+                                        </th>
+                                        <th class="span2 sortable" style="text-align: center;width:4rem;">
+                                            <span>
+                                            </span>
+                                            备注
+                                        </th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <!-- row -->
+                                    <volist name="result" id="vo">
+                                        <tr class="first" style="white-space: nowrap;">
+                                            <td style="text-align: center;">
+                                                <a href="{$Think.const.SITE_URL_L}teachers/index/details/id/{$vo.stu_id}"
+                                                target="right">
+                                                    {$vo.name}
+                                            </td>
+                                            <td style="text-align: center;">
+                                                {$vo.class}
+                                            </td>
+                                            <td style="text-align: center;">
+                                                {$vo.reason}
+                                            </td>
+                                            <td>
+                                                {$vo.time}
+                                            </td>
+                                            <td style="text-align: center;">
+                                                {$vo.way}
+                                            </td>
+                                            <td style="text-align: center;word-wrap:break-word;overflow:hidden;">
+                                                {$vo.destination}
+                                            </td>
+                                            <td style="text-align: center;">
+                                                {$vo.contacts}
+                                            </td>
+                                            <td style="text-align: center;">
+                                                {$vo.telephone}
+                                            </td>
+                                            <td style="text-align: center;">
+                                                {$vo.register}
+                                            </td>
+                                            <td style="text-align: center;">
+                                                {$vo.note}
+                                            </td>
+                                        </tr>
+                                    </volist>
+                                </tbody>
+                            </table>
+                            
+        <div class="pages">  
+            {$page}  
+        </div>
+                        </div>
+                    </div>
+                </div>
+        </div>
+        </main>
+        </div>
+        <footer class="app-footer">
+
+        <p  align="center" style="width: 60%;
+            margin: 2em auto 0;
+            margin-top:0.8em;
+            font-size: 14px;
+            text-align: center;
+            color: #999;
+            line-height: 1.8em;
+            font-family: "Microsoft Yahei"
+            ">版权所有 © ISchool
+        </p>
+        
+        </footer>
+        <!-- Bootstrap and necessary plugins -->
+        <script src="{$Think.const.ADMIN_JS_URL}jquery.min.js">
+        </script>
+        <script src="{$Think.const.ADMIN_JS_URL}tether.min.js">
+        </script>
+        <script src="{$Think.const.ADMIN_JS_URL}bootstrap.min.js">
+        </script>
+        <script src="{$Think.const.ADMIN_JS_URL}pace.min.js">
+        </script>
+        <!-- GenesisUI main scripts -->
+        <script src="{$Think.const.ADMIN_JS_URL}app.js">
+        </script>
+        <!-- Plugins and scripts required by this views -->
+        <!-- Custom scripts required by this view -->
+        <script src="{$Think.const.ADMIN_JS_URL}views/main.js">
+        </script>
+        <script type="text/javascript">
+            $('.dropdown-toggle').click(function() {
+                $(this).next(".dropdown-menu").toggle();
+            });
+        </script>
+        <script type="text/javascript">
+            function download2() {
+                window.location.href = "{$Think.const.SITE_URL_L}teachers/index/download/id/{$id}"
+            }
+        </script>
+    </body>
+
+</html>

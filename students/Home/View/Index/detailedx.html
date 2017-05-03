@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width" />
+    <title>ISchool</title>
+    <meta name="author" content="Alvaro Trigo Lopez" />
+    <meta name="description" content="学生事务管理系统" />
+    <meta name="keywords" content="学生事务管理系统" />
+    <meta name="Resource-type" content="Document" />
+    <link rel="stylesheet" type="text/css" href="{$Think.const.HOME_CSS_URL}frontpage.css" />
+    <link href="{$Think.const.HOME_CSS_URL}bootstrap.css" rel="stylesheet" type="text/css" media="all" />
+    <link href="{$Think.const.ADMIN_CSS_URL}simple-line-icons.css" rel="stylesheet">
+    <link href="{$Think.const.ADMIN_CSS_URL}font-awesome.min.css" rel="stylesheet">
+    <link href="{$Think.const.ADMIN_CSS_URL}pagination.css" rel="stylesheet">
+    <link href="{$Think.const.HOME_CSS_URL}custom_style.css" rel="stylesheet">
+    <link href="{$Think.const.HOME_CSS_URL}hover.css" rel="stylesheet">
+    <link href="{$Think.const.HOME_CSS_URL}detailed.css" rel="stylesheet">
+<link rel="apple-touch-icon" sizes="76x76" href="{$Think.const.HOME_IMAGES_URL}apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="{$Think.const.HOME_IMAGES_URL}favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="{$Think.const.HOME_IMAGES_URL}favicon-16x16.png">
+<link rel="manifest" href="{$Think.const.HOME_IMAGES_URL}manifest.json">
+<link rel="mask-icon" href="{$Think.const.HOME_IMAGES_URL}safari-pinned-tab.svg" color="#5bbad5">
+<meta name="theme-color" content="#ffffff">
+</head>
+
+<body>
+    <div class="modal fade" id="login" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+        <form action="{$Think.const.SITE_URL_L}Home/Index/login" method="post">
+            <div class="mtitle">
+                <h3 class="login-title">ISchool</h3>
+            </div>
+            <div class="modal-body">
+                <div class="input-field">
+                    <input type="username" name="username" class="form-control" placeholder="学/工号" >
+                </div>
+                <div class="input-field">
+                    <input type="password" name="password" class="form-control" placeholder="密码">
+                </div>
+            </div>
+            <div>
+                <button type="submit" class="btn btn-red">登录</button>
+            </div>
+        </div>
+    </div>
+    <div class="activelist" style="margin-top: 1.6rem;">
+        <img src="{$Think.const.HOME_IMAGES_URL}active-xiangqing.png" class="img-position" style="margin-top:  0.2rem;height: 2rem;">
+        <h1 style="font-size:1.6rem;color: white; ">
+            活动详情
+        </h1>
+    </div>
+    <div class="container">
+        <div class="big-box">
+        <div class="left">
+            <img  src="{$Think.const.HOME_IMAGES_URL}jiaoshou2.jpg" class="img center-cropped">
+            <div class="captions row">
+                <h1 class="title">活动标题</h1>
+                <h3>活动时间</h3><p>2017-4-26</p>
+                <h3>活动地点</h3>
+                <h3>活动名额</h3>
+                <i class="fa fa-envelope-o"></i> <a href="{$Think.const.SITE_URL_L}home/index/apply/id/{$detailed.id}"><h3>我要报名</h3></a>
+            </div>
+         </div>
+         <div class="right"><p>{$detailed.content}</p></div>
+        </div>
+        <a onclick="returni()" class="return"><img src="{$Think.const.HOME_IMAGES_URL}return.png"></a>
+    </div>
+    
+
+    <script src="{$Think.const.ADMIN_JS_URL}jquery-latest.js"></script>
+    <script src="{$Think.const.HOME_JS_URL}bootstrap.js"></script>
+    <script src="{$Think.const.HOME_JS_URL}login.js"></script>
+    <script type="text/javascript" src="{$Think.const.HOME_JS_URL}javascript.fullPage.js"></script>
+    <script type="text/javascript">
+        (function (doc, win) {
+            var docEl = doc.documentElement,
+                resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize',
+                recalc = function () {
+                    var clientWidth = docEl.clientWidth;
+                    if (!clientWidth) return;
+                    if(clientWidth>=640){
+                        docEl.style.fontSize = '16px';
+                    }else{
+                        docEl.style.fontSize = 16* (clientWidth / 640) + 'px';
+                    }
+                   
+                };
+
+            if (!doc.addEventListener) return;
+            win.addEventListener(resizeEvt, recalc, false);
+            doc.addEventListener('DOMContentLoaded', recalc, false);
+        })(document, window);
+        (function (doc, win) {
+            var docEl = doc.documentElement,
+                resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize',
+                he = function () {
+                    var clientHeight = docEl.clientHeight;
+                    if (!clientHeight) return;
+                    if(clientHeight>650){
+                        docEl.style.fontSize = '16px';
+                    }else{
+                        docEl.style.fontSize = 13* (clientHeight / 650) + 'px';
+                    }
+                   
+                };
+
+            if (!doc.addEventListener) return;
+            win.addEventListener(resizeEvt, he, false);
+            doc.addEventListener('DOMContentLoaded', recalc, false);
+        })(document, window);
+        function returni(event) {
+            window.history.back();
+        }
+    </script>
+</body>
+</html>

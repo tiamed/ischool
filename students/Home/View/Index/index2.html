@@ -1,0 +1,539 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width" />
+    <title>ISchool</title>
+    <meta name="author" content="Alvaro Trigo Lopez" />
+    <meta name="description" content="学生事务管理系统" />
+    <meta name="keywords" content="学生事务管理系统" />
+    <meta name="Resource-type" content="Document" />
+    <link rel="stylesheet" type="text/css" href="{$Think.const.HOME_CSS_URL}frontpage.css" />
+   <!--  <link href="{$Think.const.HOME_CSS_URL}bootstrap.css" rel="stylesheet" type="text/css" media="all" /> -->
+    <link href="{$Think.const.ADMIN_CSS_URL}style2.css" rel="stylesheet">
+    <link href="{$Think.const.HOME_CSS_URL}custom_style.css" rel="stylesheet">
+    <link href="{$Think.const.ADMIN_CSS_URL}simple-line-icons.css" rel="stylesheet">
+    <link href="{$Think.const.ADMIN_CSS_URL}pagination.css" rel="stylesheet">
+    <script type="text/javascript">
+(function (doc, win) {
+        var docEl = doc.documentElement,
+            resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize',
+            recalc = function () {
+                var clientWidth = docEl.clientWidth;
+                if (!clientWidth) return;
+                if(clientWidth>=640){
+                    docEl.style.fontSize = '16px';
+                }else{
+                    docEl.style.fontSize = 16* (clientWidth / 640) + 'px';
+                }
+               
+            };
+
+        if (!doc.addEventListener) return;
+        win.addEventListener(resizeEvt, recalc, false);
+        doc.addEventListener('DOMContentLoaded', recalc, false);
+    })(document, window);
+    </script>
+    <script type="text/javascript">
+
+s = '条件：<br>\
+div   css  javascript  html<br>\
+如何实现多行文本中最后一行文本最后自动显示省略号（如三行文本，文本自动换行后，第三行很长，自动显示省略号）';
+ 
+el = document.getElementById('line');
+n = el.offsetHeight;
+for(i=10; i<s.length; i++) {
+  el.innerHTML = s.substr(0, i);
+  if(n <= el.scrollHeight) break;
+}
+el.style.overflow = 'hidden';
+el.innerHTML = s.substr(0, i-3) + '...';
+ 
+</script>
+    
+    <style>
+
+  
+        /* Reset CSS
+	 * --------------------------------------- */
+
+      .btn-outline-secondary {
+            background-color: #263238;
+            border-color: #263238;
+            color: white;
+        }
+
+        .btn-width {
+            width: 10rem;
+            height: 3rem;
+        }
+
+        .btn-height {
+            height: 2.5rem;
+            font-size: 1rem;
+        }
+
+        .btn-margin {
+            margin-bottom: 0.3rem;
+        }
+
+        .landing2 {
+            position: fixed;
+            z-index: 100;
+            right: 2%;
+            top: 1.5%;
+        }
+
+        .welcome2 {
+            position: fixed;
+            z-index: 100;
+            right: 2%;
+            top: 3.8rem;
+            color: white;
+            font-size: 1.2rem;
+        }
+
+        .welcome2 a {
+            font-size: 1.2rem;
+        }
+
+        .btn-load {
+            font-size: 1em;
+            padding-top: 0.5em;
+            padding-bottom: 0.5em;
+            margin-top: 2.5rem;
+        }
+
+        .ischool {
+            position: relative;
+            top: 2%;
+            left: 4%;
+        }
+
+        .active-first {
+            position: absolute;
+            bottom: 2%;
+            left: 8.5rem;
+            width: 20rem;
+            font-weight: lighter;
+        }
+
+        .bigbox {
+            width: 80%;
+            height: 70%;
+            margin: 6.5rem auto;
+            background-color: white;
+            z-index: 100;
+            padding-top: 0.5rem;
+            font-weight: lighter;
+        }
+
+        .box {
+            height: 25%;
+            width: 100%;
+            padding-bottom: 0.5rem;
+            padding-right: 1rem;
+        }
+
+        .img {
+            width: 20%;
+            height: 99%;
+            float: left;
+            background-image: url(/item/students/{$actives[2]['big_image']});
+            background-size: cover;
+            margin-right: 0.5rem;
+        }
+
+        .section {
+            overflow: hidden;
+            height: 100%;
+        }
+
+        .box1 p {
+            font-size: 150%;
+        }
+
+        .box1 {
+            float: right;
+            width: 75%;
+            
+            
+        }
+
+        #section1 {
+            /* background-image: url(../images/section2back.png); */
+            background-size: cover;
+            overflow: hidden;
+        }
+
+        .activelist {
+            position: absolute;
+            top: 5%;
+            left: 10%;
+            z-index: 100;
+            width: 20rem;
+            font-weight: lighter;
+        }
+
+        .shape {
+            border-radius: 50%;
+            margin-right: 1rem;
+            color: black;
+        }
+
+        .page-position {
+            position: absolute;
+            left: 45%;
+        }
+
+        .page-css {
+            opacity: 0
+        }
+
+        .page-link {
+            border: 0;
+        }
+
+        .pagination a:hover {
+            background-color: #263238;
+            color: white;
+        }
+
+        .img-position {
+            float: left;
+            margin-right: 1rem;
+        }
+
+        .bottom {
+            z-index: 10000;
+            color: white;
+            position: absolute;
+            bottom: 5%;
+            left: 25%
+        }
+
+
+
+        .bigbox2 {
+            width: 80%;
+            height: 70%;
+            z-index: 100;
+            margin-top: 7%;
+            
+            font-weight: lighter;
+        }
+
+
+
+        .know {
+            font-size: 1rem;
+            float: right;
+            margin-right: 1rem;
+            margin-bottom: 2rem;
+            height: 10%;
+        }
+
+        .box6s {
+            height: 42%;
+            width: 49%;
+            float: left;
+            background-color: white;
+        }
+
+        .img6s {
+            height: 100%;
+            width: 50%;
+            background-image:url(/item/students/{$actives[1]['big_image']});
+            background-size: cover;
+            float: left;
+        }
+
+        .img7s {
+            height: 100%;
+            width: 50%;
+            background-image:url(/item/students/{$actives[2]['big_image']});
+            background-size: cover;
+            float: left;
+        }
+
+        .midbox6s {
+            height: 88.5%;
+            border-bottom: 1px solid #898484;
+            font-weight: lighter;
+            margin-left: 14rem;
+            overflow: hidden;
+            padding-left: 1.3rem;
+            padding-right: 1.1rem;
+            padding-top: 0.6rem;
+        }
+
+        .box7 {
+            float: right;
+            height: 42%;
+            width: 49%;
+            background-color: white;
+            font-weight: lighter;
+        }
+
+        .activemore {
+            position: relative;
+            bottom: 8%;
+            right:;
+            width: 15rem;
+            font-weight: lighter;
+        }
+
+        .midbox6s p {
+            line-height: 2.65rem;
+            text-indent: 2rem;
+            padding-right: 0.3rem;
+        }
+
+        .box5s a {
+            color: #263238;
+            transition: 0.2s;
+        }
+
+        .box5s a:hover {
+            color: #666666;
+        }
+
+        .box6s a {
+            color: #263238;
+            transition: 0.2s;
+        }
+
+        .box6s a:hover {
+            color: #666666;
+        }
+
+        .box7 a {
+            color: #263238;
+            transition: 0.2s;
+        }
+
+        .box7 a:hover {
+            color: #666666;
+        }
+
+        .p1 {
+            font-size: 1rem;
+        }
+
+        .indent {
+            text-indent: 2rem;
+        }
+
+        #pro {
+            color: #263238;
+            transition: 0.2s;
+        }
+
+        #pro:hover {
+            color: #666666;
+        }
+        .box-page2{
+            height: 44%;
+            width:100%;
+            margin:2rem auto;
+            background-color: white;
+        }
+        .img-page2{
+            width: 50%;
+            height: 100%;
+            overflow: hidden;
+            float: left;
+
+        }
+        .box-page-1 {
+        height: 90%;
+        border-bottom: 1px solid #898484;       
+       overflow: hidden;
+        }
+
+        .box-page2 a {
+            color: #263238;
+            transition: 0.2s;
+        }
+
+        .box-page2 a:hover {
+            color: #666666;
+        }
+        .ljgd{
+            height: 80%;
+            margin-top: 0.1rem;
+
+            
+        }
+        .box2-page2{
+            height: 44%;
+            width: 48%;
+            background-color: white;
+            float: left;
+        }
+        .img2-page2{
+            width: 50%;
+            height: 100%;
+            overflow: hidden;
+            float: left;
+        }
+         .box3-page2{
+            height: 44%;
+            width: 48%;
+            background-color: white;
+            float: right;
+        }
+        .box2-page2 a {
+            color: #263238;
+            transition: 0.2s;
+        }
+
+        .box2-page2 a:hover {
+            color: #666666;
+        }
+        .box3-page2 a {
+            color: #263238;
+            transition: 0.2s;
+        }
+
+        .box3-page2 a:hover {
+            color: #666666;
+        }
+        .know p{
+        float: right;
+        }
+        .container{
+            margin-top: 10rem;
+        }
+    </style>
+<link rel="apple-touch-icon" sizes="76x76" href="{$Think.const.HOME_IMAGES_URL}apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="{$Think.const.HOME_IMAGES_URL}favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="{$Think.const.HOME_IMAGES_URL}favicon-16x16.png">
+<link rel="manifest" href="{$Think.const.HOME_IMAGES_URL}manifest.json">
+<link rel="mask-icon" href="{$Think.const.HOME_IMAGES_URL}safari-pinned-tab.svg" color="#5bbad5">
+<meta name="theme-color" content="#ffffff">
+</head>
+
+<body>
+
+    <div id="fullpage">
+        <div class="section actived" id="section0" style="font-weight: lighter;">
+            <div class="ischool"><img src="{$Think.const.HOME_IMAGES_URL}ISchool2.png" class="img-position" style="height:3.5rem;width:12rem;margin-right:-21em;margin-left:4em; margin-top:2rem;"></div>
+            <div class="content">
+                <div style="font-weight:400; font-size: 3em; color: #FFF;">学生事务管理系统</div>
+            </div>
+            <a href="#secondPage">
+                <div class="active-first"><img class="plane" src="{$Think.const.HOME_IMAGES_URL}feiji.png"></div><h1 class="plane-f">活动中心</h1>
+            </a>
+        </div>
+
+        <div class="section" id="section1" style="font-weight: lighter;">
+            <div class="activelist">
+                <img src="{$Think.const.HOME_IMAGES_URL}newactive-icon.png" class="img-position" style="margin-top: 0.5rem;height: 1.5rem;">
+                <h1 style="font-size:2rem; ">
+                最新活动
+                </h1>
+            </div>
+            <div class="container" >
+            <div class="bigbox2" >
+        <div class="box-page2" >
+           <div class="img-page2"><img  src="/item/students/{$actives[2]['big_image']}"></div> <div class="box-page-1"><h2 style="font-size:1.5rem; margin-top:0.8rem; color:#D5B319; line-height: 2rem;text-align: center;">
+                        {$actives[2]['title']}
+                        </h2> 
+                        <p style=" display: block; /* Fallback for non-webkit */
+  display: -webkit-box;
+  max-width: 400px;
+  height: 26*1.4*3-to-show; /* Fallback for non-webkit */
+  margin: 0 auto;
+  font-size: 15px;
+  line-height: 1.4;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;" >
+                            {$actives[2]['content']}
+                        </p>            
+                    </div>
+                      <a href="{$Think.const.SITE_URL_L}Home/Index/detailed/id/{$actives[0]['id']}">
+                        <div class="know">
+                            <img src="{$Think.const.HOME_IMAGES_URL}ljgd.png" class="ljgd center-cropped"> <p>了解更多</p>
+                        </div>
+                    </a>
+            </div>
+          <div class="box2-page2">
+           <div class="img2-page2"><img  src="/item/students/{$actives[2]['big_image']}"></div> <div class="box-page-1"><h2 style="font-size:1.5rem; margin-top:0.8rem; color:#D5B319; line-height: 2rem;text-align: center;">
+                        {$actives[2]['title']}
+                        </h2> <p style="font-size:1.2rem; margin-top:1rem; color:#595959;line-height: 155%;">
+                            {$actives[2]['content']}
+                        </p>            
+                    </div>
+                      <a href="{$Think.const.SITE_URL_L}Home/Index/detailed/id/{$actives[0]['id']}">
+                        <div class="know">
+                            <img src="{$Think.const.HOME_IMAGES_URL}ljgd.png" class="ljgd center-cropped"> <p>了解更多</p>
+                        </div>
+                    </a>
+            </div>
+           <div class="box3-page2">
+           <div class="img2-page2"><img  src="/item/students/{$actives[2]['big_image']}"></div> <div class="box-page-1"><h2 style="font-size:1.5rem; margin-top:0.8rem; color:#D5B319; line-height: 2rem;text-align: center;">
+                        {$actives[2]['title']}
+                        </h2> <p style="font-size:1.2rem; margin-top:1rem; color:#595959;line-height: 155%;" >
+                            {$actives[2]['content']}
+                        </p>            
+                    </div>
+                      <a href="{$Think.const.SITE_URL_L}Home/Index/detailed/id/{$actives[0]['id']}">
+                        <div class="know">
+                            <img src="{$Think.const.HOME_IMAGES_URL}ljgd.png" class="ljgd center-cropped"> <p>了解更多</p>
+                        </div>
+                    </a>
+            </div>
+            </div>
+
+                <a href="#3rdPage">
+                    <div><img class="plane2" src="{$Think.const.HOME_IMAGES_URL}feiji.png"></div><h1 class="plane2-f">更多活动</h1>
+                </a>
+        </div>
+        </div>
+        <div class="section" id="section2">
+            <div class="activelist">
+                <img src="{$Think.const.HOME_IMAGES_URL}active-list.png" class="img-position" style="margin-top:  0.5rem;height: 2rem;">
+                <h1 style="font-size:2rem; ">
+                    活动列表
+                </h1>
+            </div>
+        <div class="container">
+            <div class="bigbox">
+                <volist name="list" id="vo">
+                    <div class="box">
+                        <div class="img"></div>
+                            <div class="box1"><div style="height: 1.4rem;"> <a href="{$Think.const.SITE_URL_L}home/index/detailed/id/{$vo.id}"><h2 style="float: left;font-size:1.4rem;">{$vo.title}</h2></a></div>
+                                <div class="indent" style="margin-top:2.5rem; height:60%;overflow:hidden" "><p1>{$vo.content}</p1></div>
+            				</div>
+        			</div>
+		        </volist>
+                <div class="pages" style="margin-top:1rem;">
+                    {$page}
+                </div>
+            </div>
+	    </div>
+    </div>
+    </div>
+
+<script type="text/javascript " src="{$Think.const.HOME_JS_URL}javascript.fullPage.js "></script>
+<script type="text/javascript ">
+	fullpage.initialize('#fullpage', {
+		anchors: ['firstPage', 'secondPage', '3rdPage'],
+		menu: '#menu',
+		css3:true
+	});
+</script>
+    <script src="{$Think.const.ADMIN_JS_URL}jquery.min.js"></script>
+    <script src="{$Think.const.ADMIN_JS_URL}tether.min.js"></script>
+    <script src="{$Think.const.ADMIN_JS_URL}bootstrap.min.js"></script>
+    <script type="text/javascript ">
+var a=getElementById('section1');
+var h=a.offsetHeight;
+
+    </script>
+</body>
+</html>

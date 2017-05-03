@@ -1,0 +1,150 @@
+.big-box{
+    height: 75%;
+    width: 95%;
+    background-color: white;
+    margin:6rem auto; 
+}
+.left{
+    height: 100%;
+    width: 30%;
+    background-color: #263238;
+    padding: 1.5rem;
+    float: left;
+}
+
+.right{
+    width: 70%;
+    float: right; 
+    padding: 2rem 3rem 2rem 2rem; 
+    height: 100%;
+}
+.return{
+    position: fixed;right: 12%;bottom: 15%;
+    cursor: pointer;
+}
+html{
+    height: 100%;
+}
+body{
+    background-image: url(../images/section3back.png);
+    background-position:center;
+    background-size:cover;
+}
+
+
+.return img{
+    height: 3rem;
+}
+
+
+
+@media (max-width: 768px) {
+    .left {
+        width: 100%;
+        height: 30%;
+        padding: 0.5rem;
+    }
+
+    .right {
+        width: 100%;
+        height: 70%;
+        padding: 0.5rem;
+        display: table;
+    }
+
+    .img {
+        height: 100%;
+        order: 2;
+    }
+    .captions {
+        width: 100%;
+        height: 15rem;
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    .title {
+        order: 1;
+    }
+
+    .captions > li {
+        font-size: 1.6rem;
+        line-height: ;
+    }
+    h3 {
+        font-size: 1.4rem;
+    }
+    .info > p {
+        font-size: 1.7vh !important;
+        height: auto;
+        text-indent: 15px;
+    }
+    #captions {
+        order: 1;
+    }
+    #img {
+        order: 2;
+    }
+    .gray {
+        display: flex;
+        flex-wrap: wrap;
+    }
+    .info {
+        order: 3;
+        height: 20rem !important;
+        overflow: scroll;
+    }
+}
+
+.activelist > h1 {
+    margin: 0;
+}
+
+.captions > h1, h3, p {
+    color: white;
+}
+
+.right > p {
+    color: black;
+}
+
+
+.image {
+    max-width: 100%;
+    padding: 2rem;
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+}
+
+.gray {
+    background-color: #263238;
+    height: 75%;
+}
+
+* {
+    color: white;
+}
+
+.captions {
+    padding: 2rem;
+}
+
+.captions > li {
+    list-style-type: none;
+    font-size: 3.5vh;
+}
+
+.info > p {
+    font-size: 2vh;
+    line-height: 4vh;
+    color: black;
+    height: inherit;
+    text-indent: 40px;
+}
+
+.info {
+    background-color: white;
+    padding: 2rem;
+    height: 75%;
+    overflow: auto;
+}

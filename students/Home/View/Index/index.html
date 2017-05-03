@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>ISchool</title>
+        <meta name="author" content="bz" />
+        <meta name="description" content="学生事务管理系统" />
+        <meta name="keywords"  content="学生事务管理系统" />
+        <meta name="Resource-type" content="Document" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <link rel="stylesheet" type="text/css" href="{$Think.const.HOME_CSS_URL}frontpage.css" />
+        <link href="{$Think.const.HOME_CSS_URL}bootstrap.css" rel="stylesheet" type="text/css" media="all" />
+        <!-- 	<link href="{$Think.const.ADMIN_CSS_URL}style2.css" rel="stylesheet"> -->
+        <link href="{$Think.const.ADMIN_CSS_URL}simple-line-icons.css" rel="stylesheet">
+        <link href="{$Think.const.ADMIN_CSS_URL}font-awesome.min.css" rel="stylesheet">
+        <link href="{$Think.const.ADMIN_CSS_URL}pagination.css" rel="stylesheet">
+        <link href="{$Think.const.HOME_CSS_URL}custom_style.css" rel="stylesheet">
+        <link href="{$Think.const.HOME_CSS_URL}hover.css" rel="stylesheet">
+    <link rel="apple-touch-icon" sizes="76x76" href="{$Think.const.HOME_IMAGES_URL}apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="{$Think.const.HOME_IMAGES_URL}favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="{$Think.const.HOME_IMAGES_URL}favicon-16x16.png">
+<link rel="manifest" href="{$Think.const.HOME_IMAGES_URL}manifest.json">
+<link rel="mask-icon" href="{$Think.const.HOME_IMAGES_URL}safari-pinned-tab.svg" color="#5bbad5">
+<meta name="theme-color" content="#ffffff">
+</head>
+    <body>
+        <div class="modal fade" id="login" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <form action="{$Think.const.SITE_URL_L}Home/Index/index" method="post">
+                    <div class="mtitle">
+                        <h3 class="login-title">ISchool</h3>
+                    </div>
+                    <div class="modal-body">
+                        <div class="input-field">
+                            <input type="username" name="username" class="form-control" placeholder="学/工号" required="required">
+                        </div>
+                        <div class="input-field">
+                            <input type="password" name="password" class="form-control" placeholder="密码" required="required">
+                        </div>
+                    </div>
+                    <div>
+                        <button type="submit" class="btn btn-red">登录</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <div id="fullpage">
+            <div class="section actived" id="section0" style="font-weight: lighter;">
+                <div class="row">
+                    <div class="navbar-wrapper">
+                        <div class="container">
+                            <nav class="navbar navbar-static-top">
+                                <div class="container">
+                                    <div class="navbar-header">
+                                        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                                        <span class="sr-only">Toggle navigation</span>
+                                        <span class="icon-bar"></span>
+                                        <span class="icon-bar"></span>
+                                        <span class="icon-bar"></span>
+                                        </button>
+                                        <a class="navbar-brand" href="#" style="color: white;"><img src="{$Think.const.HOME_IMAGES_URL}logo-white.png" class="center-cropped"/>学生事务管理系统</a>
+                                    </div>
+                                    <div id="navbar" class="navbar-collapse collapse">
+                                        <ul class="nav navbar-nav">
+                                            <li class="active"><a href="#firstPage">首页</a></li>
+                                            <li><a href="#secondPage">最新活动</a></li>
+                                            <li><a href="#3rdPage">活动列表</a></li>
+                                            <li class="dropdown">
+                                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">更多功能<span class="caret"></span></a>
+                                                <ul class="dropdown-menu">
+                                                    <li><a href="{$Think.const.SITE_URL_L}Home/Index/activelist">活动报名</a></li>
+                                                    <li><a href="{$Think.const.SITE_URL_L}Home/Index/leavelist">离返校管理</a></li>
+                                                    <li><a href="{$Think.const.SITE_URL_L}Home/Index/infolist">问卷调查</a></li>
+                                                    <!--<li role="separator" class="divider"></li>
+                                                        <li class="dropdown-header">Nav header</li>
+                                                        <li><a href="#">Separated link</a></li>
+                                                        <li><a href="#">One more separated link</a></li> -->
+                                                </ul>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </nav>
+                        </div>
+                    </div>
+                    <div class="content">
+						
+                        <div id="myCarousel" class="carousel slide" data-ride="carousel">
+                            <!-- Indicators -->
+                            <ol class="carousel-indicators">
+                                <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+                                <li data-target="#myCarousel" data-slide-to="1"></li>
+                                <li data-target="#myCarousel" data-slide-to="2"></li>
+                            </ol>
+
+                            <!-- Wrapper for slides -->
+                            <div class="carousel-inner">
+
+                                <div class="item active">
+                                    <span>
+                                        活动报名<br>
+                                        <p>省时高效 • 方便快捷</p>
+                                    </span>
+                                </div>
+                                <div class="item">
+                                    <span>
+                                        离返校管理<br>
+                                        <p>定位签到 • 了解动向</p>
+                                    </span>
+                                </div>
+                                <div class="item">
+                                    <span>
+                                        问卷调查<br>
+                                        <p>自由定制 • 精准反馈</p>
+                                    </span>
+                                </div>
+                            </div>
+                            <!-- Left and right controls -->
+                            <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+                            <span class="glyphicon glyphicon-chevron-left"></span>
+                            <span class="sr-only">Previous</span>
+                            </a>
+                            <a class="right carousel-control" href="#myCarousel" data-slide="next">
+                            <span class="glyphicon glyphicon-chevron-right"></span>
+                            <span class="sr-only">Next</span>
+                            </a>
+                              
+                        </div>
+                    </div>
+                    <div id="circularMenu" class="circular-menu">
+                        <button class="floating-btn" onclick="document.getElementById('circularMenu').classList.toggle('active');">
+                        待办
+                        </button>
+                        <menu class="items-wrapper">
+                            <a href="#" class="menu-item">离返校<span class="badge badge-info">1</span></a>
+                            <a href="#" class="menu-item">活动</a>
+                            <a href="#" class="menu-item">问卷</a>
+                            <a href="#" class="menu-item">信息</a>
+                        </menu>
+                    </div>
+                    <a href="#secondPage">
+                        <div class="col-md-3 col-md-offset-1 actcenter">
+                            <div><img class="plane0 pull-left" src="{$Think.const.HOME_IMAGES_URL}feiji.png"></div>
+                            <h1 class="plane-f">活动中心</h1>
+                        </div>
+                    </a>
+                </div>
+            </div>
+            <div class="section" id="section1" style="font-weight: lighter;">
+                <div class="container-fluid">
+                    <div class="row">
+                        <header class="col-md-10 col-md-offset-1 col-xs-10 col-xs-offset-1">
+                            <h1 style="font-size:2em; margin-top: 4rem; margin-bottom: 4rem;">
+                                <i class="fa fa-cog fa-spin fa-3x fa-fw" style="font-size:4rem"></i>最新活动
+                            </h1>
+                        </header>
+                        <a href="{$Think.const.SITE_URL_L}Home/Index/detailed/id/{$actives[0]['id']}">
+                            <div class="col-md-10 col-md-offset-1 col-sm-10 col-sm-offset-1 col-xs-10 col-xs-offset-1 hvr-float-shadow" style="margin-bottom: 6vh;">
+                                <div class="media">
+                                    <div class="card-block" >
+                                        <div class="row">
+                                            <div class="col-md-3 col-lg-3 col-xs-5" style="overflow: hidden;">
+                                                <img src="{$Think.const.SITE_URL}students/{$actives[0]['big_image']}" class="media-object center-cropped media-left gridact"/>
+                                            </div>
+                                            <div class="col-md-9 col-lg-9 col-xs-7 paddingin">
+                                                <div class="caption gridact" style="overflow: hidden; padding: 6px;">
+                                                    <h2 class="media-heading" style="color:#777;margin-bottom: 1rem;">
+                                                        {$actives[0]['title']}
+                                                    </h2>
+                                                    <p style="text-indent: 2rem;font-size: 1.5rem;">
+                                                        {$actives[0]['content']|subtext=400}
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                        <div class="col-md-10 col-md-offset-1 col-sm-10 col-sm-offset-1 col-xs-10 col-xs-offset-1">
+                            <div class="row">
+                                <a href="{$Think.const.SITE_URL_L}Home/Index/detailed/id/{$actives[1]['id']}">
+                                    <div class="col-md-6 hvr-float-shadow">
+                                        <div class="media">
+                                            <div class="card-block" >
+                                                <div class="row">
+                                                    <div class="col-md-6 col-lg-6 col-xs-5" style="overflow: hidden;">
+                                                        <img src="{$Think.const.SITE_URL}students/{$actives[1]['big_image']}" class="media-object center-cropped media-left gridact"/>
+                                                    </div>
+                                                    <div class="col-md-6 col-lg-6 col-xs-7 paddingin">
+                                                        <div class="caption gridact" style="overflow: hidden; padding: 6px;">
+                                                            <h2 class="media-heading" style="color:#777;margin-bottom: 1rem;">
+                                                                {$actives[1]['title']}
+                                                            </h2>
+                                                            <p style="text-indent: 2rem;font-size: 1.5rem;">
+                                                                {$actives[1]['content']|subtext=110}
+                                                            </p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </a>
+                                <a href="{$Think.const.SITE_URL_L}Home/Index/detailed/id/{$actives[2]['id']}">
+                                    <div class="col-md-6 gridbot hvr-float-shadow">
+                                        <div class="media">
+                                            <div class="card-block" >
+                                                <div class="row">
+                                                    <div class="col-md-6 col-lg-6 col-xs-5" style="overflow: hidden;">
+                                                        <img src="{$Think.const.SITE_URL}students/{$actives[2]['big_image']}" class="media-object center-cropped media-left gridact"/>
+                                                    </div>
+                                                    <div class="col-md-6 col-lg-6 col-xs-7 paddingin">
+                                                        <div class="caption gridact" style="overflow: hidden; padding: 6px;">
+                                                            <h2 class="media-heading" style="color:#777;margin-bottom: 1rem;">
+                                                                {$actives[2]['title']}
+                                                            </h2>
+                                                            <p style="text-indent: 2rem;font-size: 1.5rem;">
+                                                                {$actives[2]['content']|subtext=110}
+                                                            </p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <a href="#3rdPage">
+                    <div class="hoverp col-xs-8 col-xs-offset-2 col-md-push-7">
+                        <div><img class="plane pull-left col-xs-push-1" src="{$Think.const.HOME_IMAGES_URL}feiji.png"></div>
+                        <h1 class="plane2-f">更多活动</h1>
+                    </div>
+                </a>
+            </div>
+            <div class="section" id="section2" style="font-weight: lighter;">
+                <header class="col-md-10 col-md-offset-1 col-xs-10 col-xs-offset-1">
+                    <!-- <img src="{$Think.const.HOME_IMAGES_URL}active-list.png"
+                        style="margin-top:  2.8rem;"> -->
+                    <h1 style="font-size:2em; margin-top: 4rem; margin-bottom: 4rem;">
+                        <i class="fa fa-gg" style="font-size:4rem;"></i>活动列表
+                    </h1>
+                </header>
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-md-10 col-md-offset-1 col-sm-10 col-sm-offset-1 col-xs-10 col-xs-offset-1">
+                            <div class="card-block" style="padding-top: 0.4rem;">
+                                <volist name="list" id="vo" class="media">
+                                    <a href="{$Think.const.SITE_URL_L}Home/Index/detailed/id/{$vo.id}">
+                                        <div class="row bordered hvr-float-shadow" style="margin-left: -17px;">
+                                            <div class="col-md-3 col-lg-2 col-xs-5" style="overflow: hidden;">
+                                                <img src="{$Think.const.SITE_URL}students/{$vo.big_image}" class="media-object center-cropped media-left gridact1">
+                                            </div>
+                                            <div class="col-md-9 col-lg-10 col-xs-7 bordered">
+                                                <div class="caption gridact1" style="overflow: hidden; padding: 6px;">
+                                                    <h2 class="media-heading" style="color:#777;margin-bottom: 1rem;">
+                                                        {$vo.title}
+                                                    </h2>
+                                                    <p  style="text-indent: 2rem;font-size: 1.5rem;">
+                                                        {$vo.content|subtext=230}
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </volist>
+                            </div>
+                            <div class="pages" style="margin-top:2rem;">
+                                {$page}
+                            </div>
+                        </div>
+                        <a id="scrollUp" href="#firstPage" title="Scroll to top" style="position: absolute; z-index: 2147483647; display: block;"></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script src="{$Think.const.ADMIN_JS_URL}jquery-latest.js"></script>
+        <script src="{$Think.const.HOME_JS_URL}bootstrap.js"></script>
+        <script src="{$Think.const.HOME_JS_URL}login.js"></script>
+        <script type="text/javascript" src="{$Think.const.HOME_JS_URL}javascript.fullPage.js"></script>
+        <script type="text/javascript">
+            fullpage.initialize('#fullpage', {
+            	anchors: ['firstPage', 'secondPage', '3rdPage'],
+            	menu: '#menu',
+            	css3:true
+            });
+        </script>
+    </body>
+</html>

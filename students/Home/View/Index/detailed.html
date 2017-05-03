@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width" />
+    <title>ISchool</title>
+    <meta name="author" content="Alvaro Trigo Lopez" />
+    <meta name="description" content="学生事务管理系统" />
+    <meta name="keywords" content="学生事务管理系统" />
+    <meta name="Resource-type" content="Document" />
+    <link rel="stylesheet" type="text/css" href="{$Think.const.HOME_CSS_URL}frontpage.css" />
+    <link href="{$Think.const.HOME_CSS_URL}bootstrap.css" rel="stylesheet" type="text/css" media="all" />
+    <link href="{$Think.const.ADMIN_CSS_URL}simple-line-icons.css" rel="stylesheet">
+    <link href="{$Think.const.ADMIN_CSS_URL}font-awesome.min.css" rel="stylesheet">
+    <link href="{$Think.const.ADMIN_CSS_URL}pagination.css" rel="stylesheet">
+    <link href="{$Think.const.HOME_CSS_URL}custom_style.css" rel="stylesheet">
+    <link href="{$Think.const.HOME_CSS_URL}hover.css" rel="stylesheet">
+    <link href="{$Think.const.HOME_CSS_URL}detailed.css" rel="stylesheet">
+<link rel="apple-touch-icon" sizes="76x76" href="{$Think.const.HOME_IMAGES_URL}apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="{$Think.const.HOME_IMAGES_URL}favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="{$Think.const.HOME_IMAGES_URL}favicon-16x16.png">
+<link rel="manifest" href="{$Think.const.HOME_IMAGES_URL}manifest.json">
+<link rel="mask-icon" href="{$Think.const.HOME_IMAGES_URL}safari-pinned-tab.svg" color="#5bbad5">
+<meta name="theme-color" content="#ffffff">
+</head>
+
+<body>
+    <div class="modal fade" id="login" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+        <form action="{$Think.const.SITE_URL_L}Home/Index/detailed/id/{$detailed.id}" method="post">
+            <div class="mtitle">
+                <h3 class="login-title">ISchool</h3>
+            </div>
+            <div class="modal-body">
+                <div class="input-field">
+                    <input type="username" name="username" class="form-control" placeholder="学/工号" required="required">
+                </div>
+                <div class="input-field">
+                    <input type="password" name="password" class="form-control" placeholder="密码" required="required">
+                </div>
+            </div>
+            <div>
+                <button type="submit" class="btn btn-red">登录</button>
+            </div>
+        </div>
+    </div>
+    <header class="col-md-10 col-md-offset-1 col-xs-10 col-xs-offset-1">
+		<h1 style="font-size:3.5vh; margin-top: 4rem; margin-bottom: 4rem;">
+	        <img src="{$Think.const.HOME_IMAGES_URL}active-xiangqing.png" class="img-position" style="height: 4vh;"></i>活动详情
+	    </h1>
+    </header>
+    <div class="container-fluid">
+    	<div class="row">
+	    	<div class="col-md-10 col-md-offset-1 col-xs-12 labels">
+	    		<div class="col-md-4 gray">
+	    			<img class="center-cropped image" id="img" src="{$Think.const.SITE_URL}students/{$detailed.big_image}"/>
+	    			<ul class="captions" id="captions">
+                        <li style="font-size: 2.4vh;">{$detailed.title}</li>
+                        <li style="font-size: 1.6vh;margin-top: 2vh;">报名时间：</li><li style="font-size: 1.6vh;">{$detailed.reg_start|subtext2=16}  —  <br>{$detailed.reg_end|subtext2=16}</li>
+                        <li style="font-size: 1.6vh;margin-top: 2vh;">活动时间：</li><li style="font-size: 1.6vh;">{$detailed.start|subtext2=16}  — <br> {$detailed.end|subtext2=16}</li>
+                        <li style="font-size: 1.6vh;margin-top: 1vh;">活动地点：{$detailed.place}</li>
+                        <li style="font-size: 1.6vh;">活动名额：{$detailed.limit}</li>   
+                        <li style="font-size: 1.6vh;margin-top: 1vh;"><a href="{$Think.const.SITE_URL_L}home/index/apply/id/{$detailed.id}"><i class="fa fa-envelope-o"></i>&nbsp;我要报名</a></li>
+                    </ul>
+					
+	    		</div>
+                <div class="col-md-8 info">
+                    <p>{$detailed.content}</p>
+                </div>
+	    	</div>
+            <a onclick="returni()" class="return"><img src="{$Think.const.HOME_IMAGES_URL}return.png"></a>
+    	</div>
+    </div>
+    
+    <script src="{$Think.const.ADMIN_JS_URL}jquery-latest.js"></script>
+    <script src="{$Think.const.HOME_JS_URL}bootstrap.js"></script>
+    <script src="{$Think.const.HOME_JS_URL}login.js"></script>
+    <script type="text/javascript" src="{$Think.const.HOME_JS_URL}javascript.fullPage.js"></script>
+    <script type="text/javascript">
+        function returni(event) {
+            window.history.back();
+        }
+        </script>
+    </script>
+</body>
+</html>
