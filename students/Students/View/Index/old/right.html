@@ -1,0 +1,103 @@
+  <!DOCTYPE html>
+<html>
+<head>
+    <title>学生个人中心</title>
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    
+    <!-- style -->
+    <link href="{$Think.const.HOME_CSS_URL}style.css" rel="stylesheet" type="text/css" media="all" />
+    <!-- bootstrap -->
+    <link href="{$Think.const.ADMIN_CSS_URL}bootstrap/bootstrap.css" rel="stylesheet" />
+    <link href="{$Think.const.ADMIN_CSS_URL}bootstrap/bootstrap-responsive.css" rel="stylesheet" />
+    <link href="{$Think.const.ADMIN_CSS_URL}bootstrap/bootstrap-overrides.css" type="text/css" rel="stylesheet" />
+
+    <!-- libraries -->
+    <link href="{$Think.const.ADMIN_CSS_URL}lib/jquery-ui-1.10.2.custom.css" rel="stylesheet" type="text/css" />
+    <link href="{$Think.const.ADMIN_CSS_URL}lib/font-awesome.css" type="text/css" rel="stylesheet" />
+
+    <!-- global styles -->
+    <link rel="stylesheet" type="text/css" href="{$Think.const.ADMIN_CSS_URL}layout.css" />
+    <link rel="stylesheet" type="text/css" href="{$Think.const.ADMIN_CSS_URL}elements.css" />
+    <link rel="stylesheet" type="text/css" href="{$Think.const.ADMIN_CSS_URL}icons.css" />
+
+    <!-- this page specific styles -->
+    <link rel="stylesheet" href="{$Think.const.ADMIN_CSS_URL}compiled/index.css" type="text/css" media="screen" />
+
+    <!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" /><link rel="apple-touch-icon" sizes="76x76" href="{$Think.const.HOME_IMAGES_URL}apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="{$Think.const.HOME_IMAGES_URL}favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="{$Think.const.HOME_IMAGES_URL}favicon-16x16.png">
+<link rel="manifest" href="{$Think.const.HOME_IMAGES_URL}manifest.json">
+<link rel="mask-icon" href="{$Think.const.HOME_IMAGES_URL}safari-pinned-tab.svg" color="#5bbad5">
+<meta name="theme-color" content="#ffffff">
+</head>
+<body style="font-family:'Microsoft YaHei'">
+    <div class="single" style="margin-left:-10px;margin-top:-25px;margin-bottom:45px;">
+        <div class="container">
+            <div class="col-md-7 blog-left" >
+                <div class="blog-left-grid">
+                    <h1>个人信息</h1>
+                    
+                </div>
+                
+            </div>
+        </div>
+    </div>
+<table class="table table-hover table-responsive table-bordered" style="height:400px;font-size:1.6em;margin-left:30px;width:45em;">
+  <tr>
+    <td style="text-align: center;"><b>姓名</b></td>
+    <td>{$Think.session.name}</td>
+    <td style="text-align: center;"><b>性别</b></td>
+    <td>{$Think.session.sex}</td>
+    
+    
+  </tr>
+  <tr>
+   <td style="text-align: center;"><b>出生年月</b></td>
+    <td>{$Think.session.birthday}</td>
+    <td style="text-align: center;"><b>行政班</b></td>
+    <td>{$Think.session.class}</td>
+    
+  </tr>
+  <tr>
+     <td style="text-align: center;"><b>民族</b></td>
+    <td>{$Think.session.nation}</td>
+    
+    <td style="text-align: center;"><b>家庭住址</b></td>
+    <td>{$Think.session.address}</td>
+  </tr>
+ 
+  <tr>
+    <td style="text-align: center;"><b>长号</b></td>
+    <td>{$Think.session.lphonenum}</td>
+    <td style="text-align: center;"><b>短号</b></td>
+    <td>{$Think.session.sphonenum}</td>
+  </tr>
+  <tr>
+    <td style="text-align: center;"><b>书院寝室号</b></td>
+    <td>{$Think.session.room}</td>
+   
+    <td style="text-align: center;"><b>火车终点站</b></td>
+    <td>{$Think.session.train}</td>
+  </tr>
+
+</table>
+    <!-- <button type="button" class="btn btn-success" style="float: right;">申请修改</button> -->
+
+      <!-- scripts -->
+    <script src="{$Think.const.ADMIN_JS_URL}jquery-latest.js"></script>
+    <script src="{$Think.const.ADMIN_JS_URL}bootstrap.min.js"></script>
+    <script src="{$Think.const.ADMIN_JS_URL}jquery-ui-1.10.2.custom.min.js"></script>
+    <!-- knob -->
+    <script src="{$Think.const.ADMIN_JS_URL}jquery.knob.js"></script>
+    <!-- flot charts -->
+    <script src="{$Think.const.ADMIN_JS_URL}jquery.flot.js"></script>
+    <script src="{$Think.const.ADMIN_JS_URL}jquery.flot.stack.js"></script>
+    <script src="{$Think.const.ADMIN_JS_URL}jquery.flot.resize.js"></script>
+    <script src="{$Think.const.ADMIN_JS_URL}theme.js"></script>
+
+</body>
+</html>

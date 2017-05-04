@@ -1,0 +1,87 @@
+﻿/*
+Theme Name: 东小阴
+Theme URI: http://www.ishayou.com
+
+Author: "韵"
+Author URI: http://www.yzipi.com
+
+Tags:www.yzipi.com,柚子皮模板，Orange,简约
+
+Description:柚子皮主题用了自适应网页设计的理念进行设计，在任何设备上都显示得完美无缺。
+Version: 5.61
+
+-------------------------------------------------------------- */
+
+@charset "utf-8";
+html {
+-webkit-text-size-adjust: none;
+}
+*{
+	margin: 0;
+	padding: 0;
+}
+ol, ul {
+	list-style: none;
+}
+img {
+	border: 0;
+	height: auto;
+	width: auto;
+}
+
+body {
+	font-family: "Microsoft YaheiLight", "冬青黑体简体中文 w3";
+	font-size: 14px;
+	background: #f5f5f5;
+	color: #656565;
+	letter-spacing: 0.5px;
+}
+a {
+	color: #656565;
+	font-size: 14px;
+	text-decoration: none;
+}
+a:hover {
+	color: #d6623d;
+}
+::selection{background:#d6623d;color:#fff;}
+
+.clear {
+	clear: both;
+}
+.banner-bottom1 h2:before,.latest-posts h3:hover:before,.blog-left h1:hover:before,.testimonials h3:before,h1.title:before,.news-events h2:before,.conference h1:before,.sevices-list h3:before,.services-bottom h2:before,.services h1:before,.subscribe-left h1:before,.contact-us h3:before,.about h1:before,.mail h1:before,.about-bottom h2:before{
+
+    background:#D5B319;
+
+}
+.btn-outline-secondary{
+	background-color: #263238;
+	border-color:#263238;
+	color: white; 
+	
+}
+.btn-width{
+	width: 10rem;
+	height: 3rem;
+}
+.landing{
+	position: fixed;
+	z-index: 100;
+	right: 2%;
+	top: 2%;
+}
+.ischool{
+position: relative;top: 2%;left: 4%;
+}
+.active-first{
+	position: absolute;bottom: 2%;
+	left: 10%;
+	
+}
+.logo{
+	height: 1.2rem;
+	float: left;
+	margin-top: 0.5rem;
+}
+
+

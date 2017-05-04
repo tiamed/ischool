@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>教师中心</title>
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    
+
+    <!-- bootstrap -->
+    <link href="{$Think.const.ADMIN_CSS_URL}bootstrap/bootstrap.css" rel="stylesheet" />
+    <link href="{$Think.const.ADMIN_CSS_URL}bootstrap/bootstrap-responsive.css" rel="stylesheet" />
+    <link href="{$Think.const.ADMIN_CSS_URL}bootstrap/bootstrap-overrides.css" type="text/css" rel="stylesheet" />
+    <link href="{$Think.const.ADMIN_CSS_URL}showlist.css" rel="stylesheet" />
+    <link href="{$Think.const.ADMIN_CSS_URL}yahoo2.css" rel="stylesheet" />
+    <!-- global styles -->
+    <link rel="stylesheet" type="text/css" href="{$Think.const.ADMIN_CSS_URL}layout.css" />
+    <link rel="stylesheet" type="text/css" href="{$Think.const.ADMIN_CSS_URL}elements.css" />
+    <link rel="stylesheet" type="text/css" href="{$Think.const.ADMIN_CSS_URL}icons.css" />
+    <!-- layui -->
+    <link rel="stylesheet" type="text/css" href="{$Think.const.HOME_LAYUI_URL}css/layui.css">
+    <!-- libraries -->
+    <link href="{$Think.const.ADMIN_CSS_URL}lib/font-awesome.css" type="text/css" rel="stylesheet" />
+    
+    <!-- this page specific styles -->
+    <link rel="stylesheet" href="{$Think.const.ADMIN_CSS_URL}compiled/user-list.css" type="text/css" media="screen" />
+
+    <!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" /><link rel="apple-touch-icon" sizes="76x76" href="{$Think.const.HOME_IMAGES_URL}apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="{$Think.const.HOME_IMAGES_URL}favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="{$Think.const.HOME_IMAGES_URL}favicon-16x16.png">
+<link rel="manifest" href="{$Think.const.HOME_IMAGES_URL}manifest.json">
+<link rel="mask-icon" href="{$Think.const.HOME_IMAGES_URL}safari-pinned-tab.svg" color="#5bbad5">
+<meta name="theme-color" content="#ffffff">
+</head>
+<body>
+
+   
+    
+
+    <!-- main container --> 
+   
+        <div class="container">
+            <div class="col-md-7 blog-left" >
+                <div class="blog-left-grid" style="position:absolute; left:50px; top:-20px;">
+                    <h1>学生列表</h1>
+                    
+                </div>
+                
+            </div>
+            
+</div>
+                    <div class="span10 pull-right">
+                    <form action="{$Think.const.SITE_URL_L}teachers/index/searchstu">
+                    <button class="layui-btn"  type="submit"  method="post" style="float: right;transition: 0.3s;margin-right: 30px;">搜索</button>
+                    <input name="keyword" class="form-control input-lg" style="float: right;width: 200px;height: 28px;" type="text">
+                    </form>
+                        
+                        <!-- custom popup filter -->
+                        <!-- styles are located in {$Think.const.ADMIN_CSS_URL}elements.css -->
+                        <!-- script that enables this dropdown is located in {$Think.const.ADMIN_JS_URL}theme.js -->                        
+                    </div>
+                
+
+                <!-- Users table -->
+                <div class="row-fluid table" style="bottom:20px;margin-top:70px;margin-left: 68px;width:85em;">
+                    <table class="table table-hover table-responsive table-bordered" style="font-size: 0.9em;width: 75em;">
+                        <thead>
+                            <tr style="text-align: center;">
+                                <th class="span2 sortable">
+                                    姓名
+                                </th>
+                                <th class="span2 sortable">
+                                    <span style="text-align: center;"></span>学号
+                                </th>
+                                <th class="span2 sortable" style="text-align: center;">
+                                    <span ></span>性别
+                                </th>
+                                <th class="span2 sortable" style="text-align: center;">
+                                    <span ></span>学院
+                                </th> 
+                                <th class="span2 sortable" style="text-align: center;">
+                                    <span ></span>行政班级
+                                </th>
+
+                                <th class="span2 sortable" style="text-align: center;">
+                                    <span style="text-align: center;"></span>手机长号
+                                </th>
+                                <th class="span2 sortable" style="text-align: center;">
+                                    <span ></span>手机短号
+                                </th> 
+                                <th class="span2 sortable" style="text-align: center;">
+                                    <span ></span>书院寝室
+                                </th> 
+                            </tr>
+                        </thead>
+                        <tbody>
+                        <!-- row -->
+                        <volist name ="list" id ="vo">
+                        <tr class="first" style="white-space: nowrap;">
+                            <td style="text-align: center;">
+                                <a href="{$Think.const.SITE_URL_L}teachers/index/details/id/{$vo.id}" target="right">{$vo.name}</a>
+                            </td>
+                            <td style="text-align: center;">
+                                {$vo.num} 
+                            </td>
+                            <td style="text-align: center;">
+                               {$vo.sex}
+                            </td>
+                            <td style="text-align: center;">
+                               {$vo.campus}
+                            </td>
+                             <td style="text-align: center;">
+                               {$vo.class}
+                            </td>
+                             <td style="text-align: center;">
+                               {$vo.lphonenum}
+                            </td>
+                             <td style="text-align: center;">
+                               {$vo.sphonenum}
+                            </td>
+                             <td style="text-align: center;">
+                               {$vo.room}
+                            </td>
+                        </tr>
+                        </volist>
+                        </tbody>
+                    </table>
+                </div>
+<!--                 <div class="pagination pull-right">
+                 
+                        {$page}
+                
+            </div> -->
+
+<!--             <nav aria-label="Page navigation">
+  <ul class="pagination">
+   {$page}
+  </ul>
+</nav> -->
+<div class="yahoo2">
+{$page}
+</div>
+                <!-- <div class='page1'>{$pagelist}</div> -->
+                <!-- <div class="pagination pull-right">
+                 <ul>
+                        <li><a href="#">&#8249;</a></li>
+                        <li><a class="active">
+                        {$page}
+                        <li><a href="#">&#8250;</a></li>
+                </ul>
+            </div> -->
+                <!-- <div class="pagination pull-right">
+                    <ul>
+                        <li><a href="#">&#8249;</a></li>
+                        <li><a class="active" href="#">1</a></li>
+                        <li><a href="#">2</a></li>
+                        <li><a href="#">3</a></li>
+                        <li><a href="#">4</a></li>
+                        <li><a href="#">5</a></li>
+                        <li><a href="#">&#8250;</a></li>
+                    </ul>
+                </div> -->
+                <!-- end users table -->
+           
+    
+    <!-- end main container -->
+
+
+    <!-- scripts -->
+    <script src="{$Think.const.ADMIN_JS_URL}jquery-latest.js"></script>
+    <script src="{$Think.const.ADMIN_JS_URL}bootstrap.min.js"></script>
+    <script src="{$Think.const.ADMIN_JS_URL}theme.js"></script>
+
+</body>
+</html>

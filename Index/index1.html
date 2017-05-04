@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<title>fullPage.js - Pure Javascript version</title>
+	<meta name="author" content="Alvaro Trigo Lopez" />
+	<meta name="description" content="fullPage plugin by Alvaro Trigo. Pure javascript version of full screen slider." />
+	<meta name="keywords"  content="fullpage,jquery,alvaro,trigo,plugin,fullscren,screen,full,iphone5,apple,pure,javascript,slider,hijacking" />
+	<meta name="Resource-type" content="Document" />
+
+
+	<link rel="stylesheet" type="text/css" href="{$Think.const.HOME_CSS_URL}javascript.fullPage.css" />
+	<!-- <link href="{$Think.const.HOME_CSS_URL}bootstrap.css" rel="stylesheet" type="text/css" media="all" /> -->
+	<link href="{$Think.const.ADMIN_CSS_URL}style2.css" rel="stylesheet">
+
+	<style>
+		/* Reset CSS
+		 * --------------------------------------- */
+	</style>
+	<style type="text/css">
+.btn-outline-secondary{
+	background-color: #263238;
+	border-color:#263238;
+	color: white; 
+	
+}
+.btn-width{
+	width: 10rem;
+	height: 3rem;
+
+}
+.btn-height{
+	height: 2.5rem;
+	font-size: 1rem;
+}
+.btn-margin{
+	margin-bottom: 0.3rem;
+}
+.landing{
+	position: fixed;
+	z-index: 100;
+	right: 2%;
+	top: 2%;
+}
+.ischool{
+position: relative;top: 2%;left: 4%;
+}
+.active-first{
+	position: absolute;bottom: 2%;
+	left: 10%;
+	
+}
+.bigbox{
+	width: 80%;
+	height: 70%;
+	margin: 10rem auto;
+	background-color: white;
+	z-index: 10;
+}
+.box{
+	height: 20%;
+	width: 100%;
+}
+.img{
+	width: 20%;
+	height: 7rem;
+	float: left;
+	background-image: url(section1back1280.png);
+	background-size:cover; 
+	margin-right: 1rem;
+}
+.section{
+	overflow: hidden;
+}
+.box1 p{
+	font-size: 1.5rem;
+}
+#section1{
+	background-image: url(R0213181.jpg);
+	background-size: cover;
+	overflow: hidden;
+}
+.activelist{
+	position: absolute;top: 2%;left: 10%;
+	z-index: 100;
+}
+</style>
+<link rel="apple-touch-icon" sizes="76x76" href="{$Think.const.HOME_IMAGES_URL}apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="{$Think.const.HOME_IMAGES_URL}favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="{$Think.const.HOME_IMAGES_URL}favicon-16x16.png">
+<link rel="manifest" href="{$Think.const.HOME_IMAGES_URL}manifest.json">
+<link rel="mask-icon" href="{$Think.const.HOME_IMAGES_URL}safari-pinned-tab.svg" color="#5bbad5">
+<meta name="theme-color" content="#ffffff">
+</head>
+<body>
+<div class="landing">
+<button class="btn btn-lg btn-outline-secondary btn-height">登录</button>
+</div>
+<div id="fullpage">
+	<div class="section " id="section0">
+<div class="ischool"><h1>ISchool</h1></div>
+		<div class="content">
+			<div style="font-weight:400; font-size: 5em; color: #FFF;">每日一句话</div>
+			<p>English</p>
+			<div>
+				<button class="btn btn-lg btn-outline-secondary btn-width btn-margin" >信息征集</button>
+			</div>
+			<br/>
+			<div>
+				<button class="btn btn-lg btn-outline-secondary btn-width">离校统计</button>
+			</div>
+		</div>
+		<div class="active-first"><h1>活动中心</h1></div>
+	</div>
+
+	<div class="section fp-section fp-table active fp-completely" id="section1" >
+	<div class="activelist"><h1>活动列表</h1></div>
+		<div class="slide" id="slide1">			
+			<div class="bigbox">
+				<div class="box">
+				<div class="img"></div><div class="box1"><h2>标题</h2><p>1643651484365</p></div>
+				</div>
+				<div class="box">
+				<div class="img"></div><div class="box1"><h2>标题</h2></div>
+				</div>
+				<div class="box">
+				<div class="img"></div><div class="box1"><h2>标题</h2></div>
+				</div>
+				<div class="box">
+				<div class="img"></div><div class="box1"><h2>标题</h2></div>
+				</div>
+			</div>
+			
+		</div>
+		<div class="slide" id="slide2">
+				<div class="bigbox">
+				<div class="box">
+				<div class="img"></div><div class="box1"><h2>标题</h2></div>
+				</div>
+				<div class="box">
+				<div class="img"></div><div class="box1"><h2>标题</h2></div>
+				</div>
+				<div class="box">
+				<div class="img"></div><div class="box1"><h2>标题</h2></div>
+				</div>
+				<div class="box">
+				<div class="img"></div><div class="box1"><h2>标题</h2></div>
+				</div>
+			</div>
+		</div>
+		<div class="slide" id="slide2">
+				<div class="bigbox">
+				<div class="box">
+				<div class="img"></div><div class="box1"><h2>标题</h2><p></p></div>
+				</div>
+				<div class="box">
+				<div class="img"></div><div class="box1"><h2>标题</h2></div>
+				</div>
+				<div class="box">
+				<div class="img"></div><div class="box1"><h2>标题</h2></div>
+				</div>
+				<div class="box">
+				<div class="img"></div><div class="box1"><h2>标题</h2></div>
+				</div>
+			</div>
+		</div>		
+	</div>
+	<div class="section" id="section2">
+		
+	</div>
+</div>
+
+<script type="text/javascript" src="{$Think.const.HOME_JS_URL}javascript.fullPage.js"></script>
+<script type="text/javascript">
+	fullpage.initialize('#fullpage', {
+		anchors: ['firstPage', 'secondPage', '3rdPage', '4thpage', 'lastPage'],
+		menu: '#menu',
+		css3:true
+	});
+</script>
+
+</body>
+</html>

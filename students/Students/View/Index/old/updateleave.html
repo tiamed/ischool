@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>统计</title>
+	<!-- for-mobile-apps -->
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta name="keywords" content="" />
+	<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false);
+			function hideURLbar(){ window.scrollTo(0,1); } </script>
+	<!-- //for-mobile-apps -->
+	<link href="{$Think.const.HOME_CSS_URL}bootstrap.css" rel="stylesheet" type="text/css" media="all" />
+	<link href="{$Think.const.HOME_CSS_URL}style.css" rel="stylesheet" type="text/css" media="all" />
+	<link rel="stylesheet" type="text/css" href="{$Think.const.SITE_URL}students/Public/Home/layui/css/layui.css">
+	<!-- js -->
+	<script src="{$Think.const.HOME_JS_URL}jquery-1.11.1.min.js"></script>
+	 
+	<script src="{$Think.const.SITE_URL}students/Public/Home/layui/layui.js" type="text/javascript" charset="utf-8"></script>
+
+	<script>
+	layui.config({
+		base: '{$Think.const.HOME_JS_URL}modules/'
+	}).use('index'); 
+	</script>
+<link rel="apple-touch-icon" sizes="76x76" href="{$Think.const.HOME_IMAGES_URL}apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="{$Think.const.HOME_IMAGES_URL}favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="{$Think.const.HOME_IMAGES_URL}favicon-16x16.png">
+<link rel="manifest" href="{$Think.const.HOME_IMAGES_URL}manifest.json">
+<link rel="mask-icon" href="{$Think.const.HOME_IMAGES_URL}safari-pinned-tab.svg" color="#5bbad5">
+<meta name="theme-color" content="#ffffff">
+</head>
+	
+<body>
+
+	<div class="headerhidden"></div>
+	<div class="content">
+    
+    <div class="single">
+		<div class="container">
+			<div class="col-md-7 blog-left" >
+				<div class="blog-left-grid">
+					<h1>已填写的离校统计</h1>
+					
+				</div>
+				
+			</div>
+			</div>
+			</div>
+        <div class="box" style="padding-left: 55px;">
+		<div class="fabu">           
+					<form class="layui-form" action="{$Think.const.SITE_URL_L}students/index/updateleave/id/{$update.id}" method="post">
+
+						<div class="layui-form-item">
+							<label class="layui-form-label">离校原因：</label>
+							<div class="layui-input-block ">
+								<input type="text" name="reason" lay-verify="required" autocomplete="off" value="{$update.reason}" placeholder="请输入离校原因" class="layui-input-short " >
+							</div>
+						</div>
+
+						<div class="layui-form-item">
+							<div class="layui-inline">
+								<label class="layui-form-label">离校时间：</label>
+								<div class="layui-input-inline">
+									<input type="text" name="time" id="date" lay-verify="date" autocomplete="off" value="{$update.time}" class="layui-input " onclick="layui.laydate({elem: this})" >
+								</div>
+								
+							</div>
+						</div>
+
+						<div class="layui-form-item">
+							<label class="layui-form-label">离校方式：</label>
+							<div class="layui-input-block">
+								<input type="text" name="way" lay-verify="required" autocomplete="off" value="{$update.way}" placeholder="请输入离校方式" class="layui-input-short" >
+							</div>
+						</div>
+
+                        <div class="layui-form-item">
+							<label class="layui-form-label">目的地：</label>
+							<div class="layui-input-block">
+								<input type="text" name="destination" lay-verify="required" autocomplete="off" value="{$update.destination}" placeholder="请输入目的地" class="layui-input" >
+							</div>
+						</div>
+
+                        <div class="layui-form-item">
+							<label class="layui-form-label">紧急联系人：</label>
+							<div class="layui-input-block">
+								<input type="text" name="contacts" lay-verify="required" autocomplete="off" value="{$update.contacts}" placeholder="请输入紧急联系人姓名" class="layui-input" >
+							</div>
+						</div>
+
+                        <div class="layui-form-item">
+							<label class="layui-form-label">联系电话：</label>
+							<div class="layui-input-block">
+								<input type="text" name="telephone" lay-verify="required" autocomplete="off" value="{$update.telephone}" placeholder="请输入紧急练习人电话" class="layui-input" >
+							</div>
+						</div>
+
+						
+
+						<div class="layui-form-item layui-form-text">
+							<label class="layui-form-label">备注：</label>
+							<div class="layui-input-block">
+								<textarea placeholder="请输入内容" name="note" class="layui-textarea" >{$update.note}</textarea>
+							</div>
+						</div>
+						<div class="layui-form-item">
+							<div class="layui-input-block">
+								<button class="layui-btn" lay-submit="" >修改</button>
+								
+							</div>
+						</div>
+					</form>
+		</div>
+	</div>
+	</div>
+
+<!--end scroll_top_btn -->
+<!-- for bootstrap working -->
+	<script src="js/bootstrap.js"></script>
+<!-- //for bootstrap working -->
+</body>
+</html>
