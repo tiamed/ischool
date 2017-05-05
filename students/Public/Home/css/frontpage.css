@@ -840,3 +840,9 @@ p{
 .picsize {
   width: 40vh;
 }
+a {
+  color: wheat;
+}
+a:hover, a:focus {
+  color: indianred;
+}
