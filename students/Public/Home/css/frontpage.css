@@ -333,11 +333,11 @@ p{
 
 .plane2-f {
   font-size: 3rem;
-  margin-top: 4rem;
+  margin-top: 4vh;
 }
 .plane {
   height: 4rem;
-  margin-top: 4rem;
+  margin-top: 4vh;
   margin-right: 0.5rem;
   animation: bounce 2s infinite;
   -webkit-animation: bounce 2s infinite; /*Safari and Chrome*/
