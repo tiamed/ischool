@@ -1,12 +1,6 @@
 
 <!DOCTYPE html>
 <html>
-<!-- 导航栏阴影 -->
-<style type="text/css">
-header{
-    box-shadow: -5px 5px 10px #888888;
-}
-</style>
 
 <head>
 
@@ -15,22 +9,22 @@ header{
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="问卷调查">
     <meta name="keyword" content="admin,teacher,information,collect">
-    <link rel="shortcut icon" href="{$Think.const.ADMIN_IMGS_URL}favicon.png">
 
+
+    <link rel="shortcut icon" href="{$Think.const.ADMIN_IMGS_URL}favicon.png">
     <title>填写问卷调查</title>
 
     <!-- Icons -->
     <link href="{$Think.const.ADMIN_CSS_URL}font-awesome.min.css" rel="stylesheet">
     <link href="{$Think.const.ADMIN_CSS_URL}simple-line-icons.css" rel="stylesheet">
-
     <!-- Main styles for this application -->
     <link href="{$Think.const.ADMIN_CSS_URL}style2.css" rel="stylesheet">
-<link rel="apple-touch-icon" sizes="76x76" href="{$Think.const.HOME_IMAGES_URL}apple-touch-icon.png">
-<link rel="icon" type="image/png" sizes="32x32" href="{$Think.const.HOME_IMAGES_URL}favicon-32x32.png">
-<link rel="icon" type="image/png" sizes="16x16" href="{$Think.const.HOME_IMAGES_URL}favicon-16x16.png">
-<link rel="manifest" href="{$Think.const.HOME_IMAGES_URL}manifest.json">
-<link rel="mask-icon" href="{$Think.const.HOME_IMAGES_URL}safari-pinned-tab.svg" color="#5bbad5">
-<meta name="theme-color" content="#ffffff">
+    <link rel="apple-touch-icon" sizes="76x76" href="{$Think.const.HOME_IMAGES_URL}apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="{$Think.const.HOME_IMAGES_URL}favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="{$Think.const.HOME_IMAGES_URL}favicon-16x16.png">
+    <link rel="manifest" href="{$Think.const.HOME_IMAGES_URL}manifest.json">
+    <link rel="mask-icon" href="{$Think.const.HOME_IMAGES_URL}safari-pinned-tab.svg" color="#5bbad5">
+    <meta name="theme-color" content="#ffffff">
 </head>
 
 <body class="app header-fixed sidebar-fixed aside-menu-fixed aside-menu-hidden">
@@ -111,36 +105,62 @@ header{
         <main class="main">
             <div class="container-fluid animated fadeIn">
                 <div class="card">
-                        <div class="card-header">
-                        <i class="fa fa-align-justify"></i>填写问卷调查
-                        </div>
-                        <div class="card-block">
-                            <form class="form-horizontal col-md-9" enctype="multipart/form-data" method="post" >
-                                <div class="insert_poll">
+                    <div class="card-header">
+                    <i class="fa fa-align-justify"></i>填写问卷调查
+                    </div>
+                    <div class="card-block">
+                        <div class="form-horizontal col-md-9">
+                            <div class="insert_poll" >
+                            </div>
+                            <script type="text/template" id="poll">
+                                {{#survey}}
+                                <div class="form-group">
+                                    <label class="form-form-control-label">{{count}}. {{title}}</label>
+                                    {{#radio}}
+                                        <div class="radio">
+                                            <label for="{{value}}">
+                                                <input type="radio" name="{{id}}" value="{{value}}">{{value}}
+                                            </label>
+                                        </div>
+                                    {{/radio}}
+                                    {{#checkbox}}
+                                        <div class="checkbox">
+                                            <label for="{{value}}">
+                                                <input type="checkbox" name="{{id}}" value="{{value}}">{{value}}
+                                            </label>
+                                        </div>
+                                    {{/checkbox}}
+                                    {{#text}}
+                                        <input type="text" class="form-control" id="{{id}}">
+                                    {{/text}}
                                 </div>
-                            </form>
+                                {{/survey}}
+                            </script>
                         </div>
-                        <div class="card-footer">
-                            <div class="col-md-12">
-                                <div class="row col-md-9">
-                                    <div class="col-md-2">
-                                    </div>
-                                    <div>
-                                        <button type="submit" class="btn btn-success" onclick="posta()" style="margin-left: 0.8rem;">
-                                            <i class="fa fa-dot-circle-o">
-                                            </i>
-                                            提交
-                                        </button>
-                                        &nbsp;&nbsp;&nbsp;
-                                        <button type="reset" class="btn btn-danger" onclick="return reload();">
-                                            <i class="fa fa-ban">
-                                            </i>
-                                            重置
-                                        </button>
-                                    </div>
+                    </div>
+                    <div class="card-footer">
+                        <div class="col-md-12">
+                            <div class="row col-md-9">
+                                <div class="col-md-2">
+                                </div>
+                                <div>
+                                    <button type="submit" class="btn btn-success" onclick="posta()" style="margin-left: 0.8rem;">
+                                        <i class="fa fa-dot-circle-o">
+                                        </i>
+                                        提交
+                                    </button>
+                                    &nbsp;&nbsp;&nbsp;
+                                    <button type="reset" class="btn btn-danger" onclick="return reload();">
+                                        <i class="fa fa-ban">
+                                        </i>
+                                        重置
+                                    </button>
                                 </div>
                             </div>
                         </div>
+                    </div>
+                </div>
+            </div>
         </main>
     </div>
 
@@ -168,6 +188,8 @@ header{
 
     <script src="{$Think.const.ADMIN_JS_URL}app.js"></script>
     <!-- Plugins and scripts required by this views -->
+    <script src="{$Think.const.ADMIN_JS_URL}mustache.js" type="text/javascript"></script>
+
     <script src="{$Think.const.HOME_JS_URL}poll.js"</script>
     <!-- Custom scripts required by this view -->
     <script src="{$Think.const.ADMIN_JS_URL}views/main.js"></script>

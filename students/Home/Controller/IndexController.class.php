@@ -29,7 +29,7 @@ class IndexController extends Controller {
     public function change(){
         $sort = $_SESSION['sort'];
         if(empty($sort)){
-            $this -> error('请先登录！','/item/students/index.php/Home/Index/login');
+            $this -> error('请先登录！');
         }
         $users = M("users"); 
         $num = $_SESSION['num'];      

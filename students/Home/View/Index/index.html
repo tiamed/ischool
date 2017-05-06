@@ -247,29 +247,30 @@
                 </header>
                 <div class="container-fluid">
                     <div class="row">
-                        <div class="col-md-10 col-md-offset-1 col-sm-10 col-sm-offset-1 col-xs-10 col-xs-offset-1">
-                            <div class="card-block" style="padding-top: 0.4rem;">
-                                <volist name="list" id="vo" class="media">
-                                    <a href="{$Think.const.SITE_URL_L}Home/Index/detailed/id/{$vo.id}">
-                                        <div class="row bordered hvr-float-shadow" style="margin-left: -17px;">
-                                            <div class="col-md-3 col-lg-2 col-xs-5" style="overflow: hidden;">
-                                                <img src="{$Think.const.SITE_URL}students/{$vo.big_image}" class="media-object center-cropped media-left gridact1 imgwidth">
-                                            </div>
-                                            <div class="col-md-9 col-lg-10 col-xs-7 bordered">
-                                                <div class="caption gridact1 mindent" style="overflow: hidden; padding: 6px;">
-                                                    <h2 class="media-heading" style="color:#777;margin-bottom: 1rem;">
-                                                        {$vo.title}
-                                                    </h2>
-                                                    <p  style="text-indent: 2rem;font-size: 1.5rem;">
-                                                        {$vo.content|subtext=110}
-                                                    </p>
+                            <volist name="list" id="vo" class="media">
+                                <a href="{$Think.const.SITE_URL_L}Home/Index/detailed/id/{$vo.id}">
+                                    <div class="col-md-10 col-md-offset-1 col-sm-10 col-sm-offset-1 col-xs-10 col-xs-offset-1" style="padding-top: 0.4rem;">
+                                        <div class="card-block hvr-float-shadow">
+                                            <div class="row" style="margin-left: -17px;">
+                                                <div class="col-md-3 col-lg-2 col-xs-5" style="overflow: hidden;">
+                                                    <img src="{$Think.const.SITE_URL}students/{$vo.big_image}" class="media-object center-cropped media-left gridact1 imgwidth">
+                                                </div>
+                                                <div class="col-md-9 col-lg-10 col-xs-7">
+                                                    <div class="caption gridact1 mindent" style="overflow: hidden; padding: 6px;">
+                                                        <h2 class="media-heading" style="color:#777;margin-bottom: 1rem;">
+                                                            {$vo.title}
+                                                        </h2>
+                                                        <p  style="text-indent: 2rem;font-size: 1.5rem;">
+                                                            {$vo.content|subtext=110}
+                                                        </p>
+                                                    </div>
                                                 </div>
                                             </div>
                                         </div>
-                                    </a>
-                                </volist>
-                            </div>
-                            <div class="pages" style="margin-top:2rem;">
+                                    </div>
+                                </a>
+                            </volist>
+                            <div class="pages">
                                 {$page}
                             </div>
                         </div>

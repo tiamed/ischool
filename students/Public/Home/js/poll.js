@@ -6,6 +6,15 @@ var cid = [];
 var tAns = [];
 var rAns = [];
 var cAns = [];
+var template = $('#poll').html();
+var survey = [];
+var count = 1;
+var quesions = []
+var options = [];
+var textd = [];
+var radiod = [];
+var checkboxd = [];
+
 function json() {
 	if (window.XMLHttpRequest) {
 		var xhr = new XMLHttpRequest();
@@ -19,58 +28,76 @@ function json() {
 	if(q){
 		window.q = q;
 	}
-	window.questions = q[0];
-	window.options = q[1];
-	addQuestion();
+	questions = q[0];
+	options = q[1];
+	addQ();
 }
 
-function addQuestion() {
-	var html = '';
-	var text0 = '<div class="form-group row"><label class="form-control-label col-md-2">';
-	var text1 = '</label><div class="col-md-4"><input type="text" autocomplete="off" class="form-control" required="required" name="';
-	var radio1 = '</label><div class="col-md-4" id="radio">';
-	var radio2 = '<input type="radio" name="';
-	var checkbox1 = '</label><div class="col-md-4" id="checkbox">';
-	var checkbox2 = '<input type="checkbox" name="';
-	var div0 = '</div></div>'
-	// var ques = questions.find(quesId);
-	questions.forEach(function(question) {
+function addQ() {
+		questions.forEach(function(question) {
 		var kind = question.kind;
 		if (kind == "text") {
-			html += text0 + question.content + text1 + question.id + '" id="' + question.id +'">' +div0;
+			textd = {
+				"title": question.content,
+				"text": [{"id": question.id}],
+				"count": count
+			}
 			tid.push(question.id);
+			survey.push(textd);
+			count += 1;
 		} else if (kind == "radio") {
-			html += text0 + question.content + radio1;
+			
 			var qId = question.id;
 			rid.push(qId);
 			var option = [];
+			var radio = [];
 			options.forEach(function(opt){
 				if(opt.quest_id == qId){
 					option.push(opt);
 				}
 			})
 			option.forEach(function(op) {
-				html += radio2 + op.quest_id + '" value="' + op.content + '">' + op.content + '<br>';
+				radio.push({
+					"value": op.content,
+					"id": op.quest_id
+				})
 			});
-			html += div0;
+			radiod = {
+				"title": question.content,
+				"radio": radio,
+				"count": count
+			}
+			survey.push(radiod);
+			count += 1;
 		} else if (kind == "checkbox") {
-			html += text0 + question.content + checkbox1;
+			
 			var qId = question.id;
 			cid.push(qId);
 			var option = [];
+			var checkbox = [];
 			options.forEach(function(opt){
 				if(opt.quest_id == qId){
 					option.push(opt);
 				}
 			})
 			option.forEach(function(op) {
-				html += checkbox2 + op.quest_id + '" value="' + op.content + '">' + op.content + '<br>';
+				checkbox.push({
+					"value": op.content,
+					"id": op.quest_id
+				})
 			});
-			html += div0;
+			checkboxd = {
+				"title": question.content,
+				"checkbox": checkbox,
+				"count": count,
+			}
+			survey.push(checkboxd);
+			count += 1;
 		}
 
 	})
-	$in.append(html);
+	var result = Mustache.render(template, {survey: survey});
+	$in.append(result);
 }
 
 function getTextAnswer() {
@@ -119,7 +146,7 @@ function posta() {
 }
 
 function ajaxpost() {
-	if (answer.length > 0) {
+	if (answer.length == count - 1 && count > 1) {
 		$.ajax({
 	            method: "POST",
 	            url: xpath,
@@ -130,7 +157,7 @@ function ajaxpost() {
 	            }
 	            })
 	} else {
-		alert("请先填写！");
-		answer = [];
+		alert("请填写完整！");
 	}
 }
+

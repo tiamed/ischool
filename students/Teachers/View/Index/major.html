@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="志愿填报">
+    <meta name="keyword" content="admin,teacher,information,collect">
+    <link rel="shortcut icon" href="{$Think.const.ADMIN_IMGS_URL}favicon.png">
+
+    <title>发布志愿填报</title>
+
+    <!-- Icons -->
+    <link href="{$Think.const.ADMIN_CSS_URL}font-awesome.min.css" rel="stylesheet">
+    <link href="{$Think.const.ADMIN_CSS_URL}simple-line-icons.css" rel="stylesheet">
+
+    <!-- Main styles for this application -->
+    <link href="{$Think.const.ADMIN_CSS_URL}style2.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="{$Think.const.SITE_URL}students/Public/Home/layui/css/layui.css">
+
+<link rel="apple-touch-icon" sizes="76x76" href="{$Think.const.HOME_IMAGES_URL}apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="{$Think.const.HOME_IMAGES_URL}favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="{$Think.const.HOME_IMAGES_URL}favicon-16x16.png">
+<link rel="manifest" href="{$Think.const.HOME_IMAGES_URL}manifest.json">
+<link rel="mask-icon" href="{$Think.const.HOME_IMAGES_URL}safari-pinned-tab.svg" color="#5bbad5">
+<meta name="theme-color" content="#ffffff">
+</head>
+
+<body class="app header-fixed sidebar-fixed aside-menu-fixed aside-menu-hidden">
+    <header class="app-header navbar">
+        <button class="navbar-toggler mobile-sidebar-toggler hidden-lg-up" type="button">☰</button>
+        <a class="navbar-brand" href="{$Think.const.SITE_URL_L}Teachers/Index" style="padding:1rem;"><img src="{$Think.const.ADMIN_IMGS_URL}logohei.png" style=" height: 2rem;float: left;margin-top: -0.1rem;margin-right:0.5rem;"><h4 style="font-size: 1.5rem; color:#494949;">教师个人中心</h4></a>
+        <ul class="nav navbar-nav ml-auto">
+			<li class="nav-item dropdown">
+				<a class="nav-link dropdown-toggle" href="#" role="button" aria-haspopup="true" aria-expanded="false">
+						账户管理
+                </a>
+				<div class="dropdown-menu dropdown-menu-right text-xs-center">
+						<a class="dropdown-item" href="{$Think.const.SITE_URL_L}Home/Index/change">修改密码</a>
+				</div>
+			</li>
+            <li class="nav-item">
+                <a class="btn btn-outline" href="{$Think.const.SITE_URL_L}Home/Index/logout" style="margin-right: 1em;">
+                    <i class="icon-logout"></i> 注销
+                </a>
+            </li>
+
+        </ul>
+    </header>
+
+    <div class="app-body">
+        <div class="sidebar">
+            <nav class="sidebar-nav">
+                <ul class="nav">
+                    <li class="nav-title">
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{$Think.const.SITE_URL_L}teachers/index" ><i class="fa fa-cog"></i>我的信息</a>
+                    </li>
+                    <li class="nav-item nav-dropdown">
+                        <a class="nav-link nav-dropdown-toggle" href="#"><i class="fa fa-edit"></i>活动管理</a>
+                        <ul class="nav-dropdown-items">
+                            <li class="nav-item">
+                                <a class="nav-link" href="{$Think.const.SITE_URL_L}teachers/index/add">发布活动</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="{$Think.const.SITE_URL_L}teachers/index/actived">我发布的活动</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="nav-item nav-dropdown">
+                        <a class="nav-link nav-dropdown-toggle" href="#"><i class="fa fa-group"></i>学生信息</a>
+                        <ul class="nav-dropdown-items">
+                            <li class="nav-item">
+                                <a class="nav-link" href="{$Think.const.SITE_URL_L}teachers/index/showlist">学生列表</a>
+                            </li>
+
+                            <li class="nav-item">
+                                <a class="nav-link" href="{$Think.const.SITE_URL_L}teachers/index/stu_download">下载学生信息</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="nav-item nav-dropdown">
+                        <a class="nav-link nav-dropdown-toggle" href="#"><i class="fa fa-calendar-o"></i>离返校管理</a>
+                        <ul class="nav-dropdown-items">
+                            <li class="nav-item">
+                                <a class="nav-link" href="{$Think.const.SITE_URL_L}teachers/index/leave">发布离返校统计</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="{$Think.const.SITE_URL_L}teachers/index/leavelist">查看发布的离返校</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="nav-item nav-dropdown">
+                        <a class="nav-link nav-dropdown-toggle" href="#"><i class="fa fa-signal"></i>问卷调查管理</a>
+                        <ul class="nav-dropdown-items">
+                            <li class="nav-item">
+                                <a class="nav-link" href="{$Think.const.SITE_URL_L}teachers/index/form">发布问卷调查</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="{$Think.const.SITE_URL_L}teachers/index/infolist">查看发布的问卷调查</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="nav-item nav-dropdown">
+                            <a class="nav-link nav-dropdown-toggle" href="#">
+                                <i class="fa fa-signal">
+                                </i>
+                                志愿分流管理
+                            </a>
+                            <ul class="nav-dropdown-items">
+                                <li class="nav-item">
+                                    <a class="nav-link" href="{$Think.const.SITE_URL_L}Teachers/Index/majorform">
+                                        发布志愿信息
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="{$Think.const.SITE_URL_L}Teachers/Index/majorlist">
+                                        查看发布的志愿信息
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                </ul>
+            </nav>
+        </div>
+
+        <!-- Main content -->
+        <main class="main">
+            <div class="container-fluid animated fadeIn">
+                <div>
+                    <form method="post" enctype="multipart/form-data" action="{$Think.const.SITE_URL_L}Teachers/Index/major/id/{$id}">
+                        <div class="card">
+                            <div class="card-header">
+                                <i class="fa fa-object-group"></i>
+                                <strong>志愿信息创建</strong>
+                            </div>
+                            <div class="card-block col-lg-12">
+                            <input name="photo" type="file" value=""/>
+                                <div class="row">
+                                
+                                    <div class="form-horizontal col-md-9">
+                                        <div id="custom-majors" class="basic_form">
+                                            <div class="insert_form controls"></div>
+
+                                            <script id="major_template" type="text/template">
+
+                                                    <div class="basic_form_inputs">
+                                                        <div class="subtitle form-group row">
+                                                            <div class="col-md-2">
+                                                                <label class="form-control-label">志愿 {{count}}</label>
+                                                                
+                                                            </div>
+                                                        </div>
+                                                        <div class="textfield form-group row">
+                                                            <label for="major" class="control-label col-md-2">输入志愿名称</label>
+                                                            <div class="col-md-4">
+                                                                <input type="textfield" name="major{{count}}" value="{{question}}" class="form-control" required="required"/>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+                                            </script>
+                                            <!--  -->
+                                            <div id="add-section-custom" class="add_new_wrapp_2">
+                                                <button class="add btn btn-sm btn-primary"> 添加</button>
+                                                <button class="delete btn btn-sm btn-danger"> 删除</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card-footer">
+                                <div class="col-md-12">
+                                    <div class="row col-md-9">
+                                        <div class="col-md-2">
+                                            <div>
+                                                <button class="btn btn-success" style="margin-left: 7em;" onclick="post()"><i class="fa fa-dot-circle-o"></i>提交</button>   
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <br/>
+
+            </div>
+        </main>
+
+
+    </div>
+
+    <footer class="app-footer">
+
+    </footer>
+
+    <!-- Bootstrap and necessary plugins -->
+    <script src="{$Think.const.HOME_LAYUI_URL}layui.js" type="text/javascript" charset="utf-8"></script>
+    <script src="{$Think.const.HOME_LAYUI_URL}lay/modules/laydate.js" type="text/javascript" charset="utf-8"></script>
+    <script src="{$Think.const.HOME_LAYUI_URL}lay/modules/layedit.js" type="text/javascript" charset="utf-8"></script>
+    <script src="{$Think.const.HOME_LAYUI_URL}lay/modules/laydate.js" type="text/javascript" charset="utf-8"></script>
+    <script src="{$Think.const.ADMIN_JS_URL}jquery.min.js"></script>
+    <script src="{$Think.const.ADMIN_JS_URL}tether.min.js"></script>
+    <script src="{$Think.const.ADMIN_JS_URL}bootstrap.min.js"></script>
+    <script src="{$Think.const.ADMIN_JS_URL}pace.min.js"></script>
+    <script src="{$Think.const.ADMIN_JS_URL}mustache.js" type="text/javascript"></script>
+    <script src="{$Think.const.ADMIN_JS_URL}major.js" type="text/javascript"></script>
+    <script src="{$Think.const.SITE_URL}students/Public/Home/layui/layui.js" type="text/javascript" charset="utf-8"></script>
+    <!-- GenesisUI main scripts -->
+
+    <script src="{$Think.const.ADMIN_JS_URL}app.js"></script>
+    <!-- Plugins and scripts required by this views -->
+
+    <!-- Custom scripts required by this view -->
+    <script src="{$Think.const.ADMIN_JS_URL}views/main.js"></script>
+    <script type="text/javascript">
+        $('.dropdown-toggle').click(function(){
+        $(this).next(".dropdown-menu").toggle();
+        });
+        layui.config({
+            base: '{$Think.const.HOME_JS_URL}modules/'
+        }).use('index');
+        function post() {
+            $.ajax({
+                method: "POST",
+                url: "{$Think.const.SITE_URL_L}teachers/Index/questionnaire/id/{$id}",
+                dataType: "text",
+                data: {questions: questions},
+                success: function(){
+                    location.href="{$Think.const.SITE_URL_L}teachers/Index/infolist";
+                }
+            });
+        }
+
+    </script>
+</body>
+
+</html>

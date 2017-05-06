@@ -9,7 +9,7 @@ class IndexController extends Controller {
     public function _initialize(){  
         $login = $_SESSION['sort'];
         if($login != 2){
-            $this -> error('请先登录！','/item/students/index.php/Home/Index/login');
+            $this -> error('请先登录！');
         }
     }
 
@@ -1098,5 +1098,122 @@ class IndexController extends Controller {
         $objWriter->save('php://output'); //文件通过浏览器下载
         // END
     }
+
+    public function majorform(){
+        if(!empty($_POST)){
+            $major = M('major');
+            $major -> create();
+            $major -> editor = $_SESSION['name'];
+            $time = date('Y-m-d H:i:s',time());
+            $major -> time = $time;
+            $info = $major -> add();
+            if($info){
+                $this -> redirect('Teachers/Index/major',array('id' => $info));
+                return $info;
+            }else {
+                $this -> error('发布失败！');
+            }
+            exit();
+        }
+        $this -> display();
+    }
+
+    public function major(){
+        
+        ini_set('memory_limit','1024M');
+        $id = $_GET['id'];
+        $this -> assign('id',$id);
+        if(!empty($_POST)){
+            if (!empty($_FILES)) {
+                $config = array(
+                    'exts' => array('xlsx','xls'),
+                    'maxSize' => 3145728000,
+                    'rootPath' =>"./Public/",
+                    'savePath' => 'Uploads/',
+                    'subName' => array('date','Ymd'),
+                );
+                $upload = new \Think\Upload($config);
+                if (!$info = $upload->upload()) {
+                    $this->error($upload->getError());
+                }
+                import("Org.Util.PHPExcel");
+                import("Org.Util.PHPExcel.Worksheet.Drawing");
+                import("Org.Util.PHPExcel.Writer.Excel2007");
+                $file_name=$upload->rootPath.$info['photo']['savepath'].$info['photo']['savename'];
+                $extension = strtolower(pathinfo($file_name, PATHINFO_EXTENSION));//判断导入表格后缀格式
+                if ($extension == 'xlsx') {
+                    $objReader =\PHPExcel_IOFactory::createReader('Excel2007');
+                    $objPHPExcel =$objReader->load($file_name, $encode = 'utf-8');
+                } else if ($extension == 'xls'){
+                    $objReader =\PHPExcel_IOFactory::createReader('Excel5');
+                    $objPHPExcel =$objReader->load($file_name, $encode = 'utf-8');
+                }
+                $sheet =$objPHPExcel->getSheet(0);
+                $highestRow = $sheet->getHighestRow();//取得总行数
+                $highestColumn =$sheet->getHighestColumn(); //取得总列数
+                for ($i = 2; $i <= $highestRow; $i++) {
+                    //看这里看这里,前面小写的a是表中的字段名，后面的大写A是excel中位置
+                    $data['num'] =$objPHPExcel->getActiveSheet()->getCell("A" . $i)->getValue();
+                    $data['name'] =$objPHPExcel->getActiveSheet()->getCell("B" .$i)->getValue();
+                    $data['sex'] =$objPHPExcel->getActiveSheet()->getCell("C" .$i)->getValue();
+                    $data['class'] = $objPHPExcel->getActiveSheet()->getCell("D". $i)->getValue();
+                    $data['campus'] =$objPHPExcel->getActiveSheet()->getCell("E" .$i)->getValue();
+                    $data['score'] =$objPHPExcel->getActiveSheet()->getCell("F" . $i)->getValue();
+                    $data['range'] = $objPHPExcel->getActiveSheet()->getCell("G" . $i)->getValue();
+                    $data['major_id'] = $id;
+                    //看这里看这里,这个位置写数据库中的表名
+                    M('zhiyuan')->add($data);
+                }
+            }
+            $i = 1;
+            $majorinfo = M('majorinfo');
+            while ($major['major'] = $_POST['major'.$i]){
+                $major['major_id'] = $id;
+                $i++;
+                $majorinfo -> add($major);
+            }
+            $this -> success('发布成功！',U('Teachers/Index/majorlist'),array('id' => $id));
+            exit();
+        }
+        $this -> display();
+    }
+
+    public function majorlist(){
+        $id = $_GET['id'];
+        $db = M('major');
+        $count = $db -> count();
+        $pagecount = 30;
+        $page = new \Think\Page($count,$pagecount);
+        $page -> lastSuffix = false;
+        $show = $page -> show();
+        $list = $db -> order('id desc') -> limit($page -> firstRow.','.$page -> listRows) -> select();
+        $this -> assign('id',$id);
+        $this -> assign('list',$list);
+        $this -> assign('page',$show);
+        $this -> display();
+    }
+
+    public function majorshowlist(){
+        $this -> display();
+    }
+
+    public function searchmajor(){
+        $this -> display();
+    }
+
+    public function majordelete(){
+        $id = $_GET['id'];
+        $major = M('major');
+        if($major -> where("id=$id") -> delete()){
+            $this -> success('删除成功',U('Teachers/Index/majorlist'));
+        }else{
+            $this -> error('删除失败');
+        }
+    }
+
+    public function download_major(){
+
+    }
+
 }
 

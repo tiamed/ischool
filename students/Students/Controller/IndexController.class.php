@@ -417,4 +417,44 @@ class IndexController extends Controller {
         $this -> display();
     }
 
+    public function major(){
+        $major = M('major');
+        $zhiyuan = M('zhiyuan');
+        $majorinfo = M('majorinfo');
+        $latest = $major -> order('id desc') -> limit(1) -> find();
+        $time = date('Y-m-d H:i:s',time());
+        $id = $latest['id'];
+        $majorlist = $majorinfo -> where("major_id=$id") -> select();
+        $this -> assign('majorlist',$majorlist);
+        $where['major_id'] = $id;
+        $where['num'] = $_SESSION['num'];
+        $where['zhiyuan1'] = array('exp', 'IS NOT NULL');
+        $where1['major_id'] = $id;
+        $where1['num'] = $_SESSION['num'];
+        $info = $zhiyuan -> where($where1) -> find();
+        $this -> assign('info',$info);
+        $count = $zhiyuan -> where($where) -> count();
+        if((strtotime($time) <= strtotime($latest['start'])) || (strtotime($time) >= strtotime($latest['end']))){
+            $this -> error('暂无需填报的志愿!',U('Students/Index/majored'));
+        }else if($count){
+            $this -> error('您已提交，无法重复提交！',U('Students/Index/majored'));
+        }else if(!empty($_POST)){
+            $zhiyuan -> create();
+            if($zhiyuan -> where($where1) -> save()){
+                $this -> success('提交成功！',U('Students/Index/majored'));
+                exit();
+            }else{
+                $this -> redirect('Students/Index/major');
+            }
+        }
+        // $this -> assign('latest',$latest);
+        $this -> display();   
+    }
+
+    public function majored(){
+        $this -> display();
+    }
+
+
+
 }

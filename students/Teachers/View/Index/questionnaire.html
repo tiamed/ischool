@@ -1,11 +1,5 @@
 <!DOCTYPE html>
 <html>
-<!-- 导航栏阴影 -->
-<style type="text/css">
-header{
-    box-shadow: -5px 5px 10px #888888;
-}
-</style>
 
 <head>
 
@@ -89,7 +83,7 @@ header{
                         </ul>
                     </li>
                     <li class="nav-item nav-dropdown">
-                        <a class="nav-link nav-dropdown-toggle" href="#"><i class="fa fa-calendar-o"></i>离返校</a>
+                        <a class="nav-link nav-dropdown-toggle" href="#"><i class="fa fa-calendar-o"></i>离返校管理</a>
                         <ul class="nav-dropdown-items">
                             <li class="nav-item">
                                 <a class="nav-link" href="{$Think.const.SITE_URL_L}teachers/index/leave">发布离返校统计</a>
@@ -100,7 +94,7 @@ header{
                         </ul>
                     </li>
                     <li class="nav-item nav-dropdown">
-                        <a class="nav-link nav-dropdown-toggle" href="#"><i class="fa fa-signal"></i>问卷调查</a>
+                        <a class="nav-link nav-dropdown-toggle" href="#"><i class="fa fa-signal"></i>问卷调查管理</a>
                         <ul class="nav-dropdown-items">
                             <li class="nav-item">
                                 <a class="nav-link" href="{$Think.const.SITE_URL_L}teachers/index/form">发布问卷调查</a>
@@ -110,6 +104,25 @@ header{
                             </li>
                         </ul>
                     </li>
+                    <li class="nav-item nav-dropdown">
+                            <a class="nav-link nav-dropdown-toggle" href="#">
+                                <i class="fa fa-signal">
+                                </i>
+                                志愿分流管理
+                            </a>
+                            <ul class="nav-dropdown-items">
+                                <li class="nav-item">
+                                    <a class="nav-link" href="{$Think.const.SITE_URL_L}Teachers/Index/majorform">
+                                        发布志愿信息
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="{$Think.const.SITE_URL_L}Teachers/Index/majorlist">
+                                        查看发布的志愿信息
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
                 </ul>
             </nav>
         </div>
@@ -139,7 +152,7 @@ header{
                                                         </div>
                                                     </div>
                                                     <div class="select form-group row">
-                                                        <label for="qType" class="control-label col-md-3">问题类型：</label>
+                                                        <label for="qType" class="control-label col-md-2">问题类型：</label>
                                                         <div class="col-md-4">
                                                             <select name="qType" class="form-control" id="qType">
                                                                 {{#option}}
@@ -149,7 +162,7 @@ header{
                                                         </div>
                                                     </div>
                                                     <div class="textfield form-group row">
-                                                        <label for="question" class="control-label col-md-3">请输入问题</label>
+                                                        <label for="question" class="control-label col-md-2">请输入问题</label>
                                                         <div class="col-md-4">
                                                             <input type="textfield" name="question" id="qCt" value="{{question}}" class="form-control" required="required"/>
                                                         </div>
@@ -158,7 +171,7 @@ header{
                                                         {{#variation}}
                                                                 <div class="variation textfield">
                                                                     <div class="form-group row">
-                                                                        <label for="variation" class="control-label col-md-3">选项</label>
+                                                                        <label for="variation" class="control-label col-md-2">选项</label>
                                                                         <div class="col-md-3">
                                                                             <input type="textfield" id="qVar" class="form-control" name="variation" value="{{.}}" required="required"/>
                                                                         </div>

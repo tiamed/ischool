@@ -1,11 +1,5 @@
 <!DOCTYPE html>
 <html>
-<!-- 导航栏阴影 -->
-<style type="text/css">
-header{
-    box-shadow: -5px 5px 10px #888888;
-}
-</style>
     
     <head>
         <meta charset="utf-8">
@@ -123,7 +117,7 @@ header{
                             <a class="nav-link nav-dropdown-toggle" href="#">
                                 <i class="fa fa-calendar-o">
                                 </i>
-                                离返校
+                                离返校管理
                             </a>
                             <ul class="nav-dropdown-items">
                                 <li class="nav-item">
@@ -142,7 +136,7 @@ header{
                             <a class="nav-link nav-dropdown-toggle" href="#">
                                 <i class="fa fa-signal">
                                 </i>
-                                问卷调查
+                                问卷调查管理
                             </a>
                             <ul class="nav-dropdown-items">
                                 <li class="nav-item">
@@ -153,6 +147,25 @@ header{
                                 <li class="nav-item">
                                     <a class="nav-link" href="{$Think.const.SITE_URL_L}Teachers/Index/infolist">
                                         查看发布的问卷调查
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="nav-item nav-dropdown">
+                            <a class="nav-link nav-dropdown-toggle" href="#">
+                                <i class="fa fa-signal">
+                                </i>
+                                志愿分流管理
+                            </a>
+                            <ul class="nav-dropdown-items">
+                                <li class="nav-item">
+                                    <a class="nav-link" href="{$Think.const.SITE_URL_L}Teachers/Index/majorform">
+                                        发布志愿信息
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="{$Think.const.SITE_URL_L}Teachers/Index/majorlist">
+                                        查看发布的志愿信息
                                     </a>
                                 </li>
                             </ul>

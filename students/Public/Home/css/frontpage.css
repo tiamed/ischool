@@ -42,7 +42,7 @@ html.fp-enabled,
 .fp-slide, .fp-slidesContainer {
     height: 100%;
     display: block;
-}
+} 
 .fp-slides {
     z-index:1;
     height: 100%;
@@ -400,101 +400,14 @@ p{
 }
 
 .gridact1 {
-  height: 16vh;
+  height: 17vh;
 }
 
 .newact {
   
 }
 
-@media (max-width: 768px)  {
-  .actcenter{
-    width: 100%;
-    left: 2rem;
-  }
-  .gridact {
-    height: 18vh;
-  }
-  .gridact1 {
-    height: 17vh;
-  }
-  .media-heading {
-    font-size: 1.6rem;
-  }
-  .p{
-    font-size: 0.1rem;
-  }
-  .newact {
-    text-align: center;
-  }
-  .gridbot {
-    margin-top: 6vh;
-  }
-  .hoverp {
-    text-align: center;
-    align-content: center;
-    bottom: 4vh;
-  }
-  .plane {
-    position: absolute;
-    height: 3rem;
-    align-items: center;
-  }
-  .plane0 {
-    position: absolute;
-    height: 3rem;
-    left: 4rem;
-  }
-  .plane2-f {
-    margin-left: 4rem;
-  }
-  .plane-f {
-    margin-right: 0;
-    text-align: center;
-  }
-}
 
-@media (min-width: 768px) and (max-width: 991px) {
-  .gridbot {
-    margin-top: 4vh;
-  }
-}
-
-@media (min-width: 768px) and (max-width: 1440px) {
-  .media-heading {
-    font-size: 2rem;
-  }
-  .theme{
-    font-size: 7rem;
-  }
-}
-
-@media (min-width: 768px) {
-  .navbar-nav {
-    padding: 12px;
-  }
-  .item > span {
-    font-size: 5rem !important;
-  }
-  .paddingin {
-    margin-bottom: -1rem;
-    padding-top: 1rem;
-    padding-right: 3rem !important;
-  }
-  .carousel-indicators {
-    bottom: 18% !important;
-  }
-}
-
-@media (min-width: 1440px) {
-  .media-heading {
-    font-size: 3rem;
-  }
-  .p{
-    font-size: 1.5rem;
-  }
-
-}
 
 .hvr-grow-shadow {
   display: inline-block;
@@ -549,32 +462,7 @@ p{
   text-align: center;
 }
 
-@media screen and (min-width: 768px) { 
-  .modal:before {
-    display: inline-block;
-    vertical-align: middle;
-    content: " ";
-    height: 100%;
-  }
-  .modal {
 
-  }
-   .theme{
-    font-size: 7rem;
-  }
-}
-
-@media screen and (max-width: 768px) { 
-  .modal:before {
-    display: inline-block;
-    vertical-align: middle;
-    content: " ";
-    height: 100%;
-  }
-   .theme{
-    font-size: 5rem;
-  }
-}
 
 .p {
   text-indent: 10px;
@@ -835,14 +723,142 @@ p{
  }
 
  .imgwidth {
-  width: 26vh;
+  width: 13vw;
  }
 .picsize {
-  width: 40vh;
+  width: 20vw;
 }
-a {
-  color: wheat;
+.welcome2 > a {
+  color: wheat !important;
 }
-a:hover, a:focus {
-  color: indianred;
+.welcome2 > a:hover, a:focus {
+  color: indianred !important;
+}
+.pages {
+    position: absolute;
+    bottom: 9vh;
+    width: 100%;
+}
+@media screen and (min-width: 768px) { 
+  .modal:before {
+    display: inline-block;
+    vertical-align: middle;
+    content: " ";
+    height: 100%;
+  }
+  .modal {
+
+  }
+   .theme{
+    font-size: 7rem;
+  }
+}
+
+@media screen and (max-width: 768px) { 
+  .modal:before {
+    display: inline-block;
+    vertical-align: middle;
+    content: " ";
+    height: 100%;
+  }
+   .theme{
+    font-size: 5rem;
+  }
+}
+@media (max-width: 768px)  {
+  .actcenter{
+    width: 100%;
+    left: 2rem;
+  }
+  .gridact {
+    height: 18vh;
+  }
+  .gridact1 {
+    height: 17vh;
+  }
+  .media-heading {
+    font-size: 1.6rem;
+  }
+  .p{
+    font-size: 0.1rem;
+  }
+  .newact {
+    text-align: center;
+  }
+  .gridbot {
+    margin-top: 6vh;
+  }
+  .hoverp {
+    text-align: center;
+    align-content: center;
+    bottom: 4vh;
+  }
+  .plane {
+    position: absolute;
+    height: 3rem;
+    align-items: center;
+  }
+  .plane0 {
+    position: absolute;
+    height: 3rem;
+    left: 4rem;
+  }
+  .plane2-f {
+    margin-left: 4rem;
+  }
+  .plane-f {
+    margin-right: 0;
+    text-align: center;
+  }
+  .picsize {
+    width: 33vw;
+  }
+  .imgwidth {
+    width: 33vw;
+  }
+  .pages {
+    bottom: 2vh;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+  .gridbot {
+    margin-top: 4vh;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1440px) {
+  .media-heading {
+    font-size: 2rem;
+  }
+  .theme{
+    font-size: 7rem;
+  }
+}
+
+@media (min-width: 768px) {
+  .navbar-nav {
+    padding: 12px;
+  }
+  .item > span {
+    font-size: 5rem !important;
+  }
+  .paddingin {
+    margin-bottom: -1rem;
+    padding-top: 1rem;
+    padding-right: 3rem !important;
+  }
+  .carousel-indicators {
+    bottom: 18% !important;
+  }
+}
+
+@media (min-width: 1440px) {
+  .media-heading {
+    font-size: 3rem;
+  }
+  .p{
+    font-size: 1.5rem;
+  }
+
 }
