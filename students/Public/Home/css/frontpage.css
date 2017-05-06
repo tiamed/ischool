@@ -840,9 +840,9 @@ p{
 .picsize {
   width: 40vh;
 }
-a {
-  color: wheat;
+.welcome2 > a {
+  color: wheat !important;
 }
-a:hover, a:focus {
-  color: indianred;
+.welcome2 > a:hover, a:focus {
+  color: indianred !important;
 }

@@ -148,3 +148,10 @@ body{
     height: 75%;
     overflow: auto;
 }
+a#sign {
+    color: wheat;
+}
+
+a#sign:hover, a#sign:focus {
+    color: indianred;
+}
