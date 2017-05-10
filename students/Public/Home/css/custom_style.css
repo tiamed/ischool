@@ -23,6 +23,8 @@
             z-index: 100;
             right: 2%;
             top: -0.8%;
+            margin-top: 2.5rem;
+            
         }
         .landing2 button{
              transition:0.2s;
@@ -54,7 +56,6 @@
             font-size: 1em;
             padding-top: 0.5em;
             padding-bottom: 0.5em;
-            margin-top: 2.5rem;
         }
         
         .ischool {

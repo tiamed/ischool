@@ -7,7 +7,7 @@ class IndexController extends Controller {
     public function _initialize(){
         $login = $_SESSION['sort'];
         if($login != 1){
-            $this -> error('请先登录！');
+            $this -> error('请先登录！',U('Home/Index/index'));
         }
     }
 
@@ -435,7 +435,7 @@ class IndexController extends Controller {
         $this -> assign('info',$info);
         $count = $zhiyuan -> where($where) -> count();
         if((strtotime($time) <= strtotime($latest['start'])) || (strtotime($time) >= strtotime($latest['end']))){
-            $this -> error('暂无需填报的志愿!',U('Students/Index/majored'));
+            $this -> error('暂无需填报的志愿!',U('Students/Index/index'));
         }else if($count){
             $this -> error('您已提交，无法重复提交！',U('Students/Index/majored'));
         }else if(!empty($_POST)){
@@ -452,6 +452,37 @@ class IndexController extends Controller {
     }
 
     public function majored(){
+        $major = M('major');
+        $zhiyuan = M('zhiyuan');
+        $majorinfo = M('majorinfo');
+        $latest = $major -> order('id desc') -> limit(1) -> find();
+        $time = date('Y-m-d H:i:s',time());
+        $id = $latest['id'];
+        $majorlist = $majorinfo -> where("major_id=$id") -> select();
+        $this -> assign('majorlist',$majorlist);
+        $where['major_id'] = $id;
+        $where['num'] = $_SESSION['num'];
+        $where['zhiyuan1'] = array('exp', 'IS NOT NULL');
+        $where1['major_id'] = $id;
+        $where1['num'] = $_SESSION['num'];
+        $info = $zhiyuan -> where($where1) -> find();
+        $this -> assign('info',$info);
+        $count = $zhiyuan -> where($where) -> count();
+        if($count == 0){
+            $this -> error('请先填报志愿！',U('Students/Index/index'));
+        }else if(!empty($_POST)){
+            if(strtotime($time) >= strtotime($latest['end'])){
+                $this -> error('该志愿填报已截止!',U('Students/Index/majored'));
+            }else{
+                $zhiyuan -> create();
+                if($zhiyuan -> where($where1) -> save()){
+                    $this -> success('提交成功！',U('Students/Index/majored'));
+                    exit();
+                }else{
+                    $this -> redirect('Students/Index/majored');
+                }
+            }
+        }
         $this -> display();
     }
 

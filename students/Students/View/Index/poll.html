@@ -86,13 +86,24 @@
                     </li>
 
                     <li class="nav-item nav-dropdown">
-                        <a class="nav-link nav-dropdown-toggle" href="#"><i class="fa fa-briefcase"></i>问卷调查管理</a>
+                        <a class="nav-link nav-dropdown-toggle" href="#"><i class="icon-pie-chart"></i>问卷调查管理</a>
                         <ul class="nav-dropdown-items">
                             <li class="nav-item">
                                 <a class="nav-link" href="{$Think.const.SITE_URL_L}Students/Index/infolist">未填写的问卷调查</a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link" href="{$Think.const.SITE_URL_L}Students/Index/infolisted">已填写的问卷调查</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="nav-item nav-dropdown">
+                        <a class="nav-link nav-dropdown-toggle" href="#"><i class="fa fa-briefcase"></i>志愿分流管理</a>
+                        <ul class="nav-dropdown-items">
+                            <li class="nav-item">
+                                <a class="nav-link" href="{$Think.const.SITE_URL_L}Students/Index/major">填报志愿信息</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="{$Think.const.SITE_URL_L}Students/Index/majored">已填报的志愿信息</a>
                             </li>
                         </ul>
                     </li>
@@ -117,21 +128,21 @@
                                 <div class="form-group">
                                     <label class="form-form-control-label">{{count}}. {{title}}</label>
                                     {{#radio}}
-                                        <div class="radio">
+                                        <div class="radio" style="margin-left: 1.2rem">
                                             <label for="{{value}}">
                                                 <input type="radio" name="{{id}}" value="{{value}}">{{value}}
                                             </label>
                                         </div>
                                     {{/radio}}
                                     {{#checkbox}}
-                                        <div class="checkbox">
+                                        <div class="checkbox" style="margin-left: 1.2rem">
                                             <label for="{{value}}">
                                                 <input type="checkbox" name="{{id}}" value="{{value}}">{{value}}
                                             </label>
                                         </div>
                                     {{/checkbox}}
                                     {{#text}}
-                                        <input type="text" class="form-control" id="{{id}}">
+                                        <input type="text" class="form-control" id="{{id}}" style="margin-left: 1.2rem">
                                     {{/text}}
                                 </div>
                                 {{/survey}}

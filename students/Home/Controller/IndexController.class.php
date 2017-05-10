@@ -131,6 +131,21 @@ class IndexController extends Controller {
         }
     }
 
+    public function major(){
+        $sort = $_SESSION['sort'];
+        if(!empty($sort)){
+            if($sort == 1){
+                $this -> redirect('Students/Index/major');
+            }
+            else{
+                $this -> redirect('Teachers/Index/majorlist');
+            }
+              
+        }else{
+            $this -> error('请先登录！');
+        }
+    }
+
     public function leavelist(){
         $sort = $_SESSION['sort'];
         if(!empty($sort)){

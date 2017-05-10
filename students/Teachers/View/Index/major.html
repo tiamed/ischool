@@ -15,7 +15,7 @@
     <!-- Icons -->
     <link href="{$Think.const.ADMIN_CSS_URL}font-awesome.min.css" rel="stylesheet">
     <link href="{$Think.const.ADMIN_CSS_URL}simple-line-icons.css" rel="stylesheet">
-
+       <link rel="stylesheet" type="text/css" href="{$Think.const.SITE_URL}students/Public/Home/layui/css/layui.css">
     <!-- Main styles for this application -->
     <link href="{$Think.const.ADMIN_CSS_URL}style2.css" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="{$Think.const.SITE_URL}students/Public/Home/layui/css/layui.css">
@@ -106,7 +106,7 @@
                     </li>
                     <li class="nav-item nav-dropdown">
                             <a class="nav-link nav-dropdown-toggle" href="#">
-                                <i class="fa fa-signal">
+                                <i class="icon-pie-chart">
                                 </i>
                                 志愿分流管理
                             </a>
@@ -138,7 +138,20 @@
                                 <strong>志愿信息创建</strong>
                             </div>
                             <div class="card-block col-lg-12">
-                            <input name="photo" type="file" value=""/>
+                            <!-- <input name="photo" type="file" value=""/> -->
+                            <div class="row" >
+                                <label class="col-md-2">上传学生信息</label>
+                                <div class="layui-box layui-upload-button" style="display: inline-flex;align-items: center;height:2rem;padding-left: 10px;padding-right: 10px;">
+                                    <input type="file" id="file"/>
+                                    
+                                    <span class="layui-upload-icon" style="display: contents;">
+                                        <i class="layui-icon">
+                                        </i>
+                                        上传文件
+                                    </span>
+                                </div>
+                                <input type="text" placeholder="未上传文件" id="aim" style="margin-left:0.5rem;text-align:center;" disabled="disabled" />
+                            </div>
                                 <div class="row">
                                 
                                     <div class="form-horizontal col-md-9">
@@ -150,13 +163,15 @@
                                                     <div class="basic_form_inputs">
                                                         <div class="subtitle form-group row">
                                                             <div class="col-md-2">
-                                                                <label class="form-control-label">志愿 {{count}}</label>
+                                                                <label class="form-control-label ">志愿 {{count}}</label>
                                                                 
                                                             </div>
                                                         </div>
                                                         <div class="textfield form-group row">
+                                                        
                                                             <label for="major" class="control-label col-md-2">输入志愿名称</label>
-                                                            <div class="col-md-4">
+                                                           
+                                                            <div class="col-md-4" style="margin-left:1.7rem;">
                                                                 <input type="textfield" name="major{{count}}" value="{{question}}" class="form-control" required="required"/>
                                                             </div>
                                                         </div>
@@ -210,6 +225,8 @@
     <script src="{$Think.const.ADMIN_JS_URL}mustache.js" type="text/javascript"></script>
     <script src="{$Think.const.ADMIN_JS_URL}major.js" type="text/javascript"></script>
     <script src="{$Think.const.SITE_URL}students/Public/Home/layui/layui.js" type="text/javascript" charset="utf-8"></script>
+    <script src="{$Think.const.HOME_LAYUI_URL}layui.js" type="text/javascript"
+        charset="utf-8"></script>
     <!-- GenesisUI main scripts -->
 
     <script src="{$Think.const.ADMIN_JS_URL}app.js"></script>
@@ -224,18 +241,13 @@
         layui.config({
             base: '{$Think.const.HOME_JS_URL}modules/'
         }).use('index');
-        function post() {
-            $.ajax({
-                method: "POST",
-                url: "{$Think.const.SITE_URL_L}teachers/Index/questionnaire/id/{$id}",
-                dataType: "text",
-                data: {questions: questions},
-                success: function(){
-                    location.href="{$Think.const.SITE_URL_L}teachers/Index/infolist";
-                }
-            });
-        }
-
+        var file = $('#file'),
+            aim = $('#aim');
+        file.on('change', function( e ){
+            //e.currentTarget.files 是一个数组，如果支持多个文件，则需要遍历
+            var name = e.currentTarget.files[0].name;
+            aim.val( name );
+        });
     </script>
 </body>
 

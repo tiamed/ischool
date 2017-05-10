@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html>
 
@@ -7,30 +6,24 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="离返校签到>
+    <meta name="description" content="志愿信息">
     <meta name="keyword" content="admin,teacher,information,collect">
-    <link rel="shortcut icon" href="{$Think.const.ADMIN_IMGS_URL}favicon.png">
 
-    <title>返校签到</title>
+
+    <link rel="shortcut icon" href="{$Think.const.ADMIN_IMGS_URL}favicon.png">
+    <title>修改志愿信息</title>
 
     <!-- Icons -->
     <link href="{$Think.const.ADMIN_CSS_URL}font-awesome.min.css" rel="stylesheet">
     <link href="{$Think.const.ADMIN_CSS_URL}simple-line-icons.css" rel="stylesheet">
-
     <!-- Main styles for this application -->
     <link href="{$Think.const.ADMIN_CSS_URL}style2.css" rel="stylesheet">
-<script>
-    layui.config({
-        base: '{$Think.const.HOME_JS_URL}modules/'
-    }).use('index');
-    </script>
-    <script src="http://webapi.amap.com/maps?v=1.3&amp;key=14b3a18e6f0b81dba2f5262d932c9490&callback=init"></script>
-<link rel="apple-touch-icon" sizes="76x76" href="{$Think.const.HOME_IMAGES_URL}apple-touch-icon.png">
-<link rel="icon" type="image/png" sizes="32x32" href="{$Think.const.HOME_IMAGES_URL}favicon-32x32.png">
-<link rel="icon" type="image/png" sizes="16x16" href="{$Think.const.HOME_IMAGES_URL}favicon-16x16.png">
-<link rel="manifest" href="{$Think.const.HOME_IMAGES_URL}manifest.json">
-<link rel="mask-icon" href="{$Think.const.HOME_IMAGES_URL}safari-pinned-tab.svg" color="#5bbad5">
-<meta name="theme-color" content="#ffffff">
+    <link rel="apple-touch-icon" sizes="76x76" href="{$Think.const.HOME_IMAGES_URL}apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="{$Think.const.HOME_IMAGES_URL}favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="{$Think.const.HOME_IMAGES_URL}favicon-16x16.png">
+    <link rel="manifest" href="{$Think.const.HOME_IMAGES_URL}manifest.json">
+    <link rel="mask-icon" href="{$Think.const.HOME_IMAGES_URL}safari-pinned-tab.svg" color="#5bbad5">
+    <meta name="theme-color" content="#ffffff">
 </head>
 
 <body class="app header-fixed sidebar-fixed aside-menu-fixed aside-menu-hidden">
@@ -38,14 +31,14 @@
         <button class="navbar-toggler mobile-sidebar-toggler hidden-lg-up" type="button">☰</button>
         <a class="navbar-brand" href="{$Think.const.SITE_URL_L}Students/Index" style="padding:1rem;"><img src="{$Think.const.ADMIN_IMGS_URL}ISchool2.png" style=" height: 2rem;float: left;margin-top: -0.1rem;margin-right:0.5rem;"><h4 style="color:#494949;">学生个人中心</h4></a>
         <ul class="nav navbar-nav ml-auto">
-			<li class="nav-item dropdown">
-				<a class="nav-link dropdown-toggle" href="#" role="button" aria-haspopup="true" aria-expanded="false">
-						账户管理
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" role="button" aria-haspopup="true" aria-expanded="false">
+                        账户管理
                 </a>
-				<div class="dropdown-menu dropdown-right text-xs-center">
-						<a class="dropdown-item" href="{$Think.const.SITE_URL_L}Home/Index/change">修改密码</a>
-				</div>
-			</li>
+                <div class="dropdown-menu dropdown-right text-xs-center">
+                        <a class="dropdown-item" href="{$Think.const.SITE_URL_L}Home/Index/change">修改密码</a>
+                </div>
+            </li>
             <li class="nav-item">
                 <a class="btn btn-outline" href="{$Think.const.SITE_URL_L}Home/Index/logout" style="margin-right: 1em;">
                     <i class="icon-logout"></i> 注销
@@ -119,26 +112,73 @@
         </div>
 
         <!-- Main content -->
-        <main class="main">
-            <div class="container-fluid animated fadeIn">
-              
-                <div class="card">
-                                <div class="card-header">
-                                    <i class="fa fa-align-justify"></i> 【{$info.title}】返校签到
-                                </div>
-                                <div class="card-block">
-                   <div id="iCenter" style="width:100%; height:500px"></div>
-        <div  style="float: right;margin-top: 10px;margin-right: 10px;">
-            <button   id="leavehere" class="btn btn-default btn btn-success" type="submit" onclick="leave()">我已经到啦</button>
+                <main class="main">
+                <ul id="breadcrumb">
+                    <li><a>学号：{$info['num']}</a></li>
+                    <li><a>姓名：{$info['name']}</a></li>
+                    <li><a>班级：{$info['class']}</a></li>
+                    <li><a>成绩：{$info['score']}</a></li>
+                    <li><a>排名：{$info['range']}</a></li>
+                </ul>
 
-        </div>                                   
+            <div class="container-fluid animated fadeIn">
+                <div>
+                    <form method="post" action="{$Think.const.SITE_URL_L}Students/Index/majored">
+                        <div class="card" style="margin-top:0;">
+                            <div class="card-header">
+                                <i class="fa fa-object-group"></i>
+                                <strong>修改志愿信息</strong>
+                            </div>
+                            <div class="card-block col-lg-12">
+
+                            <div class="row">
+                                <div class="form-group col-sm-4">
+                                    <p>第一志愿：<b>{$info['zhiyuan1']}</b></p>
+                                    <p>第二志愿：<b>{$info['zhiyuan2']}</b></p>
+                                    <!-- <p>最终志愿：<b>{$info['zhiyuanok']}</b></p> -->
+                                    <!-- <p>最终志愿：<b>暂无可查询的信息</b></p> -->
+                                </div>
+                            </div>
+
+
+
+                                <div class="form-group col-sm-4">
+                                    <label>请选择第一志愿</label>
+                                    <select name="zhiyuan1" class="form-control" id="zhiyuan1">
+                                        <option value="0">请选择第一志愿</option>
+                                        <volist name="majorlist" id="vo">
+                                            <option value ="{$vo.major}">{$vo.major}</option>
+                                        </volist>
+                                    </select>
+                                </div>
+                                <div class="form-group col-sm-4">
+                                    <label>请选择第二志愿</label>
+                                    <select name="zhiyuan2" class="form-control" id="zhiyuan2">
+                                        <option value="0">请选择第二志愿</option>
+                                        <volist name="majorlist" id="vo">
+                                            <option value ="{$vo.major}">{$vo.major}</option>
+                                        </volist>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="card-footer">
+                                <div class="col-md-12">
+                                    <div class="row col-md-9">
+                                        <div class="col-md-2">
+                                            <div>
+                                                <button class="btn btn-success" style="margin-left: 7em;" type="submit" onclick="judge(event)"><i class="fa fa-dot-circle-o"></i>提交</button>   
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                </div>          
+                    </form>
+                </div>
+                <br/>
+
+            </div>
         </main>
-
-
     </div>
 
     <footer class="app-footer">
@@ -152,7 +192,7 @@
             line-height: 1.8em;
             font-family: "Microsoft Yahei"
             ">版权所有 © ISchool
-        </p>
+        </p>    
 
     </footer>
 
@@ -162,125 +202,40 @@
     <script src="{$Think.const.ADMIN_JS_URL}bootstrap.min.js"></script>
     <script src="{$Think.const.ADMIN_JS_URL}pace.min.js"></script>
     <!-- GenesisUI main scripts -->
-
     <script src="{$Think.const.ADMIN_JS_URL}app.js"></script>
     <!-- Plugins and scripts required by this views -->
-
+    <script src="{$Think.const.ADMIN_JS_URL}mustache.js" type="text/javascript"></script>
+    
+    <script src="{$Think.const.HOME_JS_URL}poll.js"</script>
     <!-- Custom scripts required by this view -->
     <script src="{$Think.const.ADMIN_JS_URL}views/main.js"></script>
     <script type="text/javascript">
         $('.dropdown-toggle').click(function(){
         $(this).next(".dropdown-menu").toggle();
         });
-        $(this).next(".dropdown-menu").toggle();
-        });
+        function judge(event) {
+          var x = $("#zhiyuan1").val();
+          var y = $("#zhiyuan2").val();
+          if (!x || !y) {
+            alert("请填写志愿！");
+            event.preventDefault(event);
+            return false;
+          } else if (x === y) {
+            alert("第一志愿不能与第二志愿相同！");
+            $("#zhiyuan2").val("");
+            event.preventDefault(event);
+            return false;
+          } else {
+            document.zhiyuan.submit();
+          }
+        }
+
+        function load() {
+            if (/msie/.test(navigator.userAgent.toLowerCase())) {
+                alert("建议使用firefox, chrome或极速模式");
+                }
+        }
     </script>
-    <script>
-$(document).ready(function(){
-    window.called = false;
-    window.mapObj = new AMap.Map('iCenter');
-    mapObj.plugin('AMap.Geolocation', function () {
-    window.geolocation = new AMap.Geolocation({
-        enableHighAccuracy: true,//是否使用高精度定位，默认:true
-        timeout: 10000,          //超过10秒后停止定位，默认：无穷大
-        maximumAge: 0,           //定位结果缓存0毫秒，默认：0
-        convert: true,           //自动偏移坐标，偏移后的坐标为高德坐标，默认：true
-        showButton: true,        //显示定位按钮，默认：true
-        buttonPosition: 'LB',    //定位按钮停靠位置，默认：'LB'，左下角
-        buttonOffset: new AMap.Pixel(10, 20),//定位按钮与设置的停靠位置的偏移量，默认：Pixel(10, 20)
-        showMarker: true,        //定位成功后在定位到的位置显示点标记，默认：true
-        showCircle: true,        //定位成功后用圆圈表示定位精度范围，默认：true
-        panToLocation: true,     //定位成功后将定位到的位置作为地图中心点，默认：true
-        zoomToAccuracy:true      //定位成功后调整地图视野范围使定位位置及精度范围视野内可见，默认：false
-    });
-    mapObj.addControl(geolocation);
-    AMap.event.addListener(geolocation, 'complete', onComplete);//返回定位信息
-    AMap.event.addListener(geolocation, 'error', onError);      //返回定位出错信息
-});
-
-    function onComplete(data) {
-        // var str=['定位成功'];
-        window.longitude = data.position.getLng();
-        window.latitude = data.position.getLat();
-        called = true;
-        // str.push('经度：' + data.position.getLng());
-        // str.push('纬度：' + data.position.getLat());
-        // if(data.accuracy){
-        //      str.push('精度：' + data.accuracy + ' 米');
-        // }//如为IP精确定位结果则没有精度信息
-        // str.push('是否经过偏移：' + (data.isConverted ? '是' : '否'));
-        // document.getElementById('iCenter').innerHTML = str.join('<br>');
-        
-    }
-    //解析定位错误信息
-    function onError(data) {
-        document.getElementById('iCenter').innerHTML = '定位失败';
-        alert('定位失败，请重试');
-    }
-
-   
-    // var x = document.getElementById("iCenter");
-
-    // function getLocation() {
-    //     if (navigator.geolocation) {
-    //         navigator.geolocation.watchPosition(showPosition);
-    //     } else {
-    //         x.innerHTML = "Geolocation is not supported by this browser.";}
-    //     }
-
-    // function showPosition(position) {
-    //     x.innerHTML="Latitude: " + position.coords.latitude +
-    //     "<br>Longitude: " + position.coords.longitude;
-    //      $.ajax({
-    //          type: "POST",
-    //              url: "192.168.1.111/item/students/index.php/students/index/map",//写成自己的
-    //              data: {
-    //                  latitude: position.coords.latitude,
-    //                  longitude: position.coords.longitude,
-    //              },
-    //          dataType: "json",
-    //      });
-    // }
-
-});
-
-    function leave() {
-        if (!called) {
-            alert("请先定位");
-        }
-        var latmax = 30.674197;
-        var latmin = 30.668918;
-        var lngmax = 119.622942;
-        var lngmin = 119.613694;
-        var condition = latitude <= latmax && latitude >= latmin && longitude <= lngmax && longitude >= lngmin;
-
-        if (condition) {
-            window.isLeft = 1;
-            window.lfstr = "已到校";
-        } else {
-            window.isLeft = 0;
-            window.lfstr = "未到校";
-        }
-
-        if (isLeft) {
-            alert("签到成功");
-            location.href="{$Think.const.SITE_URL_L}students/index/leavelist";
-        } else {
-            alert("签到失败");
-
-        }
-
-        $.ajax({
-            method: "POST",
-            url: "{$Think.const.SITE_URL_L}students/index/map/id/{$id}",
-            dataType: "text",
-            data: {register: lfstr}
-        });
-    }
-
-
-
-</script>
 </body>
 
 </html>

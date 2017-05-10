@@ -18,13 +18,13 @@
         <link href="{$Think.const.ADMIN_CSS_URL}style2.css" rel="stylesheet">
         <link rel="stylesheet" type="text/css" href="{$Think.const.SITE_URL}students/Public/Home/layui/css/layui.css">
         <link href="{$Think.const.ADMIN_CSS_URL}pagination.css" rel="stylesheet">
-    <link rel="apple-touch-icon" sizes="76x76" href="{$Think.const.HOME_IMAGES_URL}apple-touch-icon.png">
-<link rel="icon" type="image/png" sizes="32x32" href="{$Think.const.HOME_IMAGES_URL}favicon-32x32.png">
-<link rel="icon" type="image/png" sizes="16x16" href="{$Think.const.HOME_IMAGES_URL}favicon-16x16.png">
-<link rel="manifest" href="{$Think.const.HOME_IMAGES_URL}manifest.json">
-<link rel="mask-icon" href="{$Think.const.HOME_IMAGES_URL}safari-pinned-tab.svg" color="#5bbad5">
-<meta name="theme-color" content="#ffffff">
-</head>
+        <link rel="apple-touch-icon" sizes="76x76" href="{$Think.const.HOME_IMAGES_URL}apple-touch-icon.png">
+        <link rel="icon" type="image/png" sizes="32x32" href="{$Think.const.HOME_IMAGES_URL}favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="{$Think.const.HOME_IMAGES_URL}favicon-16x16.png">
+        <link rel="manifest" href="{$Think.const.HOME_IMAGES_URL}manifest.json">
+        <link rel="mask-icon" href="{$Think.const.HOME_IMAGES_URL}safari-pinned-tab.svg" color="#5bbad5">
+        <meta name="theme-color" content="#ffffff">
+    </head>
     
     <body class="app header-fixed sidebar-fixed aside-menu-fixed aside-menu-hidden">
         <header class="app-header navbar">
@@ -147,9 +147,9 @@
                                 </li>
                             </ul>
                         </li>
-<li class="nav-item nav-dropdown">
+                        <li class="nav-item nav-dropdown">
                             <a class="nav-link nav-dropdown-toggle" href="#">
-                                <i class="fa fa-signal">
+                                <i class="icon-pie-chart">
                                 </i>
                                 志愿分流管理
                             </a>
@@ -201,6 +201,12 @@
                                         <th class="span2 sortable" style="width:4rem;">
                                             姓名
                                         </th>
+                                        <th class="span2 sortable" style="width:4rem;">
+                                            学号
+                                        </th>
+                                        <th class="span2 sortable" style="width:4rem;">
+                                            性别
+                                        </th>
                                         <th class="span2 sortable" style="width:8.5rem;">
                                             <span style="text-align: center;color:black;">
                                             </span>
@@ -209,42 +215,17 @@
                                         <th class="span2 sortable" style="text-align: center;width:5.5rem;">
                                             <span>
                                             </span>
-                                            离校原因
+                                            专业排名
                                         </th>
                                         <th class="span2 sortable" style="text-align: center;width:5.5rem;">
                                             <span>
                                             </span>
-                                            离校时间
+                                            第一志愿
                                         </th>
                                         <th class="span2 sortable" style="text-align: center;width:5.5rem;">
                                             <span>
                                             </span>
-                                            离校方式
-                                        </th>
-                                        <th class="span2 sortable" style="text-align: center;">
-                                            <span style="text-align: center;">
-                                            </span>
-                                            目的地
-                                        </th>
-                                        <th class="span2 sortable" style="text-align: center;width:6.5rem;">
-                                            <span>
-                                            </span>
-                                            紧急联系人
-                                        </th>
-                                        <th class="span2 sortable" style="text-align: center;width:6rem;">
-                                            <span>
-                                            </span>
-                                            联系电话
-                                        </th>
-                                        <th class="span2 sortable" style="text-align: center;width:7rem;">
-                                            <span>
-                                            </span>
-                                            到校情况
-                                        </th>
-                                        <th class="span2 sortable" style="text-align: center;width:4rem;">
-                                            <span>
-                                            </span>
-                                            备注
+                                            第二志愿
                                         </th>
                                     </tr>
                                 </thead>
@@ -253,36 +234,25 @@
                                     <volist name="list" id="vo">
                                         <tr class="first" style="white-space: nowrap;">
                                             <td style="text-align: center;">
-                                                <a href="{$Think.const.SITE_URL_L}teachers/index/details/id/{$vo.stu_id}"
-                                                target="right">
-                                                    {$vo.name}
+                                                {$vo.name}
+                                            </td>
+                                            <td style="text-align: center;">
+                                                {$vo.num}
+                                            </td>
+                                            <td style="text-align: center;">
+                                                {$vo.sex}
                                             </td>
                                             <td style="text-align: center;">
                                                 {$vo.class}
                                             </td>
                                             <td style="text-align: center;">
-                                                {$vo.reason}
+                                                {$vo.range}
                                             </td>
                                             <td>
-                                                {$vo.time}
+                                                {$vo.zhiyuan1}
                                             </td>
                                             <td style="text-align: center;">
-                                                {$vo.way}
-                                            </td>
-                                            <td style="text-align: center;word-wrap:break-word;overflow:hidden;">
-                                                {$vo.destination}
-                                            </td>
-                                            <td style="text-align: center;">
-                                                {$vo.contacts}
-                                            </td>
-                                            <td style="text-align: center;">
-                                                {$vo.telephone}
-                                            </td>
-                                            <td style="text-align: center;">
-                                                {$vo.register}
-                                            </td>
-                                            <td style="text-align: center;">
-                                                {$vo.note}
+                                                {$vo.zhiyuan2}
                                             </td>
                                         </tr>
                                     </volist>
@@ -342,7 +312,7 @@
         </script>
         <script type="text/javascript">
             function download() {
-                window.location.href = "{$Think.const.SITE_URL_L}teachers/index/leave_download/id/{$id}"
+                window.location.href = "{$Think.const.SITE_URL_L}teachers/index/download_major/id/{$id}"
             }
         </script>
     </body>

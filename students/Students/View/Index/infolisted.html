@@ -23,13 +23,13 @@
         <script src="{$Think.const.SITE_URL}students/Public/Home/layui/layui.js"
         type="text/javascript" charset="utf-8">
         </script>
-    <link rel="apple-touch-icon" sizes="76x76" href="{$Think.const.HOME_IMAGES_URL}apple-touch-icon.png">
-<link rel="icon" type="image/png" sizes="32x32" href="{$Think.const.HOME_IMAGES_URL}favicon-32x32.png">
-<link rel="icon" type="image/png" sizes="16x16" href="{$Think.const.HOME_IMAGES_URL}favicon-16x16.png">
-<link rel="manifest" href="{$Think.const.HOME_IMAGES_URL}manifest.json">
-<link rel="mask-icon" href="{$Think.const.HOME_IMAGES_URL}safari-pinned-tab.svg" color="#5bbad5">
-<meta name="theme-color" content="#ffffff">
-</head>
+        <link rel="apple-touch-icon" sizes="76x76" href="{$Think.const.HOME_IMAGES_URL}apple-touch-icon.png">
+        <link rel="icon" type="image/png" sizes="32x32" href="{$Think.const.HOME_IMAGES_URL}favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="{$Think.const.HOME_IMAGES_URL}favicon-16x16.png">
+        <link rel="manifest" href="{$Think.const.HOME_IMAGES_URL}manifest.json">
+        <link rel="mask-icon" href="{$Think.const.HOME_IMAGES_URL}safari-pinned-tab.svg" color="#5bbad5">
+        <meta name="theme-color" content="#ffffff">
+    </head>
     
     <body class="app header-fixed sidebar-fixed aside-menu-fixed aside-menu-hidden">
     <header class="app-header navbar">
@@ -90,13 +90,24 @@
                     </li>
 
                     <li class="nav-item nav-dropdown">
-                        <a class="nav-link nav-dropdown-toggle" href="#"><i class="fa fa-briefcase"></i>问卷调查管理</a>
+                        <a class="nav-link nav-dropdown-toggle" href="#"><i class="icon-pie-chart"></i>问卷调查管理</a>
                         <ul class="nav-dropdown-items">
                             <li class="nav-item">
                                 <a class="nav-link" href="{$Think.const.SITE_URL_L}Students/Index/infolist">未填写的问卷调查</a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link" href="{$Think.const.SITE_URL_L}Students/Index/infolisted">已填写的问卷调查</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="nav-item nav-dropdown">
+                        <a class="nav-link nav-dropdown-toggle" href="#"><i class="fa fa-briefcase"></i>志愿分流管理</a>
+                        <ul class="nav-dropdown-items">
+                            <li class="nav-item">
+                                <a class="nav-link" href="{$Think.const.SITE_URL_L}Students/Index/major">填报志愿信息</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="{$Think.const.SITE_URL_L}Students/Index/majored">已填报的志愿信息</a>
                             </li>
                         </ul>
                     </li>

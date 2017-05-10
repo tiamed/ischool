@@ -7,6 +7,99 @@
  */
 /*! normalize.css v5.0.0 | MIT License | github.com/necolas/normalize.css */
 
+
+#breadcrumb {
+  list-style: none;
+  display: inline-block;
+  margin-left: -10px;
+  margin-top: 18px;
+}
+#breadcrumb .icon {
+  font-size: 14px;
+}
+#breadcrumb li {
+  float: left;
+}
+#breadcrumb li a {
+  color: #FFF;
+  display: block;
+  background: #3498db;
+  text-decoration: none;
+  position: relative;
+  height: 40px;
+  line-height: 40px;
+  padding: 0 10px 0 5px;
+  text-align: center;
+  margin-right: 23px;
+}
+#breadcrumb li:nth-child(even) a {
+  background-color: #2980b9;
+}
+#breadcrumb li:nth-child(even) a:before {
+  border-color: #2980b9;
+  border-left-color: transparent;
+}
+#breadcrumb li:nth-child(even) a:after {
+  border-left-color: #2980b9;
+}
+#breadcrumb li:first-child a {
+  padding-left: 15px;
+  -moz-border-radius: 4px 0 0 4px;
+  -webkit-border-radius: 4px;
+  border-radius: 4px 0 0 4px;
+}
+#breadcrumb li:first-child a:before {
+  border: none;
+}
+#breadcrumb li:last-child a {
+  padding-right: 15px;
+  -moz-border-radius: 0 4px 4px 0;
+  -webkit-border-radius: 0;
+  border-radius: 0 4px 4px 0;
+}
+#breadcrumb li:last-child a:after {
+  border: none;
+}
+#breadcrumb li a:before, #breadcrumb li a:after {
+  content: "";
+  position: absolute;
+  top: 0;
+  border: 0 solid #3498db;
+  border-width: 20px 10px;
+  width: 0;
+  height: 0;
+}
+#breadcrumb li a:before {
+  left: -20px;
+  border-left-color: transparent;
+}
+#breadcrumb li a:after {
+  left: 100%;
+  border-color: transparent;
+  border-left-color: #3498db;
+}
+#breadcrumb li a:hover {
+  background-color: #1abc9c;
+}
+#breadcrumb li a:hover:before {
+  border-color: #1abc9c;
+  border-left-color: transparent;
+}
+#breadcrumb li a:hover:after {
+  border-left-color: #1abc9c;
+}
+#breadcrumb li a:active {
+  background-color: #16a085;
+}
+#breadcrumb li a:active:before {
+  border-color: #16a085;
+  border-left-color: transparent;
+}
+#breadcrumb li a:active:after {
+  border-left-color: #16a085;
+}
+
+
 input::-webkit-input-placeholder {
   font-size: 0.8rem;
 }
@@ -2593,6 +2686,9 @@ tbody.collapse.show {
       display: none; } }
 
 @media (max-width: 767px) {
+  .navbar-brand {
+    display: none !important;
+  }
   .navbar-toggleable-sm .navbar-nav .dropdown-menu {
     position: static;
     float: none; }
@@ -2773,10 +2869,6 @@ tbody.collapse.show {
 .navbar-inverse .navbar-text {
   color: rgba(255, 255, 255, 0.5); }
 
-header{
-    box-shadow: 0px 5px 5px #b3b3b2;
-}
-
 header.navbar {
   position: relative;
   flex-direction: row;
@@ -2871,7 +2963,7 @@ header.navbar {
   flex-direction: column;
   background-color: #fff;
   border: 1px solid #cfd8dc;
-  box-shadow: 5px 5px 5px #b3b3b2;
+  box-shadow: 0 2px 7px rgba(0, 0, 0, .07);
    }
 
 .card-block {
@@ -3289,8 +3381,13 @@ header.navbar {
 
 .breadcrumb {
   position: relative;
-  margin-bottom: 1.5rem;
-  border-bottom: 1px solid #cfd8dc; }
+  margin-top: 1rem;
+  border-bottom: 1px solid #cfd8dc; 
+  margin-left:2rem;
+  margin-bottom: 0;
+  width: 94.4%;
+  box-shadow: 0 2px 7px rgba(0, 0, 0, .07);
+}
 
 .pagination {
   display: flex;
@@ -6295,9 +6392,9 @@ app-root {
     flex: 1; }
 
 
-  .sidebar{
+/*  .sidebar{
     box-shadow: 5px 5px 5px #888888;
-  }
+  }*/
   .app-body .sidebar {
     flex: 0 0 200px;
     order: -1; }
@@ -8860,6 +8957,16 @@ base-chart.chart {
     text-decoration:none;
 }
 
-header{
-    box-shadow: -5px 5px 10px #888888;
+/*@media (max-width: 768px) {
+    .table{
+      display: flex;
+      flex-direction: column;
+    }
+}*/
+
+@media (max-width: 768px) {
+    .hidden-md-up > tbody > tr > td {
+        min-width: 7rem;
+        vertical-align: middle !important;
+    }
 }

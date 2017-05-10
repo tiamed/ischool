@@ -36,65 +36,12 @@ body{
     height: 3rem;
 }
 
-
-
-@media (max-width: 768px) {
-    .left {
-        width: 100%;
-        height: 30%;
-        padding: 0.5rem;
-    }
-
-    .right {
-        width: 100%;
-        height: 70%;
-        padding: 0.5rem;
-        display: table;
-    }
-
-    .img {
-        height: 100%;
-        order: 2;
-    }
-    .captions {
-        width: 100%;
-        height: 15rem;
-        display: flex;
-        flex-wrap: wrap;
-    }
-
-    .title {
-        order: 1;
-    }
-
-    .captions > li {
-        font-size: 1.6rem;
-        line-height: ;
-    }
-    h3 {
-        font-size: 1.4rem;
-    }
-    .info > p {
-        font-size: 1.7vh !important;
-        height: auto;
-        text-indent: 15px;
-    }
-    #captions {
-        order: 1;
-    }
-    #img {
-        order: 2;
-    }
-    .gray {
-        display: flex;
-        flex-wrap: wrap;
-    }
-    .info {
-        order: 3;
-        height: 20rem !important;
-        overflow: scroll;
-    }
+.captions > span > li {
+    margin-top: 1vh;
+    font-size: 1.6vh;
 }
+
+
 
 .activelist > h1 {
     margin: 0;
@@ -110,7 +57,8 @@ body{
 
 
 .image {
-    max-width: 100%;
+    height: 30vh;
+    width: 24vw;
     padding: 2rem;
     padding-left: 0.5rem;
     padding-right: 0.5rem;
@@ -129,9 +77,14 @@ body{
     padding: 2rem;
 }
 
-.captions > li {
+.captions > span > li {
     list-style-type: none;
-    font-size: 3.5vh;
+}
+
+p#title {
+    width: 100%;
+    margin: 0.5rem;
+    text-align: center;
 }
 
 .info > p {
@@ -154,4 +107,111 @@ a#sign {
 
 a#sign:hover, a#sign:focus {
     color: indianred;
+}
+
+@media (max-width: 768px) {
+    .left {
+        width: 100%;
+        height: 30%;
+        padding: 0.5rem;
+    }
+
+    .right {
+        width: 100%;
+        height: 70%;
+        padding: 0.5rem;
+        display: table;
+    }
+
+    .img {
+        height: 100%;
+    }
+    .captions {
+        width: 100%;
+        height: 12rem;
+        border-bottom: 2px solid gray;
+    }
+
+    .captions > span > li {
+        font-size: 1.6rem;
+    }
+    h3 {
+        font-size: 1.4rem;
+    }
+    .info {
+        padding: 1rem;
+    }
+    .info > p {
+        font-size: 2.7vh !important;
+        height: auto;
+        line-height: 5vh !important;
+        text-indent: 15px;
+        overflow: visible;
+        text-indent: 0;
+    }
+    #captions {
+        order: 3;
+        padding: 0;
+        padding-left: 1rem;
+        display: table;
+    }
+    #img {
+        order: 1;
+    }
+    #info {
+        order: 2;
+    }
+    .gray {
+        display: flex;
+        flex-wrap: wrap;
+        height: auto !important;
+        padding: 0;
+        background-color: white !important;
+    }
+    .info {
+        height: auto;
+        overflow: visible;
+    }
+    .image {
+        width: 100% !important;
+        height: 70vw !important;
+        padding: 0 !important;
+    }
+    p#title {
+        font-size: 5vh !important;
+        font-weight: 600;
+    }
+    p, li {
+        color: black !important;
+    }
+    .welcome2 {
+        position: absolute;
+        color: darkgray;
+        top: 4rem;
+        padding: 0;
+        padding-right: 1rem;
+        margin: 0;
+    }
+    .landing2 {
+        position: absolute;
+        top: 1em;
+        padding: 0;
+        padding-right: 1rem;
+        margin: 0;
+    }
+    a#sign {
+        color: darkred;
+    }
+    a#sign > i {
+        color: black;
+    }
+    p#title {
+        text-align: left;
+    }
+    span {
+        display: flex;
+    }
+    .return {
+        bottom: 5%;
+    }
 }

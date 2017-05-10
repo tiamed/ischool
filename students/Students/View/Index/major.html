@@ -18,12 +18,12 @@
     <link href="{$Think.const.ADMIN_CSS_URL}simple-line-icons.css" rel="stylesheet">
     <!-- Main styles for this application -->
     <link href="{$Think.const.ADMIN_CSS_URL}style2.css" rel="stylesheet">
-<link rel="apple-touch-icon" sizes="76x76" href="{$Think.const.HOME_IMAGES_URL}apple-touch-icon.png">
-<link rel="icon" type="image/png" sizes="32x32" href="{$Think.const.HOME_IMAGES_URL}favicon-32x32.png">
-<link rel="icon" type="image/png" sizes="16x16" href="{$Think.const.HOME_IMAGES_URL}favicon-16x16.png">
-<link rel="manifest" href="{$Think.const.HOME_IMAGES_URL}manifest.json">
-<link rel="mask-icon" href="{$Think.const.HOME_IMAGES_URL}safari-pinned-tab.svg" color="#5bbad5">
-<meta name="theme-color" content="#ffffff">
+    <link rel="apple-touch-icon" sizes="76x76" href="{$Think.const.HOME_IMAGES_URL}apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="{$Think.const.HOME_IMAGES_URL}favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="{$Think.const.HOME_IMAGES_URL}favicon-16x16.png">
+    <link rel="manifest" href="{$Think.const.HOME_IMAGES_URL}manifest.json">
+    <link rel="mask-icon" href="{$Think.const.HOME_IMAGES_URL}safari-pinned-tab.svg" color="#5bbad5">
+    <meta name="theme-color" content="#ffffff">
 </head>
 
 <body class="app header-fixed sidebar-fixed aside-menu-fixed aside-menu-hidden">
@@ -85,13 +85,24 @@
                     </li>
 
                     <li class="nav-item nav-dropdown">
-                        <a class="nav-link nav-dropdown-toggle" href="#"><i class="fa fa-briefcase"></i>问卷调查管理</a>
+                        <a class="nav-link nav-dropdown-toggle" href="#"><i class="icon-pie-chart"></i>问卷调查管理</a>
                         <ul class="nav-dropdown-items">
                             <li class="nav-item">
                                 <a class="nav-link" href="{$Think.const.SITE_URL_L}Students/Index/infolist">未填写的问卷调查</a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link" href="{$Think.const.SITE_URL_L}Students/Index/infolisted">已填写的问卷调查</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="nav-item nav-dropdown">
+                        <a class="nav-link nav-dropdown-toggle" href="#"><i class="fa fa-briefcase"></i>志愿分流管理</a>
+                        <ul class="nav-dropdown-items">
+                            <li class="nav-item">
+                                <a class="nav-link" href="{$Think.const.SITE_URL_L}Students/Index/major">填报志愿信息</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="{$Think.const.SITE_URL_L}Students/Index/majored">已填报的志愿信息</a>
                             </li>
                         </ul>
                     </li>
@@ -102,35 +113,35 @@
 
         <!-- Main content -->
                 <main class="main">
-                <ol class="breadcrumb">
-                    <li class="breadcrumb-item">学号：{$info['num']}</li>
-                    <li class="breadcrumb-item">姓名：{$info['name']}</li>
-                    <li class="breadcrumb-item">班级：{$info['class']}</li>
-                    <li class="breadcrumb-item">成绩：{$info['score']}</li>
-                    <li class="breadcrumb-item">排名：{$info['range']}</li>
-                </ol>
+                <ul id="breadcrumb">
+                    <li><a>学号：{$info['num']}</a></li>
+                    <li><a>姓名：{$info['name']}</a></li>
+                    <li><a>班级：{$info['class']}</a></li>
+                    <li><a>成绩：{$info['score']}</a></li>
+                    <li><a>排名：{$info['range']}</a></li>
+                </ul>
 
             <div class="container-fluid animated fadeIn">
                 <div>
                     <form method="post" action="{$Think.const.SITE_URL_L}Students/Index/major">
-                        <div class="card">
+                        <div class="card" style="margin-top:0;">
                             <div class="card-header">
                                 <i class="fa fa-object-group"></i>
                                 <strong>填报志愿信息</strong>
                             </div>
                             <div class="card-block col-lg-12">
-                                <div class="form-group col-sm-4" id="zhiyuan1">
+                                <div class="form-group col-sm-4">
                                     <label>请选择第一志愿</label>
-                                    <select name="zhiyuan1" class="form-control" id="qType">
+                                    <select name="zhiyuan1" class="form-control" id="zhiyuan1">
                                         <option value="0">请选择第一志愿</option>
                                         <volist name="majorlist" id="vo">
                                             <option value ="{$vo.major}">{$vo.major}</option>
                                         </volist>
                                     </select>
                                 </div>
-                                <div class="form-group col-sm-4" id="zhiyuan2">
+                                <div class="form-group col-sm-4">
                                     <label>请选择第二志愿</label>
-                                    <select name="zhiyuan2" class="form-control" id="qType">
+                                    <select name="zhiyuan2" class="form-control" id="zhiyuan2">
                                         <option value="0">请选择第二志愿</option>
                                         <volist name="majorlist" id="vo">
                                             <option value ="{$vo.major}">{$vo.major}</option>
@@ -143,7 +154,7 @@
                                     <div class="row col-md-9">
                                         <div class="col-md-2">
                                             <div>
-                                                <button class="btn btn-success" style="margin-left: 7em;" type="submit"><i class="fa fa-dot-circle-o"></i>提交</button>   
+                                                <button class="btn btn-success" style="margin-left: 7em;" type="submit" onclick="judge(event)"><i class="fa fa-dot-circle-o"></i>提交</button>   
                                             </div>
                                         </div>
                                     </div>
@@ -186,6 +197,28 @@
     <script src="{$Think.const.HOME_JS_URL}poll.js"</script>
     <!-- Custom scripts required by this view -->
     <script src="{$Think.const.ADMIN_JS_URL}views/main.js"></script>
+    <script type="text/javascript">
+        $('.dropdown-toggle').click(function(){
+        $(this).next(".dropdown-menu").toggle();
+        });
+        function judge(event) {
+          var x = $("#zhiyuan1").val();
+          var y = $("#zhiyuan2").val();
+          if (!x || !y) {
+            alert("请填写志愿！");
+            event.preventDefault(event);
+            return false;
+          } else if (x === y) {
+            alert("第一志愿不能与第二志愿相同！");
+            $("#zhiyuan2").val("");
+            event.preventDefault(event);
+            return false;
+          } else {
+            document.zhiyuan.submit();
+          }
+        }
+
+    </script>
 </body>
 
 </html>

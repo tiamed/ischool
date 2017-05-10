@@ -9,21 +9,21 @@
         <meta name="Resource-type" content="Document" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-        <link rel="stylesheet" type="text/css" href="{$Think.const.HOME_CSS_URL}frontpage.css" />
-        <link href="{$Think.const.HOME_CSS_URL}bootstrap.css" rel="stylesheet" type="text/css" media="all" />
+        <link rel="stylesheet" type="text/css" href="{$Think.const.HOME_CSS_URL}frontpage.css">
+        <link href="{$Think.const.HOME_CSS_URL}bootstrap.css" rel="stylesheet" type="text/css" media="all">
         <!-- 	<link href="{$Think.const.ADMIN_CSS_URL}style2.css" rel="stylesheet"> -->
         <link href="{$Think.const.ADMIN_CSS_URL}simple-line-icons.css" rel="stylesheet">
         <link href="{$Think.const.ADMIN_CSS_URL}font-awesome.min.css" rel="stylesheet">
         <link href="{$Think.const.ADMIN_CSS_URL}pagination.css" rel="stylesheet">
         <link href="{$Think.const.HOME_CSS_URL}custom_style.css" rel="stylesheet">
         <link href="{$Think.const.HOME_CSS_URL}hover.css" rel="stylesheet">
-    <link rel="apple-touch-icon" sizes="76x76" href="{$Think.const.HOME_IMAGES_URL}apple-touch-icon.png">
-<link rel="icon" type="image/png" sizes="32x32" href="{$Think.const.HOME_IMAGES_URL}favicon-32x32.png">
-<link rel="icon" type="image/png" sizes="16x16" href="{$Think.const.HOME_IMAGES_URL}favicon-16x16.png">
-<link rel="manifest" href="{$Think.const.HOME_IMAGES_URL}manifest.json">
-<link rel="mask-icon" href="{$Think.const.HOME_IMAGES_URL}safari-pinned-tab.svg" color="#5bbad5">
-<meta name="theme-color" content="#ffffff">
-</head>
+        <link rel="apple-touch-icon" sizes="76x76" href="{$Think.const.HOME_IMAGES_URL}apple-touch-icon.png">
+        <link rel="icon" type="image/png" sizes="32x32" href="{$Think.const.HOME_IMAGES_URL}favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="{$Think.const.HOME_IMAGES_URL}favicon-16x16.png">
+        <link rel="manifest" href="{$Think.const.HOME_IMAGES_URL}manifest.json">
+        <link rel="mask-icon" href="{$Think.const.HOME_IMAGES_URL}safari-pinned-tab.svg" color="#5bbad5">
+        <meta name="theme-color" content="#ffffff">
+    </head>
     <body>
         <div class="modal fade" id="login" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
             <div class="modal-dialog">
@@ -69,9 +69,10 @@
                                             <li class="dropdown">
                                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">更多功能<span class="caret"></span></a>
                                                 <ul class="dropdown-menu">
-                                                    <li><a href="{$Think.const.SITE_URL_L}Home/Index/activelist">活动报名</a></li>
+                                                    <li><a href="{$Think.const.SITE_URL_L}Home/Index/activelist">活动管理</a></li>
                                                     <li><a href="{$Think.const.SITE_URL_L}Home/Index/leavelist">离返校管理</a></li>
-                                                    <li><a href="{$Think.const.SITE_URL_L}Home/Index/infolist">问卷调查</a></li>
+                                                    <li><a href="{$Think.const.SITE_URL_L}Home/Index/infolist">问卷调查管理</a></li>
+                                                    <li><a href="{$Think.const.SITE_URL_L}Home/Index/major">志愿分流管理</a></li>
                                                     <!--<li role="separator" class="divider"></li>
                                                         <li class="dropdown-header">Nav header</li>
                                                         <li><a href="#">Separated link</a></li>
@@ -92,6 +93,7 @@
                                 <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
                                 <li data-target="#myCarousel" data-slide-to="1"></li>
                                 <li data-target="#myCarousel" data-slide-to="2"></li>
+                                <li data-target="#myCarousel" data-slide-to="3"></li>
                             </ol>
 
                             <!-- Wrapper for slides -->
@@ -99,7 +101,7 @@
 
                                 <div class="item active">
                                     <span>
-                                        活动报名<br>
+                                        活动管理<br>
                                         <p>省时高效 • 方便快捷</p>
                                     </span>
                                 </div>
@@ -111,8 +113,14 @@
                                 </div>
                                 <div class="item">
                                     <span>
-                                        问卷调查<br>
+                                        问卷调查管理<br>
                                         <p>自由定制 • 精准反馈</p>
+                                    </span>
+                                </div>
+                                <div class="item">
+                                    <span>
+                                        志愿分流管理<br>
+                                        <p>轻松管理 • 便捷高效</p>
                                     </span>
                                 </div>
                             </div>
@@ -128,23 +136,15 @@
                               
                         </div>
                     </div>
-                    <div id="circularMenu" class="circular-menu">
-                        <button class="floating-btn" onclick="document.getElementById('circularMenu').classList.toggle('active');">
-                        待办
-                        </button>
-                        <menu class="items-wrapper">
-                            <a href="#" class="menu-item">离返校<span class="badge badge-info">1</span></a>
-                            <a href="#" class="menu-item">活动</a>
-                            <a href="#" class="menu-item">问卷</a>
-                            <a href="#" class="menu-item">信息</a>
-                        </menu>
-                    </div>
                     <a href="#secondPage">
-                        <div class="col-md-10 col-md-offset-1 col-xs-10 col-xs-offset-1 actcenter">
+                        <div class="col-md-5 col-md-offset-1 col-xs-10 col-xs-offset-1 actcenter">
                             <div><img class="plane0 pull-left col-xs-push-1" src="{$Think.const.HOME_IMAGES_URL}feiji.png"></div>
                             <h1 class="plane-f">活动中心</h1>
                         </div>
                     </a>
+                    <div class="col-md-2 col-md-offset-10 hidden-xs actcenter">
+                        <p class="copyright">版权所有 © ISchool </p>
+                    </div>
                 </div>
             </div>
             <div class="section" id="section1" style="font-weight: lighter;">
@@ -169,7 +169,7 @@
                                                         {$actives[0]['title']}
                                                     </h2>
                                                     <p style="text-indent: 2rem;font-size: 1.5rem;">
-                                                        {$actives[0]['content']|subtext=260}
+                                                        {$actives[0]['content']|subtext=450}
                                                     </p>
                                                 </div>
                                             </div>
@@ -194,7 +194,7 @@
                                                                 {$actives[1]['title']}
                                                             </h2>
                                                             <p style="text-indent: 2rem;font-size: 1.5rem;">
-                                                                {$actives[1]['content']|subtext=60}
+                                                                {$actives[1]['content']|subtext=115}
                                                             </p>
                                                         </div>
                                                     </div>
@@ -217,7 +217,7 @@
                                                                 {$actives[2]['title']}
                                                             </h2>
                                                             <p style="text-indent: 2rem;font-size: 1.5rem;">
-                                                                {$actives[2]['content']|subtext=60}
+                                                                {$actives[2]['content']|subtext=115}
                                                             </p>
                                                         </div>
                                                     </div>
@@ -241,7 +241,7 @@
                 <header class="col-md-10 col-md-offset-1 col-xs-10 col-xs-offset-1">
                     <!-- <img src="{$Think.const.HOME_IMAGES_URL}active-list.png"
                         style="margin-top:  2.8rem;"> -->
-                    <h1 style="font-size:3rem; margin-top: 2rem; margin-bottom: 4rem;">
+                    <h1 style="font-size:3rem; margin-top: 4vh; margin-bottom: 4vh;">
                         <i class="fa fa-gg" style="font-size:4rem;"></i>活动列表
                     </h1>
                 </header>
@@ -249,7 +249,7 @@
                     <div class="row">
                             <volist name="list" id="vo" class="media">
                                 <a href="{$Think.const.SITE_URL_L}Home/Index/detailed/id/{$vo.id}">
-                                    <div class="col-md-10 col-md-offset-1 col-sm-10 col-sm-offset-1 col-xs-10 col-xs-offset-1" style="padding-top: 0.4rem;">
+                                    <div class="col-md-10 col-md-offset-1 col-sm-10 col-sm-offset-1 col-xs-10 col-xs-offset-1" style="padding-top: 2vh;">
                                         <div class="card-block hvr-float-shadow">
                                             <div class="row" style="margin-left: -17px;">
                                                 <div class="col-md-3 col-lg-2 col-xs-5" style="overflow: hidden;">
@@ -261,7 +261,7 @@
                                                             {$vo.title}
                                                         </h2>
                                                         <p  style="text-indent: 2rem;font-size: 1.5rem;">
-                                                            {$vo.content|subtext=110}
+                                                            {$vo.content|subtext=230}
                                                         </p>
                                                     </div>
                                                 </div>

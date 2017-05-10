@@ -16,13 +16,13 @@
         <link href="{$Think.const.ADMIN_CSS_URL}simple-line-icons.css" rel="stylesheet">
         <!-- Main styles for this application -->
         <link href="{$Think.const.ADMIN_CSS_URL}style2.css" rel="stylesheet">
-    <link rel="apple-touch-icon" sizes="76x76" href="{$Think.const.HOME_IMAGES_URL}apple-touch-icon.png">
-<link rel="icon" type="image/png" sizes="32x32" href="{$Think.const.HOME_IMAGES_URL}favicon-32x32.png">
-<link rel="icon" type="image/png" sizes="16x16" href="{$Think.const.HOME_IMAGES_URL}favicon-16x16.png">
-<link rel="manifest" href="{$Think.const.HOME_IMAGES_URL}manifest.json">
-<link rel="mask-icon" href="{$Think.const.HOME_IMAGES_URL}safari-pinned-tab.svg" color="#5bbad5">
-<meta name="theme-color" content="#ffffff">
-</head>
+        <link rel="apple-touch-icon" sizes="76x76" href="{$Think.const.HOME_IMAGES_URL}apple-touch-icon.png">
+        <link rel="icon" type="image/png" sizes="32x32" href="{$Think.const.HOME_IMAGES_URL}favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="{$Think.const.HOME_IMAGES_URL}favicon-16x16.png">
+        <link rel="manifest" href="{$Think.const.HOME_IMAGES_URL}manifest.json">
+        <link rel="mask-icon" href="{$Think.const.HOME_IMAGES_URL}safari-pinned-tab.svg" color="#5bbad5">
+        <meta name="theme-color" content="#ffffff">
+    </head>
     
     <body class="app header-fixed sidebar-fixed aside-menu-fixed aside-menu-hidden">
         <header class="app-header navbar">
@@ -147,7 +147,7 @@
                         </li>
                         <li class="nav-item nav-dropdown">
                             <a class="nav-link nav-dropdown-toggle" href="#">
-                                <i class="fa fa-signal">
+                                <i class="icon-pie-chart">
                                 </i>
                                 志愿分流管理
                             </a>
@@ -177,8 +177,105 @@
                             个人信息
                         </div>
                         <div class="card-block">
-                            <table class="table">
-                                <thead>
+                            <table class="table table-bordered hidden-md-up">
+                                <tbody>
+                                    <tr>
+                                        <td style="text-align: center;">
+                                            <b>
+                                                姓名
+                                            </b>
+                                        </td>
+                                        <td data-title="姓名">
+                                            {$Think.session.name}
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td style="text-align: center;">
+                                            <b>
+                                                性别
+                                            </b>
+                                        </td>
+                                        <td>
+                                            {$Think.session.sex}
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                    </tr>
+                                    <tr>
+                                        <td style="text-align: center;">
+                                            <b>
+                                                出生年月
+                                            </b>
+                                        </td>
+                                        <td>
+                                            {$Think.session.birthday}
+                                        </td>
+                                    </tr>
+                                
+                                    <tr>
+                                        <td style="text-align: center;">
+                                            <b>
+                                                民族
+                                            </b>
+                                        </td>
+                                        <td>
+                                            {$Think.session.nation}
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td style="text-align: center;">
+                                            <b>
+                                                办公室
+                                            </b>
+                                        </td>
+                                        <td>
+                                            {$Think.session.room}
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td style="text-align: center;">
+                                            <b>
+                                                家庭住址
+                                            </b>
+                                        </td>
+                                        <td>
+                                            {$Think.session.address}
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td style="text-align: center;">
+                                            <b>
+                                                工号
+                                            </b>
+                                        </td>
+                                        <td>
+                                            {$Think.session.num}
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td style="text-align: center;">
+                                            <b>
+                                                任教科目
+                                            </b>
+                                        </td>
+                                        <td>
+                                            {$Think.session.subject}
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td style="text-align: center;">
+                                            <b>
+                                                职称
+                                            </b>
+                                        </td>
+                                        <td>
+                                            {$Think.session.jobtitle}
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            <table class="table hidden-sm-down">
+                                <tbody>
                                     <tr>
                                         <td style="text-align: center;">
                                             <b>
@@ -205,8 +302,7 @@
                                             {$Think.session.birthday}
                                         </td>
                                     </tr>
-                                </thead>
-                                <tbody>
+
                                     <tr>
                                         <td style="text-align: center;">
                                             <b>
@@ -215,23 +311,23 @@
                                         </td>
                                         <td>
                                             {$Think.session.nation}
-                                            </th>
-                                            <td style="text-align: center;">
-                                                <b>
-                                                    办公室
-                                                </b>
-                                            </td>
-                                            <td>
-                                                {$Think.session.room}
-                                                </th>
-                                                <td style="text-align: center;">
-                                                    <b>
-                                                        家庭住址
-                                                    </b>
-                                                </td>
-                                                <td>
-                                                    {$Think.session.address}
-                                                </td>
+                                        </td>
+                                        <td style="text-align: center;">
+                                            <b>
+                                                办公室
+                                            </b>
+                                        </td>
+                                        <td>
+                                            {$Think.session.room}
+                                        </td>
+                                        <td style="text-align: center;">
+                                            <b>
+                                                家庭住址
+                                            </b>
+                                        </td>
+                                        <td>
+                                            {$Think.session.address}
+                                        </td>
                                     </tr>
                                     <tr>
                                         <td style="text-align: center;">
@@ -241,23 +337,23 @@
                                         </td>
                                         <td>
                                             {$Think.session.num}
-                                            </th>
-                                            <td style="text-align: center;">
-                                                <b>
-                                                    任教科目
-                                                </b>
-                                            </td>
-                                            <td>
-                                                {$Think.session.subject}
-                                            </td>
-                                            <td style="text-align: center;">
-                                                <b>
-                                                    职称
-                                                </b>
-                                            </td>
-                                            <td>
-                                                {$Think.session.jobtitle}
-                                            </td>
+                                        </td>
+                                        <td style="text-align: center;">
+                                            <b>
+                                                任教科目
+                                            </b>
+                                        </td>
+                                        <td>
+                                            {$Think.session.subject}
+                                        </td>
+                                        <td style="text-align: center;">
+                                            <b>
+                                                职称
+                                            </b>
+                                        </td>
+                                        <td>
+                                            {$Think.session.jobtitle}
+                                        </td>
                                     </tr>
                                 </tbody>
                             </table>
@@ -300,17 +396,6 @@
         <script type="text/javascript">
             $('.dropdown-toggle').click(function() {
                 $(this).next(".dropdown-menu").toggle();
-                $.ajax({
-                    method: "POST",
-                    url: "{$Think.const.SITE_URL_L}teachers/Index/test",
-                    dataType: "text",
-                    data: {
-                        test: {
-                            'pl': 's',
-                            'fl': 'd'
-                        }
-                    }
-                });
             });
         </script>
     </body>
