@@ -704,4 +704,19 @@ p{
     font-size: 1.5rem;
   }
 
+<<<<<<< HEAD
 }
+=======
+ .imgwidth {
+  width: 26vh;
+ }
+.picsize {
+  width: 40vh;
+}
+.welcome2 > a {
+  color: wheat !important;
+}
+.welcome2 > a:hover, a:focus {
+  color: indianred !important;
+}
+>>>>>>> c345f18415cdf27a3417126abcdf257c4797131e

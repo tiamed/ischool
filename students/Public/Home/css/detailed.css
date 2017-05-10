@@ -108,6 +108,7 @@ a#sign {
 a#sign:hover, a#sign:focus {
     color: indianred;
 }
+<<<<<<< HEAD
 
 @media (max-width: 768px) {
     .left {
@@ -215,3 +216,5 @@ a#sign:hover, a#sign:focus {
         bottom: 5%;
     }
 }
+=======
+>>>>>>> c345f18415cdf27a3417126abcdf257c4797131e
