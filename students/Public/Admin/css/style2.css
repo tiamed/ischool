@@ -8964,9 +8964,18 @@ base-chart.chart {
     }
 }*/
 
+.custom-button {
+    margin-left:12.85%;
+}
+
 @media (max-width: 768px) {
     .hidden-md-up > tbody > tr > td {
         min-width: 7rem;
         vertical-align: middle !important;
+    }
+
+    .custom-button {
+      margin: 0;
+      text-align: center;
     }
 }
