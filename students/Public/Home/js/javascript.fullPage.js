@@ -5,6 +5,10 @@
  *
  * Copyright (C) 2013 alvarotrigo.com - A project by Alvaro Trigo
  */
+
+$(window).load(function() {
+           $("#loading").fadeOut(1200);
+        })
 (function( root, window, document, factory, undefined ) {
     if( typeof define === 'function' && define.amd ) {
         // AMD. Register as an anonymous module.
