@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html>
-    
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
@@ -25,13 +24,13 @@
         <link rel="mask-icon" href="{$Think.const.HOME_IMAGES_URL}safari-pinned-tab.svg" color="#5bbad5">
         <meta name="theme-color" content="#ffffff">
     </head>
-    
     <body class="app header-fixed sidebar-fixed aside-menu-fixed aside-menu-hidden">
         <header class="app-header navbar">
             <button class="navbar-toggler mobile-sidebar-toggler hidden-lg-up" type="button">
-                ☰
+            ☰
             </button>
-            <a class="navbar-brand" href="{$Think.const.SITE_URL_L}Teachers/Index" style="padding:1rem;"><img src="{$Think.const.ADMIN_IMGS_URL}logohei.png" style=" height: 2rem;float: left;margin-top: -0.1rem;margin-right:0.5rem;">
+            <a class="navbar-brand" href="{$Think.const.SITE_URL_L}Teachers/Index" style="padding:1rem;">
+                <img src="{$Think.const.ADMIN_IMGS_URL}logohei.png" style=" height: 2rem;float: left;margin-top: -0.1rem;margin-right:0.5rem;">
                 <h4 style="color:#494949;">
                     教师个人中心
                 </h4>
@@ -39,21 +38,21 @@
             <ul class="nav navbar-nav ml-auto">
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" role="button" aria-haspopup="true"
-                    aria-expanded="false">
-                        账户管理
+                        aria-expanded="false">
+                    账户管理
                     </a>
                     <div class="dropdown-menu dropdown-menu-right text-xs-center">
                         <a class="dropdown-item" href="{$Think.const.SITE_URL_L}Home/Index/change">
-                            修改密码
+                        修改密码
                         </a>
                     </div>
                 </li>
                 <li class="nav-item">
                     <a class="btn btn-outline" href="{$Think.const.SITE_URL_L}Home/Index/logout"
-                    style="margin-right: 1em;">
-                        <i class="icon-logout">
-                        </i>
-                        注销
+                        style="margin-right: 1em;">
+                    <i class="icon-logout">
+                    </i>
+                    注销
                     </a>
                 </li>
             </ul>
@@ -66,102 +65,102 @@
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="{$Think.const.SITE_URL_L}Teachers/Index">
-                                <i class="fa fa-cog">
-                                </i>
-                                我的信息
+                            <i class="fa fa-cog">
+                            </i>
+                            我的信息
                             </a>
                         </li>
                         <li class="nav-item nav-dropdown">
                             <a class="nav-link nav-dropdown-toggle" href="#">
-                                <i class="fa fa-group">
-                                </i>
-                                学生信息
+                            <i class="fa fa-group">
+                            </i>
+                            学生信息
                             </a>
                             <ul class="nav-dropdown-items">
                                 <li class="nav-item">
                                     <a class="nav-link" href="{$Think.const.SITE_URL_L}Teachers/Index/showlist">
-                                        学生列表
+                                    学生列表
                                     </a>
                                 </li>
                                 <li class="nav-item">
                                     <a class="nav-link" href="{$Think.const.SITE_URL_L}Teachers/Index/stu_download">
-                                        下载学生信息
+                                    下载学生信息
                                     </a>
                                 </li>
                             </ul>
                         </li>
                         <li class="nav-item nav-dropdown">
                             <a class="nav-link nav-dropdown-toggle" href="#">
-                                <i class="fa fa-edit">
-                                </i>
-                                活动管理
+                            <i class="fa fa-edit">
+                            </i>
+                            活动管理
                             </a>
                             <ul class="nav-dropdown-items">
                                 <li class="nav-item">
                                     <a class="nav-link" href="{$Think.const.SITE_URL_L}Teachers/Index/add">
-                                        发布活动
+                                    发布活动
                                     </a>
                                 </li>
                                 <li class="nav-item">
                                     <a class="nav-link" href="{$Think.const.SITE_URL_L}Teachers/Index/actived">
-                                        查看发布的活动
+                                    查看发布的活动
                                     </a>
                                 </li>
                             </ul>
                         </li>
                         <li class="nav-item nav-dropdown">
                             <a class="nav-link nav-dropdown-toggle" href="#">
-                                <i class="fa fa-calendar-o">
-                                </i>
-                                离返校管理
+                            <i class="fa fa-calendar-o">
+                            </i>
+                            离返校管理
                             </a>
                             <ul class="nav-dropdown-items">
                                 <li class="nav-item">
                                     <a class="nav-link" href="{$Think.const.SITE_URL_L}Teachers/Index/leave">
-                                        发布离返校统计
+                                    发布离返校统计
                                     </a>
                                 </li>
                                 <li class="nav-item">
                                     <a class="nav-link" href="{$Think.const.SITE_URL_L}Teachers/Index/leavelist">
-                                        查看发布的离返校
+                                    查看发布的离返校
                                     </a>
                                 </li>
                             </ul>
                         </li>
                         <li class="nav-item nav-dropdown">
                             <a class="nav-link nav-dropdown-toggle" href="#">
-                                <i class="fa fa-signal">
-                                </i>
-                                问卷调查管理
+                            <i class="fa fa-signal">
+                            </i>
+                            问卷调查管理
                             </a>
                             <ul class="nav-dropdown-items">
                                 <li class="nav-item">
                                     <a class="nav-link" href="{$Think.const.SITE_URL_L}Teachers/Index/form">
-                                        发布问卷调查
+                                    发布问卷调查
                                     </a>
                                 </li>
                                 <li class="nav-item">
                                     <a class="nav-link" href="{$Think.const.SITE_URL_L}Teachers/Index/infolist">
-                                        查看发布的问卷调查
+                                    查看发布的问卷调查
                                     </a>
                                 </li>
                             </ul>
                         </li>
                         <li class="nav-item nav-dropdown">
                             <a class="nav-link nav-dropdown-toggle" href="#">
-                                <i class="icon-pie-chart">
-                                </i>
-                                志愿分流管理
+                            <i class="icon-pie-chart">
+                            </i>
+                            志愿分流管理
                             </a>
                             <ul class="nav-dropdown-items">
                                 <li class="nav-item">
                                     <a class="nav-link" href="{$Think.const.SITE_URL_L}Teachers/Index/majorform">
-                                        发布志愿信息
+                                    发布志愿信息
                                     </a>
                                 </li>
                                 <li class="nav-item">
                                     <a class="nav-link" href="{$Think.const.SITE_URL_L}Teachers/Index/majorlist">
-                                        查看发布的志愿信息
+                                    查看发布的志愿信息
                                     </a>
                                 </li>
                             </ul>
@@ -174,131 +173,116 @@
                 <div class="container-fluid animated fadeIn">
                     <div class="card">
                         <div class="card-header">
-                         
                             <i class="fa fa-align-justify">
                             </i>
-
-                           
                             <strong >
-                                【{$title['title']}】活动报名情况
+                            【{$title['title']}】活动报名情况
                             </strong>
-
-
                             <form action="{$Think.const.SITE_URL_L}teachers/index/search/id/{$id}" style="float: right;">
-                            
-                                  <div class="input-group col-md-3" style="height: 1.5rem;">
+                                <div class="input-group col-md-3" style="height: 1.5rem;">
                                     <input type="text" id="username2" name="keyword" class="form-control"
-                                    placeholder="搜索" style="width: 10rem;padding:0 0.7rem;">
+                                        placeholder="搜索" style="width: 10rem;padding:0 0.7rem;">
                                     <button class="icon-magnifier btn btn-secondary " type="submit" method="post"
-                                    style="margin:0;font-size: 0.5rem;line-height: 0.6rem;">
+                                        style="margin:0;font-size: 0.5rem;line-height: 0.6rem;">
                                     </button>
-                                    
-                            </div>
-                                       
-                            
-                                </form>
-
+                                </div>
+                            </form>
                         </div>
                         <div class="card-block col-lg-12">
-                                <table class="table ">
-                                    <thead>
-                                        <tr style="text-align: center;">
-                                            <th class="span2 sortable">
-                                                姓名
-                                            </th>
-                                            <th class="span2 sortable">
-                                                <span style="text-align: center;">
-                                                </span>
-                                                学号
-                                            </th>
-                                            <th class="span2 sortable" style="text-align: center;">
-                                                <span>
-                                                </span>
-                                                性别
-                                            </th>
-                                            <th class="span2 sortable" style="text-align: center;">
-                                                <span>
-                                                </span>
-                                                学院
-                                            </th>
-                                            <th class="span2 sortable" style="text-align: center;">
-                                                <span>
-                                                </span>
-                                                行政班级
-                                            </th>
-                                            <th class="span2 sortable" style="text-align: center;">
-                                                <span style="text-align: center;">
-                                                </span>
-                                                手机长号
-                                            </th>
-                                            <th class="span2 sortable" style="text-align: center;">
-                                                <span>
-                                                </span>
-                                                手机短号
-                                            </th>
-                                            <th class="span2 sortable" style="text-align: center;">
-                                                <span>
-                                                </span>
-                                                书院寝室
-                                            </th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        <!-- row -->
-                                        <volist name="users" id="vo">
-                                            <tr class="first" style="white-space: nowrap;">
-                                                <td style="text-align: center;">
-                                                    <a href="{$Think.const.SITE_URL_L}teachers/index/details/id/{$vo.id}"
+                            <table class="table ">
+                                <thead>
+                                    <tr style="text-align: center;">
+                                        <th class="span2 sortable">
+                                            姓名
+                                        </th>
+                                        <th class="span2 sortable">
+                                            <span style="text-align: center;">
+                                            </span>
+                                            学号
+                                        </th>
+                                        <th class="span2 sortable" style="text-align: center;">
+                                            <span>
+                                            </span>
+                                            性别
+                                        </th>
+                                        <th class="span2 sortable" style="text-align: center;">
+                                            <span>
+                                            </span>
+                                            学院
+                                        </th>
+                                        <th class="span2 sortable" style="text-align: center;">
+                                            <span>
+                                            </span>
+                                            行政班级
+                                        </th>
+                                        <th class="span2 sortable" style="text-align: center;">
+                                            <span style="text-align: center;">
+                                            </span>
+                                            手机长号
+                                        </th>
+                                        <th class="span2 sortable" style="text-align: center;">
+                                            <span>
+                                            </span>
+                                            手机短号
+                                        </th>
+                                        <th class="span2 sortable" style="text-align: center;">
+                                            <span>
+                                            </span>
+                                            书院寝室
+                                        </th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <!-- row -->
+                                    <volist name="users" id="vo">
+                                        <tr class="first" style="white-space: nowrap;">
+                                            <td style="text-align: center;">
+                                                <a href="{$Think.const.SITE_URL_L}teachers/index/details/id/{$vo.id}"
                                                     target="right">
-                                                        {$vo.name}
-                                                </td>
-                                                <td style="text-align: center;">
-                                                    {$vo.num}
-                                                </td>
-                                                <td style="text-align: center;">
-                                                    {$vo.sex}
-                                                </td>
-                                                <td style="text-align: center;">
-                                                    {$vo.campus}
-                                                </td>
-                                                <td style="text-align: center;">
-                                                    {$vo.class}
-                                                </td>
-                                                <td style="text-align: center;">
-                                                    {$vo.lphonenum}
-                                                </td>
-                                                <td style="text-align: center;">
-                                                    {$vo.sphonenum}
-                                                </td>
-                                                <td style="text-align: center;">
-                                                    {$vo.room}
-                                                </td>
-                                            </tr>
-                                        </volist>
-                                    </tbody>
-                                </table>
-                                
-        <div class="pages">  
-            {$page}  
-        </div>  
-                              
+                                                {$vo.name}
+                                            </td>
+                                            <td style="text-align: center;">
+                                                {$vo.num}
+                                            </td>
+                                            <td style="text-align: center;">
+                                                {$vo.sex}
+                                            </td>
+                                            <td style="text-align: center;">
+                                                {$vo.campus}
+                                            </td>
+                                            <td style="text-align: center;">
+                                                {$vo.class}
+                                            </td>
+                                            <td style="text-align: center;">
+                                                {$vo.lphonenum}
+                                            </td>
+                                            <td style="text-align: center;">
+                                                {$vo.sphonenum}
+                                            </td>
+                                            <td style="text-align: center;">
+                                                {$vo.room}
+                                            </td>
+                                        </tr>
+                                    </volist>
+                                </tbody>
+                            </table>
+                            <div class="pages">  
+                                {$page}  
+                            </div>
                         </div>
-
-                            <div class="card-footer">
-                                <button class="btn btn-primary" style="float:right; margin-right: 1.6em; "
+                        <div class="card-footer">
+                            <button class="btn btn-primary" style="float:right; margin-right: 1.6em; "
                                 onclick="download()">
-                                    下载Excel
-                                </button>
-                            </div>        
+                            下载Excel
+                            </button>
+                        </div>
                     </div>
-
                 </div>
         </div>
         </main>
         </div>
         <footer class="app-footer">
-
-        <p  align="center" style="width: 60%;
+            <p  align="center" style="width: 60%;
             margin: 2em auto 0;
             margin-top:0.8em;
             font-size: 14px;
@@ -307,25 +291,18 @@
             line-height: 1.8em;
             font-family: "Microsoft Yahei"
             ">版权所有 © ISchool
-        </p>
-
+            </p>
         </footer>
         <!-- Bootstrap and necessary plugins -->
-        <script src="{$Think.const.ADMIN_JS_URL}jquery.min.js">
-        </script>
-        <script src="{$Think.const.ADMIN_JS_URL}tether.min.js">
-        </script>
-        <script src="{$Think.const.ADMIN_JS_URL}bootstrap.min.js">
-        </script>
-        <script src="{$Think.const.ADMIN_JS_URL}pace.min.js">
-        </script>
+        <script src="{$Think.const.ADMIN_JS_URL}jquery.min.js"></script>
+        <script src="{$Think.const.ADMIN_JS_URL}tether.min.js"></script>
+        <script src="{$Think.const.ADMIN_JS_URL}bootstrap.min.js"></script>
+        <script src="{$Think.const.ADMIN_JS_URL}pace.min.js"></script>
         <!-- GenesisUI main scripts -->
-        <script src="{$Think.const.ADMIN_JS_URL}app.js">
-        </script>
+        <script src="{$Think.const.ADMIN_JS_URL}app.js"></script>
         <!-- Plugins and scripts required by this views -->
         <!-- Custom scripts required by this view -->
-        <script src="{$Think.const.ADMIN_JS_URL}views/main.js">
-        </script>
+        <script src="{$Think.const.ADMIN_JS_URL}views/main.js"></script>
         <script type="text/javascript">
             $('.dropdown-toggle').click(function() {
                 $(this).next(".dropdown-menu").toggle();
@@ -337,5 +314,4 @@
             }
         </script>
     </body>
-
 </html>

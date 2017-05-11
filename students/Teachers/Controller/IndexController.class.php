@@ -1222,7 +1222,7 @@ class IndexController extends Controller {
         if(!empty($keyword)){
             $where['name|num|sex|class|range|zhiyuan1|zhiyuan2'] = array('like', "%{$keyword}%");
             $this -> assign('keyword',$keyword);
-            $where['id'] = $id;
+            $where['major_id'] = $id;
             $count = $db -> where($where) -> count();
             if($count == 0){
                 $this -> error('查无此人！');

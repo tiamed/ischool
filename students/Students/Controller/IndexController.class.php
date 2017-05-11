@@ -59,19 +59,6 @@ class IndexController extends Controller {
         $this -> display();
     }
 
-    // public function actives(){
-    //     $db = M("actives");
-    //     $count = $db -> count();
-    //     $pagecount = 30;
-    //     $page = new \Think\Page($count,$pagecount);
-    //     $page -> lastSuffix = false;
-    //     $show = $page -> show();
-    //     $actives = $db -> order('id desc') -> limit($page -> firstRow.','.$page -> listRows) -> select();
-    //     $this -> assign('page',$show);
-    //     $this -> assign('actives',$actives);
-    //     $this -> display();
-    // }
-    // 
     public function actives(){
         $num = $_SESSION['num'];
         $db = M("actives");
@@ -103,19 +90,6 @@ class IndexController extends Controller {
         $this -> display();
     }
 
-    // public function actived(){
-    //     $num = $_SESSION['num'];
-    //     $count = M('baoming as a') -> join('users as c on c.num = a.stu_id') -> join('actives as b on b.id = a.active_id') -> where("c.num = $num") -> count();
-    //     $pagecount = 30;
-    //     $page = new \Think\Page($count,$pagecount);
-    //     $page -> lastSuffix = false;
-    //     $show = $page -> show();
-    //     $result = M('baoming as a') -> join('users as c on c.num = a.stu_id') -> join('actives as b on b.id = a.active_id') -> where("c.num = $num") -> order('a.time desc') -> limit($page -> firstRow.','.$page -> listRows) -> select();
-    //     $this -> assign('result',$result);
-    //     $this -> assign('page',$show);
-    //     $this -> display();
-    // }
-    // 
     public function actived(){
         $num = $_SESSION['num'];
         $list = M('baoming as a') 
@@ -315,19 +289,6 @@ class IndexController extends Controller {
         $this -> display();
     }
 
-    // public function infolist(){
-    //     $information = M('information');
-    //     $count = $information -> count();
-    //     $pagecount = 30;
-    //     $page = new \Think\Page($count,$pagecount);
-    //     $page->lastSuffix = false;
-    //     $show = $page -> show();
-    //     $list = $information -> order('id desc') -> limit($page -> firstRow.','.$page -> listRows) -> select();
-    //     $this -> assign('list',$list);
-    //     $this -> assign('page',$show);
-    //     $this -> display();
-    // }
-    
     public function infolist(){
         $num = $_SESSION['num'];
         $information = M('information');

@@ -118,19 +118,19 @@
             <div class="container-fluid animated fadeIn">
                 <div class="card">
                         <div class="card-header">
-                        <i class="fa fa-align-justify"></i>填写【{$latest.title}】离校信息
+                            <i class="fa fa-align-justify"></i>填写【{$latest.title}】离校信息
                         </div> 
                         <form class="form-horizontal" action="{$Think.const.SITE_URL_L}students/index/leave/id/{$latest['id']}" enctype="multipart/form-data" method="post" >
-                        <div class="card-block col-md-9">
+                            <div class="card-block col-md-9">
                            
                                 <div class="form-group row">
-                                    <label class="control-label col-md-3">离校原因</label>
+                                    <label class="control-label col-md-2">离校原因</label>
                                     <div class="col-md-4">
                                         <input type="text" name="reason" autocomplete="off" placeholder="请输入离校原因" class="form-control" required="required">
                                     </div>
                                 </div>
                                 <div class="form-group row">
-                                    <label class="control-label col-md-3">离校时间</label>
+                                    <label class="control-label col-md-2">离校时间</label>
                                     <div class="col-md-7">
                                         <div class="layui-input-inline" style="float: left;">
                                             <input type="text" name="time" autocomplete="off" class="form-control"  onclick="layui.laydate({elem: this, istime: true, format: 'YYYY-MM-DD hh:mm:ss'})" required="required">
@@ -138,56 +138,49 @@
                                     </div>
                                 </div>
                                 <div class="form-group row">
-                                    <label class="control-label col-md-3">离校方式</label>
+                                    <label class="control-label col-md-2">离校方式</label>
                                     <div class="col-md-6">
                                         <input type="text" name="way" autocomplete="off" placeholder="请输入离校方式" class="form-control" required="required">
                                     </div>
                                 </div>
                                 <div class="form-group row">
-                                    <label class="control-label col-md-3">目的地</label>
+                                    <label class="control-label col-md-2">目的地</label>
                                     <div class="col-md-6">
                                         <input type="text" name="destination" autocomplete="off" placeholder="请输入目的地" class="form-control" required="required">
                                     </div>
                                 </div>
                                 <div class="form-group row">
-                                    <label class="control-label col-md-3">紧急联系人</label>
+                                    <label class="control-label col-md-2">紧急联系人</label>
                                     <div class="col-md-4">
                                         <input type="text" name="contacts" autocomplete="off" placeholder="请输入紧急联系人姓名" class="form-control" required="required">
                                     </div>
                                 </div>
                                 <div class="form-group row">
-                                    <label class="control-label col-md-3">联系电话</label>
+                                    <label class="control-label col-md-2">联系电话</label>
                                     <div class="col-md-4">
                                         <input type="text" name="telephone" autocomplete="off" placeholder="请输入紧急联系人电话" class="form-control" required="required">
                                     </div>
                                 </div>
                                 <div class="form-group row">
-                                    <label class="control-label col-md-3">备注</label>
+                                    <label class="control-label col-md-2">备注</label>
                                     <div class="col-md-8">
                                         <textarea id="textarea-input" class="form-control" name="note" rows="5" placeholder="请输入备注"></textarea>
                                     </div>
                                 </div>
-                            
-                        </div>
-                        <div class="card-footer">
-                                <div class="col-md-12">
-                                    <div class="row col-md-9">
-                                        <div class="col-md-3">
-                                        </div>
-                                        <div>
-                                            <button type="submit" class="btn btn-success">
-                                                <i class="fa fa-dot-circle-o">
-                                                </i>
-                                                提交
-                                            </button>
-                                            &nbsp;&nbsp;&nbsp;
-                                            <button type="reset" class="btn btn-danger" onclick="return reload();">
-                                                <i class="fa fa-ban">
-                                                </i>
-                                                重置
-                                            </button>
-                                        </div>
-                                    </div>
+                            </div>
+                            <div class="card-footer">
+                                <div class="custom-button">
+                                    <button type="submit" class="btn btn-success">
+                                        <i class="fa fa-dot-circle-o">
+                                        </i>
+                                        提交
+                                    </button>
+                                    &nbsp;&nbsp;&nbsp;
+                                    <button type="reset" class="btn btn-danger" onclick="return reload();">
+                                        <i class="fa fa-ban">
+                                        </i>
+                                        重置
+                                    </button>
                                 </div>
                             </div>
 

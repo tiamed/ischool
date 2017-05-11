@@ -130,7 +130,7 @@
                         </div>
                         <form class="form-horizontal " action="{$Think.const.SITE_URL_L}students/index/updateleave/id/{$update.id}"
                         enctype="multipart/form-data" method="post">
-                            <div class="card-block">
+                            <div class="card-block col-md-9">
                                 <div class="form-group row">
                                     <label class="control-label col-md-2">
                                         离校原因
@@ -198,16 +198,19 @@
                             
                                 
                             <div class="card-footer" >
-                            <button type="submit" class="btn btn-success" style="margin-left:10.9rem;">
-                                    <i class="fa fa-dot-circle-o">
-                                    </i>
-                                    更新
-                                </button>
-                                <button type="reset" class="btn btn-danger" onclick="return reload();">
-                                    <i class="fa fa-ban">
-                                    </i>
-                                    重置
-                                </button></div>
+                                <div class="custom-button">
+                                    <button type="submit" class="btn btn-success">
+                                        <i class="fa fa-dot-circle-o">
+                                        </i>
+                                        更新
+                                    </button>
+                                    <button type="reset" class="btn btn-danger" onclick="return reload();">
+                                        <i class="fa fa-ban">
+                                        </i>
+                                        重置
+                                    </button>
+                                </div>
+                            </div>
                         
                            
                             

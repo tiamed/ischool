@@ -177,118 +177,150 @@
                             学生详细信息
                         </div>
                         <div class="card-block">
-                            <table class="table ">
+                            <table class="table hidden-sm-down">
                                 <volist name="users" id="vo">
-                                    <tr>
-                                        <td >
-                                            <b>
-                                                姓名
-                                            </b>
-                                        </td>
-                                        <td>
-                                            {$vo.name}
-                                        </td>
-                                        <td >
-                                            <b>
-                                                性别
-                                            </b>
-                                        </td>
-                                        <td>
-                                            {$vo.sex}
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td >
-                                            <b>
-                                                出生年月
-                                            </b>
-                                        </td>
-                                        <td>
-                                            {$vo.birthday}
-                                        </td>
-                                        <td >
-                                            <b>
-                                                行政班
-                                            </b>
-                                        </td>
-                                        <td>
-                                            {$vo.class}
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td >
-                                            <b>
-                                                民族
-                                            </b>
-                                        </td>
-                                        <td>
-                                            {$vo.nation}
-                                        </td>
-                                        <td >
-                                            <b>
-                                                家庭住址
-                                            </b>
-                                        </td>
-                                        <td>
-                                            {$vo.address}
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td >
-                                            <b>
-                                                长号
-                                            </b>
-                                        </td>
-                                        <td>
-                                            {$vo.lphonenum}
-                                        </td>
-                                        <td >
-                                            <b>
-                                                短号
-                                            </b>
-                                        </td>
-                                        <td>
-                                            {$vo.sphonenum}
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td style="width: 8rem;">
-                                            <b>
-                                                书院寝室号
-                                            </b>
-                                        </td>
-                                        <td>
-                                            {$vo.room}
-                                        </td>
-                                        <td style="width: 8rem;">
-                                            <b>
-                                                火车终点站
-                                            </b>
-                                        </td>
-                                        <td>
-                                            {$vo.train}
-                                        </td>
-                                    </tr>
+                                    <tbody>
+                                        <tr>
+                                            <td style="text-align: center;"><b>姓名</b></td>
+                                            <td>{$vo.name}</td>
+                                            <td style="text-align: center;"><b>性别</b></td>
+                                            <td>{$vo.sex}</td>
+                                        </tr>
+                                        <tr>
+                                            <td style="text-align: center;"><b>出生年月</b></td>
+                                            <td>{$vo.birthday}</td>
+                                            <td style="text-align: center;"><b>行政班</b></td>
+                                            <td>{$vo.class}</td>
+                                        
+                                        </tr>
+                                        <tr>
+                                            <td style="text-align: center;"><b>民族</b></td>
+                                            <td>{$vo.nation}</td>
+                                            
+                                            <td style="text-align: center;"><b>家庭住址</b></td>
+                                            <td>{$vo.address}</td>
+                                        </tr> 
+                                        <tr>
+                                            <td style="text-align: center;"><b>长号</b></td>
+                                            <td>{$vo.lphonenum}</td>
+                                            <td style="text-align: center;"><b>短号</b></td>
+                                            <td>{$vo.sphonenum}</td>
+                                        </tr>
+                                        <tr>
+                                            <td style="text-align: center;"><b>书院寝室号</b></td>
+                                            <td>{$vo.room}</td>
+                                           
+                                            <td style="text-align: center;"><b>火车终点站</b></td>
+                                            <td>{$vo.train}</td>
+                                        </tr>
+                                    </tbody>
                                 </volist>
                             </table>
+                            <table class="table table-bordered hidden-md-up">
+                                <volist name="users" id="vo">
+                                    <tbody>
+                                        <tr>
+                                            <td style="text-align: center;">
+                                                <b>
+                                                    姓名
+                                                </b>
+                                            </td>
+                                            <td data-title="姓名">
+                                                {$vo.name}
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td style="text-align: center;">
+                                                <b>
+                                                    性别
+                                                </b>
+                                            </td>
+                                            <td>
+                                                {$vo.sex}
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                        </tr>
+                                        <tr>
+                                            <td style="text-align: center;">
+                                                <b>
+                                                    出生年月
+                                                </b>
+                                            </td>
+                                            <td>
+                                                {$vo.birthday}
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td style="text-align: center;"><b>行政班</b></td>
+                                            <td>{$vo.class}</td>
+                                        </tr>
+                                        <tr>
+                                            <td style="text-align: center;">
+                                                <b>
+                                                    民族
+                                                </b>
+                                            </td>
+                                            <td>
+                                                {$vo.nation}
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td style="text-align: center;">
+                                                <b>
+                                                    家庭住址
+                                                </b>
+                                            </td>
+                                            <td>
+                                                {$vo.address}
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td style="text-align: center;">
+                                                <b>
+                                                    学号
+                                                </b>
+                                            </td>
+                                            <td>
+                                                {$vo.num}
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td style="text-align: center;"><b>长号</b></td>
+                                            <td>{$vo.lphonenum}</td>
+                                        </tr>
+                                        <tr>
+                                            <td style="text-align: center;"><b>短号</b></td>
+                                            <td>{$vo.sphonenum}</td>
+                                        </tr>
+                                        <tr>
+                                            <td style="text-align: center;"><b>书院寝室号</b></td>
+                                            <td>{$vo.room}</td>
+                                        </tr>
+                                        <tr>
+                                            <td style="text-align: center;"><b>火车终点站</b></td>
+                                            <td>{$vo.train}</td>
+                                        </tr>
+                                    </tbody>
+                                </volist>
+                            </table>  
                         </div>
                     </div>
                 </div>
-        </div>
-        </main>
+            </main>
         </div>
         <footer class="app-footer">
 
-        <p  align="center" style="width: 60%;
-            margin: 2em auto 0;
-            margin-top:0.8em;
-            font-size: 14px;
-            text-align: center;
-            color: #999;
-            line-height: 1.8em;
-            font-family: "Microsoft Yahei"
-            ">版权所有 © ISchool
-        </p>
+            <p  align="center" style="width: 60%;
+                margin: 2em auto 0;
+                margin-top:0.8em;
+                font-size: 14px;
+                text-align: center;
+                color: #999;
+                line-height: 1.8em;
+                font-family: "Microsoft Yahei"
+                ">版权所有 © ISchool
+            </p>
         
         </footer>
         <!-- Bootstrap and necessary plugins -->
@@ -310,17 +342,6 @@
         <script type="text/javascript">
             $('.dropdown-toggle').click(function() {
                 $(this).next(".dropdown-menu").toggle();
-                $.ajax({
-                    method: "POST",
-                    url: "{$Think.const.SITE_URL_L}teachers/Index/test",
-                    dataType: "text",
-                    data: {
-                        test: {
-                            'pl': 's',
-                            'fl': 'd'
-                        }
-                    }
-                });
             });
         </script>
     </body>
