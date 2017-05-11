@@ -58,7 +58,7 @@ body{
 
 .image {
     height: 30vh;
-    width: 24vw;
+    width: 100%;
     padding: 2rem;
     padding-left: 0.5rem;
     padding-right: 0.5rem;
@@ -82,7 +82,6 @@ body{
 }
 
 p#title {
-    width: 100%;
     margin: 0.5rem;
     text-align: center;
 }
@@ -140,6 +139,7 @@ a#sign:hover, a#sign:focus {
     }
     .info {
         padding: 1rem;
+        width: 100% !important;
     }
     .info > p {
         font-size: 2.7vh !important;
@@ -167,6 +167,7 @@ a#sign:hover, a#sign:focus {
         height: auto !important;
         padding: 0;
         background-color: white !important;
+        width: 100% !important;
     }
     .info {
         height: auto;

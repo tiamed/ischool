@@ -718,7 +718,7 @@ p{
   color: indianred !important;
 }
     #loading{
-        background-color: rgba(0,0,0,0.9);
+        background-color: black;
         height: 100%;
         width: 100%;
         position: fixed;

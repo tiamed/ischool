@@ -289,7 +289,7 @@
                 </div>
             </div>
         </div>
-        <script src="{$Think.const.ADMIN_JS_URL}jquery-latest.js"></script>
+        <script src="{$Think.const.ADMIN_JS_URL}jquery-2.0.2.min.js"></script>
         <script src="{$Think.const.HOME_JS_URL}bootstrap.js"></script>
         <script src="{$Think.const.HOME_JS_URL}login.js"></script>
         <script type="text/javascript" src="{$Think.const.HOME_JS_URL}javascript.fullPage.js"></script>
@@ -299,6 +299,12 @@
             	menu: '#menu',
             	css3:true
             });
+            var prev = $('.prev').attr('href') + '#3rdPage';
+            var num = $('.num').attr('href') + '#3rdPage';
+            var next = $('.next').attr('href') + '#3rdPage';
+            $('.prev').attr('href', prev);
+            $('.num').attr('href', num);
+            $('.next').attr('href', next);
         </script>
         <script type="text/javascript" src="{$Think.const.ADMIN_JS_URL}main.js"></script>
     </body>
