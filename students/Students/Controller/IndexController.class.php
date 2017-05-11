@@ -469,7 +469,7 @@ class IndexController extends Controller {
         $this -> assign('info',$info);
         $count = $zhiyuan -> where($where) -> count();
         if($count == 0){
-            $this -> error('请先填报志愿！',U('Students/Index/index'));
+            $this -> error('请先填报志愿！',U('Students/Index/major'));
         }else if(!empty($_POST)){
             if(strtotime($time) >= strtotime($latest['end'])){
                 $this -> error('该志愿填报已截止!',U('Students/Index/majored'));

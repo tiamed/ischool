@@ -20,12 +20,12 @@
     <link href="{$Think.const.ADMIN_CSS_URL}style2.css" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="{$Think.const.SITE_URL}students/Public/Home/layui/css/layui.css">
 
-<link rel="apple-touch-icon" sizes="76x76" href="{$Think.const.HOME_IMAGES_URL}apple-touch-icon.png">
-<link rel="icon" type="image/png" sizes="32x32" href="{$Think.const.HOME_IMAGES_URL}favicon-32x32.png">
-<link rel="icon" type="image/png" sizes="16x16" href="{$Think.const.HOME_IMAGES_URL}favicon-16x16.png">
-<link rel="manifest" href="{$Think.const.HOME_IMAGES_URL}manifest.json">
-<link rel="mask-icon" href="{$Think.const.HOME_IMAGES_URL}safari-pinned-tab.svg" color="#5bbad5">
-<meta name="theme-color" content="#ffffff">
+    <link rel="apple-touch-icon" sizes="76x76" href="{$Think.const.HOME_IMAGES_URL}apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="{$Think.const.HOME_IMAGES_URL}favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="{$Think.const.HOME_IMAGES_URL}favicon-16x16.png">
+    <link rel="manifest" href="{$Think.const.HOME_IMAGES_URL}manifest.json">
+    <link rel="mask-icon" href="{$Think.const.HOME_IMAGES_URL}safari-pinned-tab.svg" color="#5bbad5">
+    <meta name="theme-color" content="#ffffff">
 </head>
 
 <body class="app header-fixed sidebar-fixed aside-menu-fixed aside-menu-hidden">
@@ -139,43 +139,46 @@
                             </div>
                             <div class="card-block col-lg-12">
                             <!-- <input name="photo" type="file" value=""/> -->
-                            <div class="row" >
-                                <label class="col-md-2">上传学生信息</label>
-                                <div class="layui-box layui-upload-button" style="display: inline-flex;align-items: center;height:2rem;padding-left: 10px;padding-right: 10px;">
-                                    <input type="file" id="file"/>
-                                    
-                                    <span class="layui-upload-icon" style="display: contents;">
-                                        <i class="layui-icon">
-                                        </i>
-                                        上传文件
-                                    </span>
-                                </div>
-                                <input type="text" placeholder="未上传文件" id="aim" style="margin-left:0.5rem;text-align:center;" disabled="disabled" />
-                            </div>
                                 <div class="row">
                                 
                                     <div class="form-horizontal col-md-9">
+                                        <div class="form-group row">
+                                            <label class="control-label col-md-2">
+                                                上传志愿信息
+                                            </label>
+                                            <div class="layui-box layui-upload-button" style="margin-left: 0.9em;   display: inline-flex;align-items: center;">
+                                                <input name="photo" class="layui-upload-file" type="file" id="file"
+                                                accept=".xls" onchange="loadFile(event)">
+                                                <span class="layui-upload-icon">
+                                                    <i class="layui-icon">
+                                                    </i>
+                                                    上传表格
+                                                </span>
+                                            </div>
+                                            <div class="layui-inline" style="display:flex;">
+                                                <input type="text" placeholder="未上传文件" id="aim" style="margin-left:0.5rem;text-align:center;" disabled="disabled" />
+                                            </div>
+                                        </div>
                                         <div id="custom-majors" class="basic_form">
                                             <div class="insert_form controls"></div>
 
                                             <script id="major_template" type="text/template">
-
-                                                    <div class="basic_form_inputs">
-                                                        <div class="subtitle form-group row">
-                                                            <div class="col-md-2">
-                                                                <label class="form-control-label ">志愿 {{count}}</label>
-                                                                
-                                                            </div>
-                                                        </div>
-                                                        <div class="textfield form-group row">
-                                                        
-                                                            <label for="major" class="control-label col-md-2">输入志愿名称</label>
-                                                           
-                                                            <div class="col-md-4" style="margin-left:1.7rem;">
-                                                                <input type="textfield" name="major{{count}}" value="{{question}}" class="form-control" required="required"/>
-                                                            </div>
+                                                <div class="basic_form_inputs">
+                                                    <div class="subtitle form-group row">
+                                                        <div class="col-md-2">
+                                                            <label class="form-control-label ">志愿 {{count}}</label>
+                                                            
                                                         </div>
                                                     </div>
+                                                    <div class="textfield form-group row">
+                                                    
+                                                        <label for="major" class="control-label col-md-2">输入志愿名称</label>
+                                                       
+                                                        <div class="col-md-4">
+                                                            <input type="textfield" name="major{{count}}" value="{{question}}" class="form-control" required="required"/>
+                                                        </div>
+                                                    </div>
+                                                </div>
 
                                             </script>
                                             <!--  -->
@@ -192,7 +195,7 @@
                                     <div class="row col-md-9">
                                         <div class="col-md-2">
                                             <div>
-                                                <button class="btn btn-success" style="margin-left: 7em;" onclick="post()"><i class="fa fa-dot-circle-o"></i>提交</button>   
+                                                <button class="btn btn-success" style="margin-left: 7em;><i class="fa fa-dot-circle-o"></i>提交</button>   
                                             </div>
                                         </div>
                                     </div>
