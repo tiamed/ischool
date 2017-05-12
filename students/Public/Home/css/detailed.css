@@ -189,14 +189,14 @@ a#sign:hover, a#sign:focus {
     .welcome2 {
         position: absolute;
         color: darkgray;
-        top: 3.5rem;
+        top: 4rem;
         padding: 0;
         padding-right: 1rem;
         margin: 0;
     }
     .landing2 {
         position: absolute;
-        top: 4vh;
+        top: 1em;
         padding: 0;
         padding-right: 1rem;
         margin: 0;
