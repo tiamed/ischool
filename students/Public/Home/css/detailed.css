@@ -140,6 +140,7 @@ a#sign:hover, a#sign:focus {
     .info {
         padding: 1rem;
         width: 100% !important;
+        border-bottom: 20px double gray;
     }
     .info > p {
         font-size: 2.7vh !important;
