@@ -31,7 +31,7 @@ define('HOME_ASSETS_URL',SITE_URL.'students/Public/Home/assets/');
 //define('STU_CONTROLLER_URL',SITE_URL_L.'students/Students/Controller/');
 //把目前tp模式由生产模式变为开发模式
 
-define("APP_DEBUG",true);
+define("APP_DEBUG",false);
 
 //引入框架的核心程序
 
