@@ -1,4 +1,4 @@
-
+<?php if (!defined('THINK_PATH')) exit();?>
 <!DOCTYPE html>
 <html>
 
@@ -11,37 +11,37 @@
     <meta name="keyword" content="admin,teacher,information,collect">
 
 
-    <link rel="shortcut icon" href="{$Think.const.ADMIN_IMGS_URL}favicon.png">
+    <link rel="shortcut icon" href="<?php echo (ADMIN_IMGS_URL); ?>favicon.png">
     <title>填写问卷调查</title>
 
     <!-- Icons -->
-    <link href="{$Think.const.ADMIN_CSS_URL}font-awesome.min.css" rel="stylesheet">
-    <link href="{$Think.const.ADMIN_CSS_URL}simple-line-icons.css" rel="stylesheet">
+    <link href="<?php echo (ADMIN_CSS_URL); ?>font-awesome.min.css" rel="stylesheet">
+    <link href="<?php echo (ADMIN_CSS_URL); ?>simple-line-icons.css" rel="stylesheet">
     <!-- Main styles for this application -->
-    <link href="{$Think.const.ADMIN_CSS_URL}style2.css" rel="stylesheet">
-    <link rel="apple-touch-icon" sizes="76x76" href="{$Think.const.HOME_IMAGES_URL}apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="{$Think.const.HOME_IMAGES_URL}favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="{$Think.const.HOME_IMAGES_URL}favicon-16x16.png">
-    <link rel="manifest" href="{$Think.const.HOME_IMAGES_URL}manifest.json">
-    <link rel="mask-icon" href="{$Think.const.HOME_IMAGES_URL}safari-pinned-tab.svg" color="#5bbad5">
+    <link href="<?php echo (ADMIN_CSS_URL); ?>style2.css" rel="stylesheet">
+    <link rel="apple-touch-icon" sizes="76x76" href="<?php echo (HOME_IMAGES_URL); ?>apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="<?php echo (HOME_IMAGES_URL); ?>favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="<?php echo (HOME_IMAGES_URL); ?>favicon-16x16.png">
+    <link rel="manifest" href="<?php echo (HOME_IMAGES_URL); ?>manifest.json">
+    <link rel="mask-icon" href="<?php echo (HOME_IMAGES_URL); ?>safari-pinned-tab.svg" color="#5bbad5">
     <meta name="theme-color" content="#ffffff">
 </head>
 
 <body class="app header-fixed sidebar-fixed aside-menu-fixed aside-menu-hidden">
     <header class="app-header navbar">
         <button class="navbar-toggler mobile-sidebar-toggler hidden-lg-up" type="button">☰</button>
-        <a class="navbar-brand" href="{$Think.const.SITE_URL_L}Students/Index" style="padding:1rem;"><img src="{$Think.const.ADMIN_IMGS_URL}ISchool2.png" style=" height: 2rem;float: left;margin-top: -0.1rem;margin-right:0.5rem;"><h4 style="color:#494949;">学生个人中心</h4></a>
+        <a class="navbar-brand" href="<?php echo (SITE_URL_L); ?>Students/Index" style="padding:1rem;"><img src="<?php echo (ADMIN_IMGS_URL); ?>ISchool2.png" style=" height: 2rem;float: left;margin-top: -0.1rem;margin-right:0.5rem;"><h4 style="color:#494949;">学生个人中心</h4></a>
         <ul class="nav navbar-nav ml-auto">
             <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" href="#" role="button" aria-haspopup="true" aria-expanded="false">
                         账户管理
                 </a>
                 <div class="dropdown-menu dropdown-right text-xs-center">
-                        <a class="dropdown-item" href="{$Think.const.SITE_URL_L}Home/Index/change">修改密码</a>
+                        <a class="dropdown-item" href="<?php echo (SITE_URL_L); ?>Home/Index/change">修改密码</a>
                 </div>
             </li>
             <li class="nav-item">
-                <a class="btn btn-outline" href="{$Think.const.SITE_URL_L}Home/Index/logout" style="margin-right: 1em;">
+                <a class="btn btn-outline" href="<?php echo (SITE_URL_L); ?>Home/Index/logout" style="margin-right: 1em;">
                     <i class="icon-logout"></i> 注销
                 </a>
             </li>
@@ -56,16 +56,16 @@
                     <li class="nav-title">
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="{$Think.const.SITE_URL_L}Students/Index" ><i class="fa fa-cog"></i>我的信息</a>
+                        <a class="nav-link" href="<?php echo (SITE_URL_L); ?>Students/Index" ><i class="fa fa-cog"></i>我的信息</a>
                     </li>
                     <li class="nav-item nav-dropdown">
                         <a class="nav-link nav-dropdown-toggle" href="#"><i class="fa fa-edit"></i>活动管理</a>
                         <ul class="nav-dropdown-items">
                             <li class="nav-item">
-                                <a class="nav-link" href="{$Think.const.SITE_URL_L}Students/Index/actives">未填报的活动</a>
+                                <a class="nav-link" href="<?php echo (SITE_URL_L); ?>Students/Index/actives">未填报的活动</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="{$Think.const.SITE_URL_L}Students/Index/actived">已填报的活动</a>
+                                <a class="nav-link" href="<?php echo (SITE_URL_L); ?>Students/Index/actived">已填报的活动</a>
                             </li>
                         </ul>
                     </li>
@@ -74,13 +74,13 @@
                         <a class="nav-link nav-dropdown-toggle" href="#"><i class="fa fa-calendar-o"></i>离返校管理</a>
                         <ul class="nav-dropdown-items">
                             <li class="nav-item">
-                                <a class="nav-link" href="{$Think.const.SITE_URL_L}Students/Index/los">填写离校信息</a>
+                                <a class="nav-link" href="<?php echo (SITE_URL_L); ?>Students/Index/los">填写离校信息</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="{$Think.const.SITE_URL_L}Students/Index/leavelist">已填写的离返校信息</a>
+                                <a class="nav-link" href="<?php echo (SITE_URL_L); ?>Students/Index/leavelist">已填写的离返校信息</a>
                             </li>
 <!--                             <li class="nav-item">
-    <a class="nav-link" href="{$Think.const.SITE_URL_L}students/index/map">离返校签到</a>
+    <a class="nav-link" href="<?php echo (SITE_URL_L); ?>students/index/map">离返校签到</a>
 </li> -->
                         </ul>
                     </li>
@@ -89,10 +89,10 @@
                         <a class="nav-link nav-dropdown-toggle" href="#"><i class="icon-pie-chart"></i>问卷调查管理</a>
                         <ul class="nav-dropdown-items">
                             <li class="nav-item">
-                                <a class="nav-link" href="{$Think.const.SITE_URL_L}Students/Index/infolist">未填写的问卷调查</a>
+                                <a class="nav-link" href="<?php echo (SITE_URL_L); ?>Students/Index/infolist">未填写的问卷调查</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="{$Think.const.SITE_URL_L}Students/Index/infolisted">已填写的问卷调查</a>
+                                <a class="nav-link" href="<?php echo (SITE_URL_L); ?>Students/Index/infolisted">已填写的问卷调查</a>
                             </li>
                         </ul>
                     </li>
@@ -100,10 +100,10 @@
                         <a class="nav-link nav-dropdown-toggle" href="#"><i class="fa fa-briefcase"></i>志愿分流管理</a>
                         <ul class="nav-dropdown-items">
                             <li class="nav-item">
-                                <a class="nav-link" href="{$Think.const.SITE_URL_L}Students/Index/major">填报志愿信息</a>
+                                <a class="nav-link" href="<?php echo (SITE_URL_L); ?>Students/Index/major">填报志愿信息</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="{$Think.const.SITE_URL_L}Students/Index/majored">已填报的志愿信息</a>
+                                <a class="nav-link" href="<?php echo (SITE_URL_L); ?>Students/Index/majored">已填报的志愿信息</a>
                             </li>
                         </ul>
                     </li>
@@ -151,7 +151,7 @@
                     </div>
                     <div class="card-footer">
                         <div class="custom-button">
-                            <button type="submit" class="btn btn-success" onclick="posta()">
+                            <button type="submit" class="btn btn-success" onclick="posta()" style="margin-left: 0.8rem;">
                                 <i class="fa fa-dot-circle-o">
                                 </i>
                                 提交
@@ -185,27 +185,27 @@
     </footer>
 
     <!-- Bootstrap and necessary plugins -->
-    <script src="{$Think.const.ADMIN_JS_URL}jquery.min.js"></script>
-    <script src="{$Think.const.ADMIN_JS_URL}tether.min.js"></script>
-    <script src="{$Think.const.ADMIN_JS_URL}bootstrap.min.js"></script>
-    <script src="{$Think.const.ADMIN_JS_URL}pace.min.js"></script>
+    <script src="<?php echo (ADMIN_JS_URL); ?>jquery.min.js"></script>
+    <script src="<?php echo (ADMIN_JS_URL); ?>tether.min.js"></script>
+    <script src="<?php echo (ADMIN_JS_URL); ?>bootstrap.min.js"></script>
+    <script src="<?php echo (ADMIN_JS_URL); ?>pace.min.js"></script>
     <!-- GenesisUI main scripts -->
 
-    <script src="{$Think.const.ADMIN_JS_URL}app.js"></script>
+    <script src="<?php echo (ADMIN_JS_URL); ?>app.js"></script>
     <!-- Plugins and scripts required by this views -->
-    <script src="{$Think.const.ADMIN_JS_URL}mustache.js" type="text/javascript"></script>
+    <script src="<?php echo (ADMIN_JS_URL); ?>mustache.js" type="text/javascript"></script>
 
-    <script src="{$Think.const.HOME_JS_URL}poll.js"</script>
+    <script src="<?php echo (HOME_JS_URL); ?>poll.js"</script>
     <!-- Custom scripts required by this view -->
-    <script src="{$Think.const.ADMIN_JS_URL}views/main.js"></script>
+    <script src="<?php echo (ADMIN_JS_URL); ?>views/main.js"></script>
     <script type="text/javascript">
         $('.dropdown-toggle').click(function(){
         $(this).next(".dropdown-menu").toggle();
         });
 
-        var path = "{$Think.const.HOME_JS_URL}poll.json";
-        var xpath = "{$Think.const.SITE_URL_L}students/Index/poll/id/{$id}";
-        var repath = "{$Think.const.SITE_URL_L}students/Index/infolisted";
+        var path = "<?php echo (HOME_JS_URL); ?>poll.json";
+        var xpath = "<?php echo (SITE_URL_L); ?>students/Index/poll/id/<?php echo ($id); ?>";
+        var repath = "<?php echo (SITE_URL_L); ?>students/Index/infolisted";
         $(document).ready(json());
     </script>
 </body>
